@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   controller: {fileID: 349539767}
+  playerControllerScript: {fileID: 349539770}
 --- !u!114 &349539769
 MonoBehaviour:
   m_ObjectHideFlags: 0

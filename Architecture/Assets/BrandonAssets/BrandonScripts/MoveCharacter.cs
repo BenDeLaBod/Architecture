@@ -9,21 +9,24 @@ public class MoveCharacter : MonoBehaviour
     public CharacterController controller;
     private Vector3 velocity;
     private float gravityValue = -9.82f;
+    public PlayerController playerControllerScript;
     void Start()
     {
-        
+        playerControllerScript = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * moveSpeed);
+        
+        Vector3 direction =  playerControllerScript.GetDirection().normalized;
 
-        if (move != Vector3.zero)
+        controller.Move(moveSpeed * Time.deltaTime * direction);
+
+        if (direction != Vector3.zero)
         {
-            gameObject.transform.forward = move;
+            gameObject.transform.forward = direction;
         }
 
         velocity.y += gravityValue * Time.deltaTime;
@@ -31,4 +34,6 @@ public class MoveCharacter : MonoBehaviour
 
         
     }
+
+
 }
