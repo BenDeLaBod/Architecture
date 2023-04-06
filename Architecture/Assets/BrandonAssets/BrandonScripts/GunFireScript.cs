@@ -6,7 +6,7 @@ public class GunFireScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject projectilePrefab;
-    public GameObject barrelPosition;
+   // public GameObject barrelPosition;
     
     void Start()
     {
@@ -16,13 +16,16 @@ public class GunFireScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
        
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(projectilePrefab, barrelPosition.transform.position, barrelPosition.transform.rotation);
-        }
+    /// <summary>
+    /// Spawn a bullet prefab 
+    /// </summary>
+    /// <param name="shootPos"> The position where the bullet spawns from</param>
+    public void Shoot(Transform shootPos)
+    {
+        Instantiate(projectilePrefab, shootPos.transform.position, shootPos.transform.rotation);
     }
 
     

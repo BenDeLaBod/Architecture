@@ -14,6 +14,21 @@ public class HealthPoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(healthPoints <= 0)
+        {
+            Debug.Log("Dead");
+            Die();
+        }
+    }
+
+
+    public void TakeDamage(int damageNumber)
+    {
+        healthPoints -= damageNumber;
+    }
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
     }
 }

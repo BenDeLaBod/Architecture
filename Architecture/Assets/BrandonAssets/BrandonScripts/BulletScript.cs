@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    float lifeSpan = 2.5f;
     void Start()
     {
         
@@ -14,5 +15,26 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * 7);
+        lifeSpan -= Time.deltaTime;
+
+        if(lifeSpan <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision targetHit)
+    {
+        if (targetHit.gameObject.CompareTag("EnemyTest"))
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Enemy Hit");
+            targetHit.gameObject.GetComponent<HealthPoints>().TakeDamage(1);
+            
+        }
     }
 }
+
+
+
