@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(HealthPoints))]
-public class PlayerController : MonoBehaviour
+
+public class HealthPoints : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    [SerializeField] int healthPoints = 5;
     void Start()
     {
         
