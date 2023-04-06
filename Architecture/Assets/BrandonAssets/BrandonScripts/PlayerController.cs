@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     {
         return direction;
     }
+    public Transform GetPlayerTransform()
+    {
+        return transform;
+    }
 
     void Start()
     {
