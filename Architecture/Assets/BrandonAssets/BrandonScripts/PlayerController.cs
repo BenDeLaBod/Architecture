@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             gunScript.Shoot(barrelPos);
         }
