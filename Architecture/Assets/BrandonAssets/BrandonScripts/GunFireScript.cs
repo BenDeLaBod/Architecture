@@ -25,7 +25,7 @@ public class GunFireScript : MonoBehaviour
     /// <param name="shootPos"> The position where the bullet spawns from</param>
     public void Shoot(Transform shootPos)
     {
-        Instantiate(projectilePrefab, shootPos.transform.position, shootPos.transform.rotation);
+        Instantiate(projectilePrefab, shootPos.transform.position , shootPos.transform.rotation);
     }
 
     

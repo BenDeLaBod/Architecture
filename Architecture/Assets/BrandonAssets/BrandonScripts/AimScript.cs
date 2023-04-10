@@ -7,10 +7,10 @@ public class AimScript : MonoBehaviour
     // Start is called before the first frame update
     public Camera cam;
     Vector2 mousePos;
-    public PlayerController playerControllerScript;
+   // public PlayerController playerControllerScript;
     void Start()
     {
-        playerControllerScript = GetComponent<PlayerController>();
+        //playerControllerScript = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class AimScript : MonoBehaviour
 
        // PlayerAim();
         HandleRotationInpt();
+        
        
     }
 
@@ -47,9 +48,14 @@ public class AimScript : MonoBehaviour
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit))
         {
-            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+            Vector3 lookDir = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+            
+
+            transform.LookAt(lookDir);
         }
     }
+
+  
 }

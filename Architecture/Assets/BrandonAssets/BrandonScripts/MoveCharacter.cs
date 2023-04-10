@@ -23,6 +23,7 @@ public class MoveCharacter : MonoBehaviour
         Vector3 direction =  playerControllerScript.GetDirection().normalized;
 
         controller.Move(moveSpeed * Time.deltaTime * direction);
+        
 
         if (direction != Vector3.zero)
         {
