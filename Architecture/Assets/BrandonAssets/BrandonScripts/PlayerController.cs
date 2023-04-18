@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public int ammoCount;
     public int ammoSize;
 
+    //Money
+    public int moneyCount;
+
     
 
     void Start()
@@ -50,4 +53,5 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
 }

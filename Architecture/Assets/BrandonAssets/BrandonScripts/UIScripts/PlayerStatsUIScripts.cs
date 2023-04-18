@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStatsUIScripts : MonoBehaviour
 {
     // Start is called before the first frame update
+    public int playerMoney;
+    [SerializeField] private TextMeshProUGUI moneyText;
     void Start()
     {
         
@@ -14,5 +17,11 @@ public class PlayerStatsUIScripts : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AddMoney(int moneyToAdd)
+    {
+        playerMoney += moneyToAdd;
+        moneyText.text = "Gold: $" + playerMoney.ToString();
     }
 }

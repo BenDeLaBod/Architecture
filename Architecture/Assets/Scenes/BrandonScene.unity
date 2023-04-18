@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 349539771}
   m_Layer: 0
   m_Name: PlaceHolderPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,6 +594,7 @@ MonoBehaviour:
   hud: {fileID: 797930163}
   ammoCount: 0
   ammoSize: 0
+  moneyCount: 0
 --- !u!114 &349539771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,7 +829,7 @@ GameObject:
   - component: {fileID: 532747461}
   m_Layer: 5
   m_Name: Player Stats HUD (HP, Stamina & Gold))
-  m_TagString: Untagged
+  m_TagString: PlayerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -928,6 +929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff349d2f088f3e43b2d3340be2e4335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMoney: 0
+  moneyText: {fileID: 1105002516}
 --- !u!1 &797930163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1343,7 @@ GameObject:
   - component: {fileID: 1105002517}
   - component: {fileID: 1105002516}
   m_Layer: 5
-  m_Name: GoldText
+  m_Name: Gold Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1386,7 +1389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Gold: 10.000'
+  m_text: 'Gold: $0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: abaaac24067910b40ab282990fa20fd1, type: 2}
   m_sharedMaterial: {fileID: 1411749738212285611, guid: abaaac24067910b40ab282990fa20fd1, type: 2}
@@ -2629,7 +2632,7 @@ GameObject:
   - component: {fileID: 2142167795}
   - component: {fileID: 2142167794}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Health Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

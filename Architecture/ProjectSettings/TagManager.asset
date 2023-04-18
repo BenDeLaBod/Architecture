@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - EnemyTest
+  - PlayerUI
   layers:
   - Default
   - TransparentFX
