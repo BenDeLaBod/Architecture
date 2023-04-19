@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthPoints : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] int healthPoints = 5;
+    public int healthPoints;
     private PlayerStatsUIScripts playerUI;
     void Start()
     {
@@ -15,6 +15,7 @@ public class HealthPoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(healthPoints <= 0)
         {
             Debug.Log("Dead");
@@ -29,6 +30,7 @@ public class HealthPoints : MonoBehaviour
     public void TakeDamage(int damageNumber)
     {
         healthPoints -= damageNumber;
+        
     }
 
     public void Die()

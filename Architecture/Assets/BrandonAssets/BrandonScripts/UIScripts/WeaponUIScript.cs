@@ -17,6 +17,6 @@ public class WeaponUIScript : MonoBehaviour
         //icon.sprite = weaponIcon;
         ammoSizeText.text = ""+ammoSize.ToString();
         ammoCountText.text = "" + ammoCount.ToString();
-        Debug.Log("Update");
+        
     }
 }

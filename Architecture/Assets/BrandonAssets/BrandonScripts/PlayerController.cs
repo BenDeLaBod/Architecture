@@ -16,24 +16,30 @@ public class PlayerController : MonoBehaviour
         return transform;
     }
 
-    private GunFireScript gunScript;
+
+    
+   
+    [Header("Weapon")]
     public Transform barrelPos;
+    private GunFireScript gunScript;
     public GameObject hud;
     private WeaponUIScript weaponHudScript;
-
-
-    //Ammo
     public int ammoCount;
     public int ammoSize;
 
+
+    [Header("Player Info HUD")]
     //Money
     public int moneyCount;
+    private HealthPoints hpScript;
+    
 
     
 
     void Start()
     {
         gunScript = GetComponent<GunFireScript>();
+        hpScript = GetComponent<HealthPoints>();
         weaponHudScript = hud.GetComponent<WeaponUIScript>();
         ammoSize = 40;
         ammoCount = ammoSize;
@@ -45,11 +51,33 @@ public class PlayerController : MonoBehaviour
     {
         direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        if (  ammoCount >=1 && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+        Shoot();
+
+        //Test take damage HUD Update
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            hpScript.TakeDamage(3);
+        }
+      
+    }
+
+
+    /// <summary>
+    /// Shoot ability, If player have ammo left and presses Space or Mouse 0 minus 1 ammmo and call
+    /// gunScript Shoot method, update players weaponHUD. And for every 6 shoot "Reload" / small delay
+    /// </summary>
+    private void Shoot()
+    {
+        if (ammoCount >= 1 && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
         {
             ammoCount--;
+            if((ammoSize- ammoCount) %6 == 0) 
+            {
+                Debug.LogError("Reload");
+            }
+
             gunScript.Shoot(barrelPos);
-            weaponHudScript.UpdateInfo(ammoSize,ammoCount);
+            weaponHudScript.UpdateInfo(ammoSize, ammoCount);
 
         }
     }
