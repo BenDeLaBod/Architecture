@@ -6,7 +6,7 @@ public class AimScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public Camera cam;
-    Vector2 mousePos;
+   // Vector2 mousePos;
    // public PlayerController playerControllerScript;
     void Start()
     {

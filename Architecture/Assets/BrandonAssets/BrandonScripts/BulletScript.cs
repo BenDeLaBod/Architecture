@@ -5,8 +5,8 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] float bulletSpeed = 10;
-    float lifeSpan = 2.5f;
+    [SerializeField] float _bulletSpeed = 10;
+    float _lifeSpan = 2.5f;
     
     void Start()
     {
@@ -16,10 +16,10 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
-        lifeSpan -= Time.deltaTime;
+        transform.Translate(Vector3.forward * Time.deltaTime * _bulletSpeed);
+        _lifeSpan -= Time.deltaTime;
 
-        if(lifeSpan <= 0)
+        if(_lifeSpan <= 0)
         {
             Destroy(this.gameObject);
         }

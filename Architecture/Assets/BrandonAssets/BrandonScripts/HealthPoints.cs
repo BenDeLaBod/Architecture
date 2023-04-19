@@ -6,10 +6,10 @@ public class HealthPoints : MonoBehaviour
 {
     // Start is called before the first frame update
     public int healthPoints;
-    private PlayerStatsUIScripts playerUI;
+    private PlayerStatsUIScripts _playerUI;
     void Start()
     {
-        playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerStatsUIScripts>();
+        _playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerStatsUIScripts>();
         
     }
 
@@ -23,7 +23,7 @@ public class HealthPoints : MonoBehaviour
             Die();
             if(gameObject.tag == "EnemyTest")
             {
-                playerUI.AddMoney(100);
+                _playerUI.AddMoney(100);
                          
             }
         }

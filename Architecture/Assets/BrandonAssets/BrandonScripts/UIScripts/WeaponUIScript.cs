@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class WeaponUIScript : MonoBehaviour
 {
-    [SerializeField] private Image icon;
-    [SerializeField] private TextMeshProUGUI ammoSizeText; 
-    [SerializeField] private TextMeshProUGUI ammoCountText; 
+    [SerializeField] private Image _icon;
+    [SerializeField] private TextMeshProUGUI _ammoSizeText; 
+    [SerializeField] private TextMeshProUGUI _ammoCountText; 
     
 
 
     public void UpdateInfo(/*Sprite weaponIcon,*/ int ammoSize, int ammoCount)
     {
         //icon.sprite = weaponIcon;
-        ammoSizeText.text = ""+ammoSize.ToString();
-        ammoCountText.text = "" + ammoCount.ToString();
+        _ammoSizeText.text = ""+ammoSize.ToString();
+        _ammoCountText.text = "" + ammoCount.ToString();
         
     }
 }
