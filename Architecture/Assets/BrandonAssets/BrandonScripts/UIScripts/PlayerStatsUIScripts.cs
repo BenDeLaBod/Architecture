@@ -28,7 +28,7 @@ public class PlayerStatsUIScripts : MonoBehaviour
         moneyText.text = "Gold: $" + playerMoney.ToString();
     }
 
-    public void HealPlayerHP( int newHealth)
+    public void HealPlayerHP(int newHealth)
     {
         playerHealth += newHealth;
         healthText.text = playerHealth.ToString();

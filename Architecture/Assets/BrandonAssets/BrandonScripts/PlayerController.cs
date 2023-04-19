@@ -58,6 +58,11 @@ public class PlayerController : MonoBehaviour
         {
             hpScript.TakeDamage(3);
         }
+        //Test heal + hp clamp
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            hpScript.HealHP(5);
+        }
       
     }
 

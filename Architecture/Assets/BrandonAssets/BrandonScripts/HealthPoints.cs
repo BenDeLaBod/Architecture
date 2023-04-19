@@ -10,19 +10,21 @@ public class HealthPoints : MonoBehaviour
     void Start()
     {
         playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerStatsUIScripts>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(healthPoints <= 0)
+        healthPoints = Mathf.Clamp(healthPoints, 0, 100);
+        if (healthPoints <= 0)
         {
             Debug.Log("Dead");
             Die();
             if(gameObject.tag == "EnemyTest")
             {
                 playerUI.AddMoney(100);
+                         
             }
         }
     }
@@ -31,6 +33,11 @@ public class HealthPoints : MonoBehaviour
     {
         healthPoints -= damageNumber;
         
+    }
+
+    public void HealHP(int amountHeal)
+    {
+        healthPoints += amountHeal;
     }
 
     public void Die()
