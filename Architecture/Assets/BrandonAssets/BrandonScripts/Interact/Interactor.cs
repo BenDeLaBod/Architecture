@@ -7,10 +7,13 @@ public class Interactor : MonoBehaviour
     [SerializeField] private Transform _interctionPoint;
     [SerializeField] private float _interractionPointRadius = 0.5f;
     [SerializeField] private LayerMask _interactableMask;
+    [SerializeField] private InteractionPromptUI _interactionPromptUI;
 
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numColliderFound;
     Collider[] _hoverArray = new Collider[0];
+
+    private Interactable _interactable;
 
     private void HoverHighlightOff()
     {
@@ -30,11 +33,31 @@ public class Interactor : MonoBehaviour
     {
         if (_numColliderFound > 0)
         {
-            var interactable = _colliders[0].GetComponent<Interactable>();
+            _interactable = _colliders[0].GetComponent<Interactable>();
             //If interactable object is found press L to interact
-            if (interactable != null && Input.GetKeyDown(KeyCode.L))
+            if (_interactable != null /*&& Input.GetKeyDown(KeyCode.L)*/)
             {
-                interactable.Interact(this);
+
+                if (!_interactionPromptUI.isDisplayed)
+                {
+                    _interactionPromptUI.SetUp(_interactable.InteractionPromt);
+                }
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    _interactable.Interact(this);
+                }
+            }
+        }
+        else
+        {
+            if(_interactable != null)
+            {
+                _interactable = null;
+            }
+
+            if (_interactionPromptUI.isDisplayed)
+            {
+                _interactionPromptUI.ClosePanel();
             }
         }
     }
