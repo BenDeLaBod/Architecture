@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
     {
         return transform;
     }
-
-
-    
    
     [Header("Weapon")]
     public Transform barrelPos;
@@ -29,9 +26,9 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Player Info HUD")]
+    [SerializeField] private IntEventSO _heal;
     //Money
-    public int moneyCount;
-    private HealthPoints hpScript;
+
     
 
     
@@ -39,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gunScript = GetComponent<GunFireScript>();
-        hpScript = GetComponent<HealthPoints>();
+       
         weaponHudScript = hud.GetComponent<WeaponUIScript>();
         ammoSize = 40;
         ammoCount = ammoSize;
@@ -56,12 +53,15 @@ public class PlayerController : MonoBehaviour
         //Test take damage HUD Update
         if (Input.GetKeyDown(KeyCode.U))
         {
-            hpScript.TakeDamage(3);
+            //hpScript.TakeDamage(3);
+            _heal.Invoke(-10);
         }
         //Test heal + hp clamp
         if (Input.GetKeyDown(KeyCode.I))
         {
-            hpScript.HealHP(5);
+            //hpScript.HealHP(5);
+            _heal.Invoke(5);
+                
         }
       
     }
