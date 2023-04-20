@@ -7,7 +7,7 @@ public class HealthPoints : MonoBehaviour
     // Start is called before the first frame update
     public int healthPoints;
 
-    [SerializeField] private IntEventSO _hpEvent;
+    [SerializeField] private IntEventSO _goldEvent;
     [SerializeField] private int _deathMoney = 33;
     private PlayerHealthManager phm;
 
@@ -28,10 +28,7 @@ public class HealthPoints : MonoBehaviour
         {
             Debug.Log("Dead");
             Die();
-            if(gameObject.tag == "EnemyTest")
-            {
-                _hpEvent.Invoke(_deathMoney);                     
-            }
+           
         }
     }
 
@@ -47,6 +44,10 @@ public class HealthPoints : MonoBehaviour
 
     public void Die()
     {
+        if (gameObject.tag == "EnemyTest")
+        {
+            _goldEvent.Invoke(_deathMoney);
+        }
         Destroy(this.gameObject);
     }
 }

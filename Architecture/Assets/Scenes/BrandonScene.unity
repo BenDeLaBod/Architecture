@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 100
-  _hpEvent: {fileID: 0}
+  _goldEvent: {fileID: 0}
   _deathMoney: 33
 --- !u!114 &349539770
 MonoBehaviour:
@@ -2111,7 +2111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 5
-  _hpEvent: {fileID: 0}
+  _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
   _deathMoney: 70
 --- !u!54 &1220102794
 Rigidbody:
@@ -2635,12 +2635,12 @@ GameObject:
   - component: {fileID: 1628300353}
   - component: {fileID: 1628300352}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera Top down
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1628300352
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3262,7 +3262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1980860686
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3431,7 +3431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 5
-  _hpEvent: {fileID: 0}
+  _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
   _deathMoney: 150
 --- !u!54 &2078279777
 Rigidbody:
@@ -3714,6 +3714,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 408592059866305363, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
+      propertyPath: _hpEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 3cfa9b4f56988b343a3f12087222e549, type: 2}
+    - target: {fileID: 408592059866305363, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
+      propertyPath: _goldEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
     - target: {fileID: 408592059866305365, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
       propertyPath: m_Name
       value: EnemyTarget
