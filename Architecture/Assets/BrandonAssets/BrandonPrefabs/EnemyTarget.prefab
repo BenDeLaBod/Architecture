@@ -129,3 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 5
+  _scoreEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
+  _deathMoney: 80
