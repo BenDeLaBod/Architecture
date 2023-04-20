@@ -8,6 +8,7 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] private IntEventSO _hpUpdateEvent;
 
     public int _currentHP = 100;
+    public int GetCurrentHP() => _currentHP;
 
     private void Start()
     {
@@ -22,8 +23,11 @@ public class PlayerHealthManager : MonoBehaviour
     {
         _currentHP += healedHP;
         _currentHP = Mathf.Clamp(_currentHP, 0, 100);
+       
         _hpUpdateEvent.Invoke(_currentHP);
     }
+
+
 
     
 
