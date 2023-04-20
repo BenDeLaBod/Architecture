@@ -26,9 +26,4 @@ public class PlayerHealthManager : MonoBehaviour
        
         _hpUpdateEvent.Invoke(_currentHP);
     }
-
-
-
-    
-
 }
