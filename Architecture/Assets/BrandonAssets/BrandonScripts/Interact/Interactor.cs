@@ -45,6 +45,7 @@ public class Interactor : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.L))
                 {
                     _interactable.Interact(this);
+                    
                 }
             }
         }
