@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPUI : MonoBehaviour
+public class HPHUD : MonoBehaviour
 {
     [SerializeField] private IntEventSO _goldEvent;
     [SerializeField] private TMPro.TMP_Text _text;

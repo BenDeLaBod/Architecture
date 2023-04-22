@@ -19,6 +19,11 @@ public class PlayerHealthManager : MonoBehaviour
         _hpEvent.Event -= UpdateHP;
     }
 
+    /// <summary>
+    /// Update HP, Add the argument value to the current HP, clamp the HP to 0 and 100. 
+    /// Invoke updates the HP UI display
+    /// </summary>
+    /// <param name="healedHP"> The assigned value gets added to the existing current HP</param>
     private void UpdateHP(int healedHP)
     {
         _currentHP += healedHP;

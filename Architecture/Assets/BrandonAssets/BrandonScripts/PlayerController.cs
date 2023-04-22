@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public Transform barrelPos;
     private GunFireScript gunScript;
     public GameObject hud;
-    private WeaponUIScript weaponHudScript;
+    private WeaponHUDScript weaponHudScript;
     public int ammoCount;
     public int ammoSize;
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         gunScript = GetComponent<GunFireScript>();
        
-        weaponHudScript = hud.GetComponent<WeaponUIScript>();
+        weaponHudScript = hud.GetComponent<WeaponHUDScript>();
         ammoSize = 40;
         ammoCount = ammoSize;
         weaponHudScript.UpdateInfo(ammoSize, ammoCount);

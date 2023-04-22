@@ -15,6 +15,9 @@ public class Interactor : MonoBehaviour
 
     private Interactable _interactable;
 
+    /// <summary>
+    /// Toggle all highlights off
+    /// </summary>
     private void HoverHighlightOff()
     {
         foreach (var hover in _hoverArray)
@@ -22,6 +25,9 @@ public class Interactor : MonoBehaviour
             hover.GetComponent<HighlightInteract>().ToggleHighlight(false);
         }
     }
+    /// <summary>
+    /// Toggle all highlights on
+    /// </summary>
     private void HoverHighlightOn()
     {
         foreach (var hover in _hoverArray)
@@ -29,6 +35,13 @@ public class Interactor : MonoBehaviour
             hover.GetComponent<HighlightInteract>().ToggleHighlight(true);
         }
     }
+
+    /// <summary>
+    /// If there are any colliders within the Shere area and interact promt is 
+    /// not displayed display interaction promt, Press L to interact with object.
+    /// 
+    /// If no collider is found make interactable null and turn off display
+    /// </summary>
     private void InteractWithObject()
     {
         if (_numColliderFound > 0)
@@ -37,7 +50,6 @@ public class Interactor : MonoBehaviour
             //If interactable object is found press L to interact
             if (_interactable != null /*&& Input.GetKeyDown(KeyCode.L)*/)
             {
-
                 if (!_interactionPromptUI.isDisplayed)
                 {
                     _interactionPromptUI.SetUp(_interactable.InteractionPromt);
@@ -55,7 +67,6 @@ public class Interactor : MonoBehaviour
             {
                 _interactable = null;
             }
-
             if (_interactionPromptUI.isDisplayed)
             {
                 _interactionPromptUI.ClosePanel();

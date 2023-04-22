@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldUI : MonoBehaviour
+public class GoldHUD : MonoBehaviour
 {
     [SerializeField] private IntEventSO _goldEvent;
     [SerializeField] private TMPro.TMP_Text _text;
