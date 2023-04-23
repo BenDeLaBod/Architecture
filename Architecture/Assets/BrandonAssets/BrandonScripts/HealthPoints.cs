@@ -9,19 +9,19 @@ public class HealthPoints : MonoBehaviour
 
     [SerializeField] private IntEventSO _goldEvent;
     [SerializeField] private int _deathMoney = 33;
-    private PlayerHealthManager phm;
+    private PlayerHealthManager _phm;
 
     // Update is called once per frame
     private void Start()
     {
-        phm = GameObject.Find("HealthManager").GetComponent<PlayerHealthManager>();
+        _phm = GameObject.Find("HealthManager").GetComponent<PlayerHealthManager>();
     }
     void Update()
     {
         
         if(gameObject.tag == "Player")
         {
-            healthPoints = phm.GetCurrentHP();
+            healthPoints = _phm.GetCurrentHP();
         }
 
         if (healthPoints <= 0)

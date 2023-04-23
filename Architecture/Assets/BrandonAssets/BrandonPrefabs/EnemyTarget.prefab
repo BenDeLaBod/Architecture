@@ -147,6 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _promt: '[L] Talk'
+  _NPCchoiceCanvas: {fileID: 0}
+  _playerHealth: {fileID: 0}
+  _playerGold: {fileID: 0}
+  _playerWeapon: {fileID: 0}
 --- !u!114 &726972472
 MonoBehaviour:
   m_ObjectHideFlags: 0
