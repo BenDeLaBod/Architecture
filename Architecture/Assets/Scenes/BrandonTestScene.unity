@@ -3413,7 +3413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5294228848fd28478842482a337c7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
+  _sprites:
   - {fileID: 21300000, guid: 30e8a423d47fe1d49a76b58345e27207, type: 3}
   - {fileID: 21300000, guid: c8917a5364fce2c4d99b6d48337191be, type: 3}
   - {fileID: 21300000, guid: 484f54c15f22e82429b3f87c788fec7d, type: 3}
@@ -3421,6 +3421,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1cffb528ce4365a4ea4a4f84eb8a86be, type: 3}
   - {fileID: 21300000, guid: 486e3cf34b007934ea3ec2049ee13958, type: 3}
   - {fileID: 21300000, guid: 62825e02076700d4d99f193cb53f71f6, type: 3}
+  _image: {fileID: 695692487}
+  currentAmmoCount: 0
 --- !u!1 &730492220
 GameObject:
   m_ObjectHideFlags: 0

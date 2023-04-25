@@ -29,7 +29,7 @@ public class RevolverBulletCount : MonoBehaviour
             }
             else
             {
-                ChangeRevolverImage(currentAmmoCount+1);
+                ChangeRevolverImage(currentAmmoCount);
             }
         }
     }
@@ -40,7 +40,7 @@ public class RevolverBulletCount : MonoBehaviour
 
     public void FullAmmo()
     {
-        _image.sprite = _sprites[7];
+        _image.sprite = _sprites[6];
         currentAmmoCount = 6;
     }
 }
