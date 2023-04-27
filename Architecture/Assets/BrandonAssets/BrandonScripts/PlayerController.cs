@@ -15,35 +15,29 @@ public class PlayerController : MonoBehaviour
     {
         return transform;
     }
-
-
-    
    
     [Header("Weapon")]
     public Transform barrelPos;
-    private GunFireScript gunScript;
+    private GunFireScript _gunScript;
     public GameObject hud;
-    private WeaponUIScript weaponHudScript;
+    private WeaponHUDScript _weaponHudScript;
     public int ammoCount;
     public int ammoSize;
 
 
     [Header("Player Info HUD")]
+    [SerializeField] private IntEventSO _heal;
     //Money
-    public int moneyCount;
-    private HealthPoints hpScript;
-    
 
-    
 
     void Start()
     {
-        gunScript = GetComponent<GunFireScript>();
-        hpScript = GetComponent<HealthPoints>();
-        weaponHudScript = hud.GetComponent<WeaponUIScript>();
+        _gunScript = GetComponent<GunFireScript>();
+
+        _weaponHudScript = hud.GetComponent<WeaponHUDScript>();
         ammoSize = 40;
         ammoCount = ammoSize;
-        weaponHudScript.UpdateInfo(ammoSize, ammoCount);
+        _weaponHudScript.UpdateInfo(ammoSize, ammoCount);
     }
 
     // Update is called once per frame
@@ -56,12 +50,15 @@ public class PlayerController : MonoBehaviour
         //Test take damage HUD Update
         if (Input.GetKeyDown(KeyCode.U))
         {
-            hpScript.TakeDamage(3);
+            //hpScript.TakeDamage(3);
+            _heal.Invoke(-10);
         }
         //Test heal + hp clamp
         if (Input.GetKeyDown(KeyCode.I))
         {
-            hpScript.HealHP(5);
+            //hpScript.HealHP(5);
+            _heal.Invoke(5);
+                
         }
       
     }
@@ -81,8 +78,8 @@ public class PlayerController : MonoBehaviour
                 Debug.LogError("Reload");
             }
 
-            gunScript.Shoot(barrelPos);
-            weaponHudScript.UpdateInfo(ammoSize, ammoCount);
+            _gunScript.Shoot(barrelPos);
+            _weaponHudScript.UpdateInfo(ammoSize, ammoCount);
 
         }
     }

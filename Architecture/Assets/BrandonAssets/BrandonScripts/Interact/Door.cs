@@ -6,11 +6,11 @@ public class Door : MonoBehaviour, Interactable
 {
 
     [SerializeField] private string _promt;
+
     public string InteractionPromt => _promt;
 
     public bool Hover(Interactor interactor)
     {
-
         return true;
     }
 

@@ -6,33 +6,35 @@ public class HealthPoints : MonoBehaviour
 {
     // Start is called before the first frame update
     public int healthPoints;
-    private PlayerStatsUIScripts _playerUI;
-    void Start()
-    {
-        _playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerStatsUIScripts>();
-        
-    }
+
+    [SerializeField] private IntEventSO _goldEvent;
+    [SerializeField] private int _deathMoney = 33;
+    private PlayerHealthManager _phm;
 
     // Update is called once per frame
+    private void Start()
+    {
+        _phm = GameObject.Find("HealthManager").GetComponent<PlayerHealthManager>();
+    }
     void Update()
     {
-        healthPoints = Mathf.Clamp(healthPoints, 0, 100);
+        
+        if(gameObject.tag == "Player")
+        {
+            healthPoints = _phm.GetCurrentHP();
+        }
+
         if (healthPoints <= 0)
         {
             Debug.Log("Dead");
             Die();
-            if(gameObject.tag == "EnemyTest")
-            {
-                _playerUI.AddMoney(100);
-                         
-            }
+           
         }
     }
 
     public void TakeDamage(int damageNumber)
     {
-        healthPoints -= damageNumber;
-        
+        healthPoints -= damageNumber;    
     }
 
     public void HealHP(int amountHeal)
@@ -42,6 +44,10 @@ public class HealthPoints : MonoBehaviour
 
     public void Die()
     {
+        if (gameObject.tag == "EnemyTest")
+        {
+            _goldEvent.Invoke(_deathMoney);
+        }
         Destroy(this.gameObject);
     }
 }
