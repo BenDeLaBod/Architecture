@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnemyTest
   - PlayerUI
+  - Gun
   layers:
   - Default
   - TransparentFX
