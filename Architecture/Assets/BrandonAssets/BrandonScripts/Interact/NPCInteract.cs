@@ -63,12 +63,18 @@ public class NPCInteract : MonoBehaviour, Interactable
 
     private void ShowNPCHUD()
     {
-       
+      
+        _playerHealth.anchorMin = new Vector2(0, 1);
+        _playerHealth.anchorMax = new Vector2(0, 1);
+        _playerGold.anchorMin = new Vector2(0, 1);
+        _playerGold.anchorMax = new Vector2(0, 1);
+        _playerWeapon.anchorMin = new Vector2(1, 1);
+        _playerWeapon.anchorMax = new Vector2(1, 1);
 
 
-        _playerHealth.anchoredPosition = new Vector2(_playerHealth.anchoredPosition.x + 120, _playerHealth.anchoredPosition.y + 335); ;
-        _playerGold.anchoredPosition = new Vector2(_playerGold.anchoredPosition.x + 120, _playerGold.anchoredPosition.y + 325);
-        _playerWeapon.anchoredPosition = new Vector2(_playerWeapon.anchoredPosition.x, _playerWeapon.anchoredPosition.y + 320);
+        _playerHealth.anchoredPosition = new Vector2(_playerHealth.anchoredPosition.x+117, _playerHealth.anchoredPosition.y -126); ;
+        _playerGold.anchoredPosition = new Vector2(_playerGold.anchoredPosition.x + 120, _playerGold.anchoredPosition.y -140);
+        _playerWeapon.anchoredPosition = new Vector2(_playerWeapon.anchoredPosition.x, _playerWeapon.anchoredPosition.y -126);
         _NPCchoiceCanvas.gameObject.SetActive(true);
     }
     private void HideNPCHUD()
