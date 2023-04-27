@@ -33,6 +33,9 @@ public class NPCTalkHUDManager : MonoBehaviour
             HideNPCHUD();
         }
     }
+    /// <summary>
+    /// Shows the NPC talk HUD. And moves Health, Gold and Weapon HUD element to new positions 
+    /// </summary>
     public void ShowNPCHUD()
     {
         _playerMoveScript.enabled = false;
@@ -50,6 +53,9 @@ public class NPCTalkHUDManager : MonoBehaviour
         _playerWeapon.anchoredPosition = new Vector2(_playerWeapon.anchoredPosition.x, _playerWeapon.anchoredPosition.y - 126);
         _NPCchoiceCanvas.gameObject.SetActive(true);
     }
+    /// <summary>
+    /// Resets Health, Gold and Weapon HUD elements to its original settings. And hides the NPC talk HUD
+    /// </summary>
     public void HideNPCHUD()
     {
         _playerHealth.anchorMin = new Vector2(0, 0);
@@ -65,7 +71,11 @@ public class NPCTalkHUDManager : MonoBehaviour
         showHUD = false;
         _playerMoveScript.enabled = true;
         //_thirdPersonCamera.enabled = true;
+    }
 
+    public void DuelSelected()
+    {
 
     }
+
 }
