@@ -48,16 +48,17 @@ public class Interactor : MonoBehaviour
         {
             _interactable = _colliders[0].GetComponent<Interactable>();
             //If interactable object is found press L to interact
-            if (_interactable != null /*&& Input.GetKeyDown(KeyCode.L)*/)
+            if (_interactable != null)
             {
                 if (!_interactionPromptUI.isDisplayed)
                 {
                     _interactionPromptUI.SetUp(_interactable.InteractionPromt);
                 }
                 if (Input.GetKeyDown(KeyCode.E))
-                {
+                {      
                     _interactable.Interact(this);
                     
+
                 }
             }
         }

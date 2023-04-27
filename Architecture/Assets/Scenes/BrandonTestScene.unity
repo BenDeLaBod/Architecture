@@ -1192,7 +1192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &281631806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8631,6 +8631,8 @@ MonoBehaviour:
   _playerHealth: {fileID: 879538188}
   _playerGold: {fileID: 1009804330}
   _playerWeapon: {fileID: 730492221}
+  _playerMoveScript: {fileID: 636493388}
+  _thirdPersonCamera: {fileID: 2133670908}
   showHUD: 0
 --- !u!1 &1812343858
 GameObject:
@@ -10528,7 +10530,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 450
+    m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X

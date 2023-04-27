@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class NPCTalkHUDManager : MonoBehaviour
     [SerializeField] private RectTransform _playerHealth;
     [SerializeField] private RectTransform _playerGold;
     [SerializeField] private RectTransform _playerWeapon;
+    [SerializeField] private PlayerMove _playerMoveScript;
+    [SerializeField] private CinemachineFreeLook _thirdPersonCamera;
     Vector2 _healthPos;
     Vector2 _goldPos;
     Vector2 _weaponPos;
@@ -32,6 +35,9 @@ public class NPCTalkHUDManager : MonoBehaviour
     }
     public void ShowNPCHUD()
     {
+        _playerMoveScript.enabled = false;
+        _thirdPersonCamera.m_YAxis.m_MaxSpeed = 2;
+        _thirdPersonCamera.m_XAxis.m_MaxSpeed = 30;
         showHUD = true;
         _playerHealth.anchorMin = new Vector2(0, 1);
         _playerHealth.anchorMax = new Vector2(0, 1);
@@ -57,6 +63,9 @@ public class NPCTalkHUDManager : MonoBehaviour
         _playerWeapon.anchoredPosition = _weaponPos;
         _NPCchoiceCanvas.gameObject.SetActive(false);
         showHUD = false;
-        
+        _playerMoveScript.enabled = true;
+        //_thirdPersonCamera.enabled = true;
+
+
     }
 }
