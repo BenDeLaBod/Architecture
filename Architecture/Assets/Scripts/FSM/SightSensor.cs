@@ -44,9 +44,16 @@ public class SightSensor : MonoBehaviour
 
     public bool DistanceCheck()
     {
-        if (Vector3.Distance(this.transform.position, Player.position) < 10)
+
+        if (!Physics.Raycast(_ray, out var hit, 100, ~_ignoreMask))
         {
+            return false;
+        }
+        if (Vector3.Distance(this.transform.position, Player.position) < 10 && hit.collider.tag == "Player")
+        {
+            Debug.Log("In Range");
             return true;
+           
         }
         else
             return false;

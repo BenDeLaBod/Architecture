@@ -8,6 +8,8 @@ public class AttackAction : FSMAction
 {
     public override void Execute(StateMachine stateMachine)
     {
-        throw new System.NotImplementedException();
+        var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
+
+        navMeshAgent.isStopped = true;
     }
 }
