@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCTalkHUDManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class NPCTalkHUDManager : MonoBehaviour
     Vector2 _healthPos;
     Vector2 _goldPos;
     Vector2 _weaponPos;
+
+    [SerializeField] private GameObject _duelQuest;
+    [SerializeField] private GameObject _duelSelected;
 
 
     public bool showHUD;
@@ -75,7 +79,8 @@ public class NPCTalkHUDManager : MonoBehaviour
 
     public void DuelSelected()
     {
-
+        _duelSelected.SetActive(true);
+        _duelQuest.SetActive(false);
     }
 
 }
