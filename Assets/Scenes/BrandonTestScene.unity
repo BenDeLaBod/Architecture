@@ -3455,9 +3455,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  runningMovementSpeed: 8
   smoothRotationTime: 0.1
+  sprint: 0
   controller: {fileID: 636493389}
   cameraTransform: {fileID: 1722710058}
+  animator: {fileID: 636493391}
 --- !u!143 &636493389
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3488,91 +3491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boneShape: 1
-  drawBones: 1
-  drawTripods: 0
-  boneSize: 1.69
-  tripodSize: 0.01
-  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
-  m_Transforms:
-  - {fileID: 1739737680}
-  - {fileID: 1244605428}
-  - {fileID: 1176607549}
-  - {fileID: 1369995379}
-  - {fileID: 53854386}
-  - {fileID: 286503474}
-  - {fileID: 656807693}
-  - {fileID: 1576134611}
-  - {fileID: 160658663}
-  - {fileID: 902855292}
-  - {fileID: 1033434791}
-  - {fileID: 1293100211}
-  - {fileID: 390424385}
-  - {fileID: 1138320166}
-  - {fileID: 746291207}
-  - {fileID: 1226995160}
-  - {fileID: 611194075}
-  - {fileID: 1733366664}
-  - {fileID: 779712678}
-  - {fileID: 1921246277}
-  - {fileID: 1892050769}
-  - {fileID: 488284003}
-  - {fileID: 1816529942}
-  - {fileID: 152136407}
-  - {fileID: 1973621340}
-  - {fileID: 1874052061}
-  - {fileID: 505374117}
-  - {fileID: 768221330}
-  - {fileID: 1106996776}
-  - {fileID: 182415444}
-  - {fileID: 684947115}
-  - {fileID: 1610714003}
-  - {fileID: 657295456}
-  - {fileID: 549477839}
-  - {fileID: 1325462356}
-  - {fileID: 218713157}
-  - {fileID: 985115571}
-  - {fileID: 179085430}
-  - {fileID: 1294069060}
-  - {fileID: 780349786}
-  - {fileID: 560085300}
-  - {fileID: 347762205}
-  - {fileID: 2139330627}
-  - {fileID: 1434145461}
-  - {fileID: 1554851857}
-  - {fileID: 1003098902}
-  - {fileID: 738253404}
-  - {fileID: 2012206624}
-  - {fileID: 1994538049}
-  - {fileID: 143911392}
-  - {fileID: 1572920992}
-  - {fileID: 1477128428}
-  - {fileID: 1968274375}
-  - {fileID: 1355856595}
-  - {fileID: 664030031}
-  - {fileID: 489036342}
-  - {fileID: 2124118002}
-  - {fileID: 1199969977}
-  - {fileID: 2040029718}
-  - {fileID: 411001900}
-  - {fileID: 1716252149}
-  - {fileID: 1840931670}
-  - {fileID: 496997171}
-  - {fileID: 1584662490}
-  - {fileID: 66126192}
-  - {fileID: 1105606259}
-  - {fileID: 1721022339}
-  - {fileID: 438894087}
-  - {fileID: 1598272204}
-  - {fileID: 923928827}
-  - {fileID: 1783812684}
-  - {fileID: 1163925981}
-  - {fileID: 1964221767}
-  - {fileID: 999084578}
-  - {fileID: 2083153654}
-  - {fileID: 1494034906}
-  - {fileID: 177772856}
-  - {fileID: 1341194764}
 --- !u!95 &636493391
 Animator:
   serializedVersion: 5
@@ -3581,7 +3499,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636493387}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7966d979d9982a743a30e3b75a402b94, type: 3}
   m_Controller: {fileID: 9100000, guid: 3ef6d82a20031ba4eb332e4d3c34c6ab, type: 2}
   m_CullingMode: 1
@@ -6067,7 +5985,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064913117}
-  m_LocalRotation: {x: 0.11619861, y: 0.0000000621591, z: -0.0000000072720616, w: 0.993226}
+  m_LocalRotation: {x: 0.11619861, y: 0.000000097390675, z: -0.000000011393842, w: 0.993226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
