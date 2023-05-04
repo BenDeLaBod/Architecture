@@ -8,6 +8,7 @@ public class NPCInteract : MonoBehaviour, Interactable
 
     [SerializeField] private string _promt;
     [SerializeField] private NPCTalkHUDManager _talkManager;
+    [SerializeField] private NPCInfo _npcInfo;
 
     public string InteractionPromt => _promt;
 
@@ -22,6 +23,7 @@ public class NPCInteract : MonoBehaviour, Interactable
 
         if (!_talkManager.showHUD)
         {
+            _npcInfo.UpdateNPCInfo();
             _talkManager.ShowNPCHUD();
         }
         return true;

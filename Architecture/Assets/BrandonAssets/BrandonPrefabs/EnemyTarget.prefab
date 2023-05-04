@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 408592059866305363}
   - component: {fileID: 726972471}
   - component: {fileID: 726972472}
+  - component: {fileID: 411385319}
   m_Layer: 6
   m_Name: EnemyTarget
   m_TagString: EnemyTest
@@ -146,11 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4c6b96ea628bc4997bcbdc13f2bb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _promt: '[L] Talk'
-  _NPCchoiceCanvas: {fileID: 0}
-  _playerHealth: {fileID: 0}
-  _playerGold: {fileID: 0}
-  _playerWeapon: {fileID: 0}
+  _promt: '[E] Talk'
+  _talkManager: {fileID: 0}
 --- !u!114 &726972472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +165,21 @@ MonoBehaviour:
   - {fileID: 6379462666116372683}
   - {fileID: 4745763091972793719}
   _color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0.09803922}
+--- !u!114 &411385319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35a6c7d7606af4fb4bbb8bb0dd1dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
+  _cowboyHeadshot: {fileID: 0}
+  _name: Lonnie 'Justice' Stanton
 --- !u!1001 &1390680105
 PrefabInstance:
   m_ObjectHideFlags: 0
