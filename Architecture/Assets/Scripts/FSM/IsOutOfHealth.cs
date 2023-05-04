@@ -7,6 +7,12 @@ public class IsOutOfHealth : Decision
 {
     public override bool Decide(StateMachine state)
     {
-        throw new System.NotImplementedException();
+        var health = state.GetComponent<HealthPoints>();
+
+        if (health.healthPoints > 0)
+        {
+            return false;
+        }
+        return true;
     }
 }

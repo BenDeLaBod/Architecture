@@ -7,6 +7,7 @@ public class DeathAction : FSMAction
 {
     public override void Execute(StateMachine stateMachine)
     {
+        Debug.Log("dead");
         throw new System.NotImplementedException();
     }
 }

@@ -55,7 +55,7 @@ public class SightSensor : MonoBehaviour
         if (angle > 60)
             return false;
 
-        if (!Physics.Raycast(_ray, out var hit, 100, ~_ignoreMask))
+        if (!Physics.Raycast(Aray, out var hit, 100, ~_ignoreMask))
         {
             return false;
         }
