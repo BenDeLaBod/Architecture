@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3932567768388180326}
   - component: {fileID: 3752377928797770489}
   - component: {fileID: -7605955076581735077}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: BulletPrefabTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef1b0fcad2aa6249b6cc0c46745b719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletSpeed: 10
 --- !u!54 &3752377928797770489
 Rigidbody:
   m_ObjectHideFlags: 0

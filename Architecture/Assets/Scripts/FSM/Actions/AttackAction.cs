@@ -9,7 +9,11 @@ public class AttackAction : FSMAction
     public override void Execute(StateMachine stateMachine)
     {
         var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
-
         navMeshAgent.isStopped = true;
+
+        var attack = stateMachine.GetComponent<AiShooting>();
+        attack.shoot();
+
+       
     }
 }

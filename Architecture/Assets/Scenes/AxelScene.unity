@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 1c567dc6f5f8d254e8068b4162578fc0, type: 2}
+--- !u!1 &523592590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523592592}
+  - component: {fileID: 523592591}
+  m_Layer: 0
+  m_Name: health manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &523592591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523592590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4447685e58b7f354f91faa2c7a9ab5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpEvent: {fileID: 0}
+  _hpUpdateEvent: {fileID: 0}
+  _currentHP: 100
+--- !u!4 &523592592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523592590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.790118, y: -27.20272, z: 20.01766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541339168
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791843148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.7, y: 1.1, z: 0}
+  m_LocalPosition: {x: -1.77, y: 1.1, z: -18.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -752,6 +799,7 @@ GameObject:
   - component: {fileID: 2025220784}
   - component: {fileID: 2025220785}
   - component: {fileID: 2025220786}
+  - component: {fileID: 2025220787}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -937,6 +985,21 @@ MonoBehaviour:
   healthPoints: 5
   _goldEvent: {fileID: 0}
   _deathMoney: 33
+--- !u!114 &2025220787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025220776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28468daddb3c5fa4181a17f8cf93cc49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3932567768388180325, guid: 1a2d8608e78d0f149ae2eba255ad2fd4, type: 3}
+  gunCooldown: 1
+  magSize: 6
 --- !u!1 &2048990062
 GameObject:
   m_ObjectHideFlags: 0
