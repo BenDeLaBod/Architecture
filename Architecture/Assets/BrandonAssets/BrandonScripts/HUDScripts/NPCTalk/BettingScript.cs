@@ -6,53 +6,56 @@ using UnityEngine;
 
 public class BettingScript : MonoBehaviour
 {
-
+    [SerializeField] private GoldManager _goldManager;
     [SerializeField] private TextMeshProUGUI _bettingText;
     [SerializeField] public double bettingMoney;
-    [SerializeField] public double lastBet;
     Stack<int> _bettingHistory = new Stack<int>();
 
     public void Add5()
     {
-        //ActionBase action = new Add5Dollar(this);
-
-        //_bettingRecorder.Record(action);
-
-        bettingMoney += 5f;
-        UpdateBettingText();
-        lastBet = 5;
-        _bettingHistory.Push(5);
+        if (CheckEnoughGold(5))
+        {
+            bettingMoney += 5f;
+            UpdateBettingText();
+            _bettingHistory.Push(5);
+        }
     }
     public void Add10()
     {
-
-        bettingMoney += 10f;
-        UpdateBettingText();
-        lastBet = 10f;
-        _bettingHistory.Push(10);
+        if (CheckEnoughGold(10))
+        {
+            bettingMoney += 10f;
+            UpdateBettingText();
+            _bettingHistory.Push(10);
+        }
+       
     }
     public void Add20()
     {
-
-        bettingMoney += 20f;
-        UpdateBettingText();
-        lastBet = 20;
-        _bettingHistory.Push(20);
+        if (CheckEnoughGold(20))
+        {
+            bettingMoney += 20;
+            UpdateBettingText();
+            _bettingHistory.Push(20);
+        }
     }
     public void Add50()
     {
-        bettingMoney += 50f;
-        UpdateBettingText();
-        lastBet = 50;
-        _bettingHistory.Push(50);
+        if (CheckEnoughGold(50))
+        {
+            bettingMoney += 50;
+            UpdateBettingText();
+            _bettingHistory.Push(50);
+        }
     }
     public void Add100()
     {
-
-        bettingMoney += 100f;
-        UpdateBettingText();
-        lastBet = 100;
-        _bettingHistory.Push(100);
+        if (CheckEnoughGold(100))
+        {
+            bettingMoney += 100;
+            UpdateBettingText();
+            _bettingHistory.Push(100);
+        }
     }
 
     public void UndoMoney()
@@ -61,8 +64,7 @@ public class BettingScript : MonoBehaviour
         {
             bettingMoney -= _bettingHistory.Pop();
             UpdateBettingText();
-        }
-       
+        }   
     }
 
 
@@ -70,6 +72,11 @@ public class BettingScript : MonoBehaviour
     {
         //_bettingMoney *= 0.5f;
         _bettingText.text = "Your bet amount: $" +  bettingMoney.ToString();
+    }
+
+    private bool CheckEnoughGold(int wantToBet)
+    {
+        return _goldManager.currentGold-bettingMoney-wantToBet > 0;
     }
 
 }

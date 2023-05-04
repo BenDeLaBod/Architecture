@@ -57,8 +57,6 @@ public class Interactor : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {      
                     _interactable.Interact(this);
-                    
-
                 }
             }
         }

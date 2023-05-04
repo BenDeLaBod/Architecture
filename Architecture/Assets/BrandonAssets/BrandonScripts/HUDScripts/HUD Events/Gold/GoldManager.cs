@@ -6,7 +6,7 @@ public class GoldManager : MonoBehaviour
 {
     [SerializeField] private IntEventSO _goldAddedEvent;
     [SerializeField] private IntEventSO _goldUpdateEvent;
-    public int _currentGold = 0;
+    public int currentGold = 0;
 
     private void Start()
     {
@@ -19,8 +19,8 @@ public class GoldManager : MonoBehaviour
 
     private void UpdateGold(int addedGold)
     {
-        _currentGold += addedGold;
-        _goldUpdateEvent.Invoke(_currentGold);
+        currentGold += addedGold;
+        _goldUpdateEvent.Invoke(currentGold);
     }
 
 }
