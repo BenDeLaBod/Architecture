@@ -24,14 +24,14 @@ public class AiShooting : MonoBehaviour
     }
     public void shoot()
     {
+        this.transform.LookAt(Player);
         Debug.Log("shoot");
         if (gunTimer <= 0)
         {
             if (bulletsInMag > 0)
             {
                 Debug.Log("shoot2");
-
-                this.transform.LookAt(Player);
+                
                 Shoot(transform);
                 
                 bulletsInMag--;

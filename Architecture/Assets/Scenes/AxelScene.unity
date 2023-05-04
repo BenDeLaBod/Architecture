@@ -969,7 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ignoreMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2
 --- !u!114 &2025220786
 MonoBehaviour:
   m_ObjectHideFlags: 0
