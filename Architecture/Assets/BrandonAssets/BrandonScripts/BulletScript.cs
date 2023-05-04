@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] float _bulletSpeed = 10;
+    [SerializeField] float _bulletSpeed = 20;
     float _lifeSpan = 2.5f;
 
     Vector3 direction;
@@ -13,22 +13,24 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         direction = transform.forward;
+        transform.localEulerAngles += new Vector3(0, 90);
+        Destroy(gameObject, _lifeSpan);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position +=  Time.deltaTime * _bulletSpeed * direction;
-        _lifeSpan -= Time.deltaTime;
+        //_lifeSpan -= Time.deltaTime;
 
-        if(_lifeSpan <= 0)
-        {
-            Destroy(gameObject);
-        }
+        //if(_lifeSpan <= 0)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
+   
 
-
-    private void OnCollisionEnter(Collision targetHit)
+    private void OnTriggerEnter(Collider targetHit)
     {
         if (!targetHit.gameObject.CompareTag("Gun"))
         {

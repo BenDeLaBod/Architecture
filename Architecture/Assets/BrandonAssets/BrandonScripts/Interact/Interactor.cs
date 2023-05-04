@@ -22,7 +22,10 @@ public class Interactor : MonoBehaviour
     {
         foreach (var hover in _hoverArray)
         {
-            hover.GetComponent<HighlightInteract>().ToggleHighlight(false);
+            if (hover != null)
+            {
+                hover.GetComponent<HighlightInteract>().ToggleHighlight(false);
+            }
         }
     }
     /// <summary>
