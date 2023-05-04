@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f311fc33e6644408268379cd36e450, type: 3}
   m_Name: Attack
   m_EditorClassIdentifier: 
-  Decision: {fileID: 0}
-  TrueState: {fileID: 0}
-  FalseState: {fileID: 0}
+  Decision: {fileID: 11400000, guid: 5ce4ecc5ff405ea4391135200fe25a6c, type: 2}
+  TrueState: {fileID: 11400000, guid: 43910ae56c120ce428b64fa96ed64868, type: 2}
+  FalseState: {fileID: 11400000, guid: 863a3a9c7e77c314eac1db7c1735d45b, type: 2}

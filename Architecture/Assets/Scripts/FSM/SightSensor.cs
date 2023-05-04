@@ -8,7 +8,7 @@ public class SightSensor : MonoBehaviour
 
     [SerializeField] private LayerMask _ignoreMask;
 
-    private Ray _ray;
+    private Ray _ray, Aray;
 
     private void Awake()
     {
@@ -44,6 +44,16 @@ public class SightSensor : MonoBehaviour
 
     public bool DistanceCheck()
     {
+        if (Player == null)
+            return false;
+
+        Aray = new Ray(this.transform.position, Player.position - this.transform.position);
+
+        var dir = new Vector3(Aray.direction.x, 0, Aray.direction.z);
+
+        var angle = Vector3.Angle(dir, this.transform.forward);
+        if (angle > 60)
+            return false;
 
         if (!Physics.Raycast(_ray, out var hit, 100, ~_ignoreMask))
         {
