@@ -3430,7 +3430,6 @@ GameObject:
   m_Component:
   - component: {fileID: 636493392}
   - component: {fileID: 636493391}
-  - component: {fileID: 636493390}
   - component: {fileID: 636493389}
   - component: {fileID: 636493388}
   - component: {fileID: 636493393}
@@ -3479,18 +3478,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 2, z: 0}
---- !u!114 &636493390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636493387}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &636493391
 Animator:
   serializedVersion: 5
@@ -3823,7 +3810,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665643618}
-  m_LocalRotation: {x: 0.15220079, y: 0.00000007088026, z: -0.000000010915196, w: 0.9883496}
+  m_LocalRotation: {x: 0.15220079, y: 0.00000008788618, z: -0.000000013534022, w: 0.9883496}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5985,7 +5972,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064913117}
-  m_LocalRotation: {x: 0.11619861, y: 0.000000097390675, z: -0.000000011393842, w: 0.993226}
+  m_LocalRotation: {x: 0.11619861, y: 0.0000000621591, z: -0.0000000072720616, w: 0.993226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
