@@ -54,7 +54,7 @@ public class NPCManager : MonoBehaviour
         var newNPCInfo = newNpc.GetComponent<NPCInfo>();
         newNPCInfo._name = _npcNames[Random.Range(0, _npcNames.Count)];
         newNpc.name = newNPCInfo._name;
-        newNPCInfo.UpdateNPCInfo();
+        //newNPCInfo.UpdateNPCInfo();
 
 
         _npcArray = FindObjectsOfType<NPCInfo>();

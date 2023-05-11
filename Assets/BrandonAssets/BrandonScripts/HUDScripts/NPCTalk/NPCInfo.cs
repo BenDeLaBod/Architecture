@@ -15,6 +15,7 @@ public class NPCInfo : MonoBehaviour
     private void Start()
     {
          _talkController = GameObject.FindAnyObjectByType<TalkController>();
+        UpdateNPCInfo();
     }
 
     // Update is called once per frame
