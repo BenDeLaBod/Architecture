@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     public float movementSpeed, runningMovementSpeed, smoothRotationTime;
     private float turnSmoothVelocity, gravityConstant;
     private Vector3 direction;
-    public bool sprint;
+    bool sprint;
 
     public CharacterController controller;
     public Transform cameraTransform;
