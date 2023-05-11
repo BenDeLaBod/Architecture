@@ -12,6 +12,7 @@ public class NPCManager : MonoBehaviour
     float y;
     float z;
     public GameObject newNpc;
+    [SerializeField] private Sprite[] _npcSprites;
  
 
 
@@ -43,9 +44,9 @@ public class NPCManager : MonoBehaviour
 
     private void SpawnNewNPC()
     {
-        x = Random.Range(-30, 30);
-        y = Random.Range(0, 30);
-        z = 6;
+        x = Random.Range(0, 10);
+        y = 6;
+        z = 10;
         Vector3 randomPos = new Vector3(x, y, z);
         newNpc.transform.position = randomPos;
         Instantiate(newNpc, newNpc.transform.position,newNpc.transform.rotation);
@@ -54,7 +55,9 @@ public class NPCManager : MonoBehaviour
         var newNPCInfo = newNpc.GetComponent<NPCInfo>();
         newNPCInfo._name = _npcNames[Random.Range(0, _npcNames.Count)];
         newNpc.name = newNPCInfo._name;
-        //newNPCInfo.UpdateNPCInfo();
+
+        newNPCInfo._cowboySprite = _npcSprites[Random.Range(0, _npcSprites.Length)];
+
 
 
         _npcArray = FindObjectsOfType<NPCInfo>();

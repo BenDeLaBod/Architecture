@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class NPCInfo : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Sprite _cowboySprite;
+    [SerializeField] public Sprite _cowboySprite;
     [SerializeField] private Image _cowboyImage;
 
     [SerializeField] public string _name;
@@ -25,7 +25,7 @@ public class NPCInfo : MonoBehaviour
     }
     public void UpdateNPCInfo()
     {
-        //_talkController.SetImage(_cowboySprite);
+        _talkController.SetImage(_cowboySprite);
         _talkController.SetDisplayName(_name);
     }
 }
