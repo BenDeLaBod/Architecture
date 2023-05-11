@@ -17,16 +17,19 @@ public class NPCTalkHUDManager : MonoBehaviour
     Vector2 _goldPos;
     Vector2 _weaponPos;
 
+    [Header("Duel")]
     [SerializeField] private GameObject _duelQuest;
     [SerializeField] private GameObject _duelSelected;
 
-
+    [Header("Quest")]
+    [SerializeField] private GameObject _questSelected;
     public bool showHUD;
     void Start()
     {
         _healthPos = _playerHealth.anchoredPosition;
         _goldPos = _playerGold.anchoredPosition;
         _weaponPos = _playerWeapon.anchoredPosition;
+        
     }
 
     // Update is called once per frame
@@ -81,6 +84,11 @@ public class NPCTalkHUDManager : MonoBehaviour
     {
         _duelSelected.SetActive(true);
         _duelQuest.SetActive(false);
+    }
+
+    public void QuestSelected()
+    {
+
     }
 
 }
