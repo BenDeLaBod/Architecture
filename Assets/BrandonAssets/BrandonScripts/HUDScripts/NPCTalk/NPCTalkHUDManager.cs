@@ -39,6 +39,12 @@ public class NPCTalkHUDManager : MonoBehaviour
         {
             HideNPCHUD();
         }
+        if (!showHUD)
+        {
+            _duelQuest.SetActive(true);
+            _duelSelected.SetActive(false);
+            _questSelected.SetActive(false);
+        }
     }
     /// <summary>
     /// Shows the NPC talk HUD. And moves Health, Gold and Weapon HUD element to new positions 
@@ -89,6 +95,7 @@ public class NPCTalkHUDManager : MonoBehaviour
     public void QuestSelected()
     {
         _questSelected.SetActive(true);
+        
         _duelQuest.SetActive(false);
     }
 

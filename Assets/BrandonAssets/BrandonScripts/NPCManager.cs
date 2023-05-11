@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using UnityEngine;
 
 public class NPCManager : MonoBehaviour
@@ -80,5 +81,31 @@ public class NPCManager : MonoBehaviour
 
 
         _npcArray = FindObjectsOfType<NPCInfo>();
+    }
+
+    public string GenerateQuestText(string NPCTalking)
+    {
+        string wantedNPC = "***";
+        string questionText = _questionList[Random.Range(0, _questionList.Count)];
+        if (questionText.Contains(wantedNPC))
+        {
+            StringBuilder sb = new StringBuilder(questionText);
+            //questionText.IndexOf(wantedNPC);
+            sb.Remove(questionText.IndexOf(wantedNPC), wantedNPC.Length);
+            sb.Insert(questionText.IndexOf(wantedNPC), _npcNames[Random.Range(0, _npcNames.Count)]);
+
+
+            //questionText.Replace(wantedNPC, _npcNames[Random.Range(0, _npcNames.Count)]);
+            questionText = sb.ToString(); ;
+            
+            Debug.LogWarning("Replace: " + questionText);
+        }
+
+
+
+        string questPromt = /*_questionList[Random.Range(0, _questionList.Count)]*/ questionText + " " + _rewardList[Random.Range(0, _rewardList.Count)] /*+ NPCTalking*/;
+        Debug.LogWarning(questionText+ " "+ _rewardList[Random.Range(0, _rewardList.Count)] + NPCTalking);
+
+        return questPromt;
     }
 }

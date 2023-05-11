@@ -18,8 +18,6 @@ public class TalkController : MonoBehaviour
         
     }
 
-
-
     public void ToggleCanvas(bool state)
     {
         _canvasGO.SetActive(state);
