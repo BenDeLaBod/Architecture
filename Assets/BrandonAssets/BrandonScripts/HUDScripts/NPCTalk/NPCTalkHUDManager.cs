@@ -88,7 +88,8 @@ public class NPCTalkHUDManager : MonoBehaviour
 
     public void QuestSelected()
     {
-
+        _questSelected.SetActive(true);
+        _duelQuest.SetActive(false);
     }
 
 }

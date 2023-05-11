@@ -19,10 +19,17 @@ public class NPCManager : MonoBehaviour
     //Generate Names
     public string loadNameListPath;
     [SerializeField] private List<string> _npcNames = new List<string>();
-    [SerializeField] private TextAsset _textDocList;
-   
 
-    
+
+
+    //Generate Quest
+    public string loadQuestionPath;
+    public string loadRewardPath;
+    [SerializeField] private List<string> _questionList = new List<string>();
+    [SerializeField] private List<string> _rewardList = new List<string>();
+
+
+
     void Start()
     {
         _npcArray = FindObjectsOfType<NPCInfo>();
@@ -30,6 +37,18 @@ public class NPCManager : MonoBehaviour
         while (!stream.EndOfStream)
         {
             _npcNames.Add(stream.ReadLine());
+        }
+
+
+        var streamQuestion = new StreamReader(loadQuestionPath);
+        var streamReward = new StreamReader(loadRewardPath);
+        while (!streamQuestion.EndOfStream)
+        {
+            _questionList.Add(streamQuestion.ReadLine());
+        }
+        while (!streamReward.EndOfStream)
+        {
+            _rewardList.Add(streamReward.ReadLine());
         }
     }
 
