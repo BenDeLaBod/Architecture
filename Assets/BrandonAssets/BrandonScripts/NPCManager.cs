@@ -29,24 +29,45 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private List<string> _questionList = new List<string>();
     [SerializeField] private List<string> _rewardList = new List<string>();
 
+    [Header("Quest string placeholder")]
+    string placeholderWantedNPC = "***";
+    string placeholderReward = "---";
+    string replacePlayerName = "///";
+
+
 
 
     void Start()
     {
         _npcArray = FindObjectsOfType<NPCInfo>();
+
+        LoadNames();
+        LoadQuestions();
+        LoadReward();  
+    }
+
+    private void LoadNames()
+    {
         var stream = new StreamReader(loadNameListPath);
         while (!stream.EndOfStream)
         {
             _npcNames.Add(stream.ReadLine());
         }
+    }
 
-
+    private void LoadQuestions()
+    {
         var streamQuestion = new StreamReader(loadQuestionPath);
-        var streamReward = new StreamReader(loadRewardPath);
         while (!streamQuestion.EndOfStream)
         {
             _questionList.Add(streamQuestion.ReadLine());
         }
+    }
+
+    private void LoadReward()
+    {
+        var streamReward = new StreamReader(loadRewardPath);
+
         while (!streamReward.EndOfStream)
         {
             _rewardList.Add(streamReward.ReadLine());
@@ -85,27 +106,61 @@ public class NPCManager : MonoBehaviour
 
     public string GenerateQuestText(string NPCTalking)
     {
-        string wantedNPC = "***";
-        string questionText = _questionList[Random.Range(0, _questionList.Count)];
-        if (questionText.Contains(wantedNPC))
+
+        string randomQuestionText = _questionList[Random.Range(0, _questionList.Count)];
+        string randomRewardText = _rewardList[Random.Range(0, _rewardList.Count)];
+        string randomWantedName = _npcNames[Random.Range(0, _npcNames.Count)];
+
+
+
+        if (randomQuestionText.Contains(placeholderWantedNPC))
         {
-            StringBuilder sb = new StringBuilder(questionText);
-            //questionText.IndexOf(wantedNPC);
-            sb.Remove(questionText.IndexOf(wantedNPC), wantedNPC.Length);
-            sb.Insert(questionText.IndexOf(wantedNPC), _npcNames[Random.Range(0, _npcNames.Count)]);
+            randomQuestionText =  SetWantedNPCName(randomQuestionText, randomWantedName);
 
+            Debug.LogWarning("Replace: " + randomQuestionText);
+        }
 
-            //questionText.Replace(wantedNPC, _npcNames[Random.Range(0, _npcNames.Count)]);
-            questionText = sb.ToString(); ;
+        if (randomRewardText.Contains(placeholderReward))
+        {
+
+           randomRewardText = SetRewardAmount(randomRewardText, Random.Range(100, 500));
+        }
+        if (randomRewardText.Contains(placeholderWantedNPC))
+        {
+            randomRewardText = SetWantedNPCName(randomRewardText, randomWantedName);  
             
-            Debug.LogWarning("Replace: " + questionText);
         }
 
 
 
-        string questPromt = /*_questionList[Random.Range(0, _questionList.Count)]*/ questionText + " " + _rewardList[Random.Range(0, _rewardList.Count)] /*+ NPCTalking*/;
-        Debug.LogWarning(questionText+ " "+ _rewardList[Random.Range(0, _rewardList.Count)] + NPCTalking);
+        string questPromt =  randomQuestionText + " " + randomRewardText /*+ NPCTalking*/;
+        //Debug.LogWarning(questionText+ " "+ _rewardList[Random.Range(0, _rewardList.Count)] + NPCTalking);
 
         return questPromt;
+    }
+
+
+    private string SetWantedNPCName(string stringType,string name)
+    {
+        StringBuilder sb = new StringBuilder(stringType);
+
+        sb.Remove(stringType.IndexOf(placeholderWantedNPC), placeholderWantedNPC.Length);
+        sb.Insert(stringType.IndexOf(placeholderWantedNPC), "<color=#d62d2d>" + name + "</color>");
+
+        stringType = sb.ToString();
+        return stringType;
+    }
+
+    private string SetRewardAmount(string _rewardText, int rewardAmount)
+    {
+        StringBuilder sbReward = new StringBuilder(_rewardText);
+
+        //questionText.IndexOf(wantedNPC);
+        sbReward.Remove(_rewardText.IndexOf(placeholderReward), placeholderReward.Length);
+        sbReward.Insert(_rewardText.IndexOf(placeholderReward), "<color=#FFD700>" + rewardAmount +"</color>");
+
+        _rewardText = sbReward.ToString();
+       
+        return _rewardText;
     }
 }
