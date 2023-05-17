@@ -22,7 +22,6 @@ public class NPCManager : MonoBehaviour
     [SerializeField] public List<string> npcNames = new List<string>();
 
 
-
     //Generate Quest
     public string loadQuestionPath;
     public string loadRewardPath;
