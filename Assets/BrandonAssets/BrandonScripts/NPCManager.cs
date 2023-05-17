@@ -34,7 +34,7 @@ public class NPCManager : MonoBehaviour
     string placeholderReward = "---";
     string replacePlayerName = "///";
 
-
+    string _playerName;
 
 
     void Start()
@@ -43,7 +43,8 @@ public class NPCManager : MonoBehaviour
 
         LoadNames();
         LoadQuestions();
-        LoadReward();  
+        LoadReward();
+        _playerName = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfoScript>().playerName;
     }
 
     private void LoadNames()
@@ -107,55 +108,61 @@ public class NPCManager : MonoBehaviour
     public string GenerateQuestText(string NPCTalking)
     {
 
-        string randomQuestionText = _questionList[Random.Range(0, _questionList.Count)];
-        string randomRewardText = _rewardList[Random.Range(0, _rewardList.Count)];
-        string randomWantedName = _npcNames[Random.Range(0, _npcNames.Count)];
-
-
-
-        if (randomQuestionText.Contains(placeholderWantedNPC))
+        string questionText = _questionList[Random.Range(0, _questionList.Count)];
+        while(questionText == NPCTalking)
         {
-            randomQuestionText =  SetWantedNPCName(randomQuestionText, randomWantedName);
+           questionText = _questionList[Random.Range(0, _questionList.Count)];
+        }
+        
 
-            Debug.LogWarning("Replace: " + randomQuestionText);
+        string rewardText = _rewardList[Random.Range(0, _rewardList.Count)];
+        string randomWantedName = _npcNames[Random.Range(0, _npcNames.Count)];  
+
+        if (questionText.Contains(placeholderWantedNPC))
+        {
+            questionText =  SetWantedNPCName(questionText, randomWantedName);
+        }
+        if (rewardText.Contains(placeholderReward))
+        {
+           rewardText = SetRewardAmount(rewardText, Random.Range(100, 500));
+        }
+        if (rewardText.Contains(placeholderWantedNPC))
+        {
+            rewardText = SetWantedNPCName(rewardText, randomWantedName);          
+        }
+        if (questionText.Contains(replacePlayerName))
+        {
+            questionText = SetPlayerName(questionText, _playerName);
+        }
+        if (rewardText.Contains(replacePlayerName))
+        {
+           rewardText = SetPlayerName(rewardText, _playerName);
         }
 
-        if (randomRewardText.Contains(placeholderReward))
-        {
-
-           randomRewardText = SetRewardAmount(randomRewardText, Random.Range(100, 500));
-        }
-        if (randomRewardText.Contains(placeholderWantedNPC))
-        {
-            randomRewardText = SetWantedNPCName(randomRewardText, randomWantedName);  
-            
-        }
 
 
-
-        string questPromt =  randomQuestionText + " " + randomRewardText /*+ NPCTalking*/;
+        string questPromt =  questionText + " " + rewardText /*+ NPCTalking*/;
         //Debug.LogWarning(questionText+ " "+ _rewardList[Random.Range(0, _rewardList.Count)] + NPCTalking);
 
         return questPromt;
     }
 
 
-    private string SetWantedNPCName(string stringType,string name)
+    private string SetWantedNPCName(string questText,string name)
     {
-        StringBuilder sb = new StringBuilder(stringType);
+        StringBuilder sb = new StringBuilder(questText);
 
-        sb.Remove(stringType.IndexOf(placeholderWantedNPC), placeholderWantedNPC.Length);
-        sb.Insert(stringType.IndexOf(placeholderWantedNPC), "<color=#d62d2d>" + name + "</color>");
+        sb.Remove(questText.IndexOf(placeholderWantedNPC), placeholderWantedNPC.Length);
+        sb.Insert(questText.IndexOf(placeholderWantedNPC), "<color=#d62d2d>" + name + "</color>");
 
-        stringType = sb.ToString();
-        return stringType;
+        questText = sb.ToString();
+        return questText;
     }
 
     private string SetRewardAmount(string _rewardText, int rewardAmount)
     {
         StringBuilder sbReward = new StringBuilder(_rewardText);
 
-        //questionText.IndexOf(wantedNPC);
         sbReward.Remove(_rewardText.IndexOf(placeholderReward), placeholderReward.Length);
         sbReward.Insert(_rewardText.IndexOf(placeholderReward), "<color=#FFD700>" + rewardAmount +"</color>");
 
@@ -163,4 +170,17 @@ public class NPCManager : MonoBehaviour
        
         return _rewardText;
     }
+
+    private string SetPlayerName(string _rewardText, string name)
+    {
+        StringBuilder sb = new StringBuilder(_rewardText);
+
+        sb.Remove(_rewardText.IndexOf(replacePlayerName), replacePlayerName.Length);
+        sb.Insert(_rewardText.IndexOf(replacePlayerName), "<color=#52c5fa>" + name + "</color>");
+
+        _rewardText = sb.ToString();
+        return _rewardText;
+    }
+
+    
 }

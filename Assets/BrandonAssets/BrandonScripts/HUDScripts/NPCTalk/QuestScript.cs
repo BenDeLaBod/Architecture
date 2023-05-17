@@ -7,15 +7,15 @@ public class QuestScript : MonoBehaviour
 {
     [SerializeField] private NPCManager _npcManager;
     [SerializeField] private TextMeshProUGUI questText;
+    [SerializeField] private string currentNPCTalking;
 
-    private void Start()
+    private void Update()
     {
-       
-
+        currentNPCTalking = GameObject.Find("TalkController").GetComponent<TalkController>().npcDisplayName.text;
     }
 
     public void SayQuest()
     {
-        questText.text = _npcManager.GenerateQuestText("test name");
+        questText.text = _npcManager.GenerateQuestText(currentNPCTalking);
     }
 }

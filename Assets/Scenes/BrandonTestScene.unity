@@ -3049,7 +3049,7 @@ PrefabInstance:
     - target: {fileID: 411385319, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
       propertyPath: _cowboySprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
+      objectReference: {fileID: 21300000, guid: 6f81d015f7c926945b1f062037d30a80, type: 3}
     - target: {fileID: 411385319, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
       propertyPath: _cowboyHeadshot
       value: 
@@ -3422,6 +3422,7 @@ GameObject:
   - component: {fileID: 636493392}
   - component: {fileID: 636493391}
   - component: {fileID: 636493389}
+  - component: {fileID: 636493395}
   - component: {fileID: 636493388}
   - component: {fileID: 636493393}
   - component: {fileID: 636493394}
@@ -3546,6 +3547,22 @@ MonoBehaviour:
     m_Bits: 64
   _interactionPromptUI: {fileID: 1884633156}
   _numColliderFound: 0
+--- !u!114 &636493395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636493387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eced34a5a7965de4c9c88c9e2101d98c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Hol Horse
+  _gold: 0
+  _health: 0
+  _wantedPrice: 0
 --- !u!1 &652468931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,6 +5033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _npcManager: {fileID: 1759320989}
   questText: {fileID: 1263984748}
+  currentNPCTalking: 
 --- !u!1 &879538187
 GameObject:
   m_ObjectHideFlags: 0
@@ -6666,8 +6684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGO: {fileID: 281631805}
-  _cowboyImage: {fileID: 513654040}
-  _cowboyDisplayName: {fileID: 554768956}
+  _npcImage: {fileID: 513654040}
+  npcDisplayName: {fileID: 554768956}
 --- !u!1 &1138320165
 GameObject:
   m_ObjectHideFlags: 0
@@ -10265,6 +10283,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 411385319, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
+      propertyPath: _cowboySprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 40031c690f6e48e47aff1c2d18cd026a, type: 3}
+    - target: {fileID: 411385319, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
       propertyPath: _cowboyImageGO
       value: 
       objectReference: {fileID: 0}
@@ -10979,7 +11001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hpEvent: {fileID: 11400000, guid: 3cfa9b4f56988b343a3f12087222e549, type: 2}
   _hpUpdateEvent: {fileID: 11400000, guid: 7412de33ffaeae141ae0ca2d161d840d, type: 2}
-  _currentHP: 100
+  currentHP: 100
 --- !u!4 &1865742024
 Transform:
   m_ObjectHideFlags: 0

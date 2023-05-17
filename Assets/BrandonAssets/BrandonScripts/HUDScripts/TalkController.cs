@@ -8,20 +8,18 @@ using UnityEngine.UI;
 public class TalkController : MonoBehaviour
 {
     [SerializeField] private GameObject _canvasGO;
-    [SerializeField] private Image _cowboyImage;
-    [SerializeField] private TextMeshProUGUI _cowboyDisplayName;
+    [SerializeField] private Image _npcImage;
+    [SerializeField] public TextMeshProUGUI npcDisplayName;
+    //public string currentInteractinNPC;
 
-  
 
-    private void Start()
-    {
-        
-    }
-
+    //private void Update()
+    //{
+    //    currentInteractinNPC = _cowboyDisplayName.text;
+    //}
     public void ToggleCanvas(bool state)
     {
-        _canvasGO.SetActive(state);
-        
+        _canvasGO.SetActive(state);    
     }
 
     public void EnableCanvas()
@@ -31,16 +29,11 @@ public class TalkController : MonoBehaviour
 
     public void SetImage(Sprite image)
     {
-        _cowboyImage.sprite = image;
+        _npcImage.sprite = image;
     }
 
     public void SetDisplayName(string name)
     {
-        _cowboyDisplayName.text = name;
+        npcDisplayName.text = name;
     }
-    
-
-    
-
-
 }

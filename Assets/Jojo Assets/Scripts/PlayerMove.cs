@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     public CharacterController controller;
     public Transform cameraTransform;
     public Animator animator;
+
     // Start
     private void Start()
     {
