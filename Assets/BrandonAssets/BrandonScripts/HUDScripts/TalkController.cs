@@ -10,13 +10,6 @@ public class TalkController : MonoBehaviour
     [SerializeField] private GameObject _canvasGO;
     [SerializeField] private Image _npcImage;
     [SerializeField] public TextMeshProUGUI npcDisplayName;
-    //public string currentInteractinNPC;
-
-
-    //private void Update()
-    //{
-    //    currentInteractinNPC = _cowboyDisplayName.text;
-    //}
     public void ToggleCanvas(bool state)
     {
         _canvasGO.SetActive(state);    

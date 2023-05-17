@@ -6,6 +6,7 @@ using UnityEngine;
 public class QuestScript : MonoBehaviour
 {
     [SerializeField] private NPCManager _npcManager;
+    [SerializeField] private QuestManager _questManager;
     [SerializeField] private TextMeshProUGUI questText;
     [SerializeField] private string currentNPCTalking;
 
@@ -16,6 +17,6 @@ public class QuestScript : MonoBehaviour
 
     public void SayQuest()
     {
-        questText.text = _npcManager.GenerateQuestText(currentNPCTalking);
+        questText.text = _questManager.GenerateQuestText(currentNPCTalking);
     }
 }
