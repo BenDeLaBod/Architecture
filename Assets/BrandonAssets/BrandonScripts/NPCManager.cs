@@ -22,26 +22,14 @@ public class NPCManager : MonoBehaviour
     [SerializeField] public List<string> npcNames = new List<string>();
 
 
-    //Generate Quest
-    public string loadQuestionPath;
-    public string loadRewardPath;
-    [SerializeField] private List<string> _questionList = new List<string>();
-    [SerializeField] private List<string> _rewardList = new List<string>();
-
-    [Header("Quest string placeholder")]
-    string placeholderWantedNPC = "***";
-    string placeholderReward = "---";
-    string replacePlayerName = "///";
-
-    string _playerName;
-
+   
     void Start()
     {
         _npcArray = FindObjectsOfType<NPCInfo>();
 
         LoadNames();
        
-        _playerName = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfoScript>().playerName;
+     
     }
 
     private void LoadNames()
