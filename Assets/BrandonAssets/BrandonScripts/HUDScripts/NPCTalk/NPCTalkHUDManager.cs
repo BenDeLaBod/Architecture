@@ -13,6 +13,8 @@ public class NPCTalkHUDManager : MonoBehaviour
     [SerializeField] private RectTransform _playerWeapon;
     [SerializeField] private PlayerMove _playerMoveScript;
     [SerializeField] private CinemachineFreeLook _thirdPersonCamera;
+    float _thirdPersonYDefaultSpeed;
+    float _thirdPersonXDefaultSpeed;
     Vector2 _healthPos;
     Vector2 _goldPos;
     Vector2 _weaponPos;
@@ -29,6 +31,9 @@ public class NPCTalkHUDManager : MonoBehaviour
         _healthPos = _playerHealth.anchoredPosition;
         _goldPos = _playerGold.anchoredPosition;
         _weaponPos = _playerWeapon.anchoredPosition;
+
+        _thirdPersonYDefaultSpeed = _thirdPersonCamera.m_YAxis.m_MaxSpeed;
+        _thirdPersonXDefaultSpeed = _thirdPersonCamera.m_XAxis.m_MaxSpeed;
         
     }
 
@@ -83,6 +88,8 @@ public class NPCTalkHUDManager : MonoBehaviour
         _NPCchoiceCanvas.gameObject.SetActive(false);
         showHUD = false;
         _playerMoveScript.enabled = true;
+        _thirdPersonCamera.m_YAxis.m_MaxSpeed = _thirdPersonYDefaultSpeed;
+        _thirdPersonCamera.m_XAxis.m_MaxSpeed = _thirdPersonXDefaultSpeed;
         //_thirdPersonCamera.enabled = true;
     }
 
