@@ -8,7 +8,7 @@ public class NPCManager : MonoBehaviour
 {
 
     
-    [SerializeField] private NPCInfo[] _npcArray;
+    [SerializeField] public NPCInfo[] npcArray;
     float x;
     float y;
     float z;
@@ -20,16 +20,25 @@ public class NPCManager : MonoBehaviour
     //Generate Names
     public string loadNameListPath;
     [SerializeField] public List<string> npcNames = new List<string>();
+    List<string> assignedName = new List<string>();
+    string giveRandomName;
 
+   [SerializeField] GameObject _wantedNPC;
 
    
     void Start()
     {
-        _npcArray = FindObjectsOfType<NPCInfo>();
+        
 
         LoadNames();
-       
-     
+        int npcCount = npcNames.Count;
+        for (int i = 0; i < npcCount; i++)
+        {
+            SpawnNewNPC(npcNames[i]); 
+        }
+
+        //npcArray = FindObjectsOfType<NPCInfo>();
+
     }
 
     private void LoadNames()
@@ -39,33 +48,48 @@ public class NPCManager : MonoBehaviour
         {
             npcNames.Add(stream.ReadLine());
         }
+        
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SpawnNewNPC();
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    SpawnNewNPC();
+        //} 
     }
 
-    private void SpawnNewNPC()
+    private void SpawnNewNPC(string giveName)
     {
-        x = Random.Range(0, 10);
+        x = Random.Range(-10, 10);
         y = 6;
-        z = 10;
+        z = Random.Range(0,10);
         Vector3 randomPos = new Vector3(x, y, z);
         newNpc.transform.position = randomPos;
         Instantiate(newNpc, newNpc.transform.position,newNpc.transform.rotation);
         
         //New NPC Info
-        var newNPCInfo = newNpc.GetComponent<NPCInfo>();
-        newNPCInfo._name = npcNames[Random.Range(0, npcNames.Count)];
-        newNpc.name = newNPCInfo._name;
+        newNpc.GetComponent<NPCInfo>()._name = giveName;
+        newNpc.name = giveName;
 
-        newNPCInfo._cowboySprite = _npcSprites[Random.Range(0, _npcSprites.Length)];
 
-        _npcArray = FindObjectsOfType<NPCInfo>();
+
+
+        newNpc.GetComponent<NPCInfo>()._cowboySprite = _npcSprites[Random.Range(0, _npcSprites.Length)];
+
+        npcArray = FindObjectsOfType<NPCInfo>();
+        
+    }
+
+    public void WantedNPC(string wantedNPCName)
+    {
+        foreach (NPCInfo npcWanted in npcArray)
+        {
+            if( npcWanted._name == wantedNPCName )
+            {
+                _wantedNPC = npcWanted.gameObject;
+            }
+        }     
     }
    
 }

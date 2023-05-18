@@ -7,8 +7,10 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
 
+    [SerializeField] private NPCManager _npcManager;
+
     //Generate Names
-    [SerializeField] private List<string> _npcNames = new List<string>();
+    [SerializeField] private List<string> _npcNamesList = new List<string>();
 
     //Generate Quest
     public string loadQuestionPath;
@@ -25,17 +27,13 @@ public class QuestManager : MonoBehaviour
     string _rewardText;
     string _randomWantedNpc;
 
-
-    [Header("Current Quest")]
-    [SerializeField] GameObject _npcToKill; //NPC to kill
-
-
-
+   
 
     private void Start()
     {
         _playerName = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfoScript>().playerName;
-        _npcNames = GameObject.Find("NPC Manager").GetComponent<NPCManager>().npcNames;
+
+        _npcNamesList = _npcManager.npcNames;
 
         LoadQuestions();
         LoadReward();
@@ -43,7 +41,8 @@ public class QuestManager : MonoBehaviour
 
     private void Update()
     {
-        
+
+       
     }
 
     private void LoadQuestions()
@@ -70,14 +69,18 @@ public class QuestManager : MonoBehaviour
     {
 
         _questionText = _questionList[Random.Range(0, _questionList.Count)];
-        //Prevent NPC form requesting itself as a hit.
-        while (_questionText == NPCTalking)
-        {
-            _questionText = _questionList[Random.Range(0, _questionList.Count)];
-        }
-
         _rewardText = _rewardList[Random.Range(0, _rewardList.Count)];
-        _randomWantedNpc = _npcNames[Random.Range(0, _npcNames.Count)];
+
+
+        _randomWantedNpc = _npcNamesList[Random.Range(0, _npcNamesList.Count)];
+        while (_randomWantedNpc == NPCTalking)  //Prevent NPC form requesting itself as a hit.
+        {
+            _randomWantedNpc = _npcNamesList[Random.Range(0, _npcNamesList.Count)];
+        }
+        _npcManager.WantedNPC(_randomWantedNpc);
+
+
+
 
         if (_questionText.Contains(_placeholderWantedNPC))
         {

@@ -3106,6 +3106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTarget (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 408592059866305365, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
 --- !u!1 &560085299
@@ -5025,8 +5029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75af82053b2e0f94fbf84254a83e2d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadNameListPath: 
-  _npcNames: []
+  _npcManager: {fileID: 1759320989}
+  _npcNamesList: []
   loadQuestionPath: Assets/BrandonAssets/QuestPromtsQuestions.txt
   loadRewardPath: Assets/BrandonAssets/QuestPromtsReward.txt
   _questionList: []
@@ -5081,7 +5085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454ace2344ef60f4eb5f6f760d44e99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _npcManager: {fileID: 1759320989}
   _questManager: {fileID: 831006193}
   questText: {fileID: 1263984748}
   currentNPCTalking: 
@@ -10323,10 +10326,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 40031c690f6e48e47aff1c2d18cd026a, type: 3}
   loadNameListPath: Assets/BrandonAssets/NPC Name List.txt
   npcNames: []
-  loadQuestionPath: Assets/BrandonAssets/QuestPromtsQuestions.txt
-  loadRewardPath: Assets/BrandonAssets/QuestPromtsReward.txt
-  _questionList: []
-  _rewardList: []
+  _wantedNPC: {fileID: 0}
 --- !u!1001 &1767619521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10393,6 +10393,10 @@ PrefabInstance:
     - target: {fileID: 408592059866305365, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
       propertyPath: m_Name
       value: EnemyTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 408592059866305365, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
