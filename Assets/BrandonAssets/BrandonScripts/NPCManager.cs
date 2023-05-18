@@ -72,9 +72,6 @@ public class NPCManager : MonoBehaviour
         newNpc.GetComponent<NPCInfo>()._name = giveName;
         newNpc.name = giveName;
 
-
-
-
         newNpc.GetComponent<NPCInfo>()._cowboySprite = _npcSprites[Random.Range(0, _npcSprites.Length)];
 
         npcArray = FindObjectsOfType<NPCInfo>();
@@ -85,10 +82,13 @@ public class NPCManager : MonoBehaviour
     {
         foreach (NPCInfo npcWanted in npcArray)
         {
-            if( npcWanted._name == wantedNPCName )
+            npcWanted.GetComponent<HighlightInteract>().ToggleWanted(false);
+            if ( npcWanted._name == wantedNPCName )
             {
                 _wantedNPC = npcWanted.gameObject;
+                _wantedNPC.GetComponent<HighlightInteract>().ToggleWanted(true);
             }
+
         }     
     }
    
