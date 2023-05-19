@@ -106,4 +106,9 @@ public class NPCTalkHUDManager : MonoBehaviour
         _duelQuest.SetActive(false);
     }
 
+    public void DuelReturnButton()
+    {
+        _duelQuest.SetActive(true);
+        _duelSelected.SetActive(false);
+    }
 }
