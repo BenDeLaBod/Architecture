@@ -14,6 +14,7 @@ public class NPCInfo : MonoBehaviour
     TalkController _talkController;
     private void Start()
     {
+        gameObject.name = _name;
          _talkController = GameObject.FindAnyObjectByType<TalkController>();
         UpdateNPCInfo();
     }
