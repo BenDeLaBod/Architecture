@@ -15,19 +15,23 @@ public class DuelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hasShot)
+        {
+            Transition(false);
+        }
         if (!hasShot && Input.GetKeyDown(KeyCode.Mouse0))
         {
             hasShot = true;
+            Transition(true);
             DuelUIScript.instance.StoppPin();
             success = DuelUIScript.instance.HitOrMiss();
 
             Debug.Log(success);
-            //Transition();
         }
     }
 
-    void Transition()
+    void Transition(bool input)
     {
-        //animator.SetBool("", true);
+        animator.SetBool("HasFired", input);
     }
 }
