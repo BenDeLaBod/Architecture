@@ -12,7 +12,7 @@ public class DuelUIScript : MonoBehaviour
     [SerializeField] Image pin, bar;
     float speed;
     Vector2 direction;
-    int maxVal, minVal, centreVal;
+    int maxVal, minVal, centreVal, winSize;
     bool isStopped;
 
     private void Awake()
@@ -27,8 +27,9 @@ public class DuelUIScript : MonoBehaviour
     void Start()
     {
         centreVal = (int)pin.transform.position.x;
-        maxVal = centreVal + (int)bar.sprite.rect.xMax / 2;
-        minVal = centreVal - (int)bar.sprite.rect.xMax / 2;
+        maxVal = centreVal + (int)bar.sprite.rect.width;
+        minVal = centreVal - (int)bar.sprite.rect.width;
+        winSize = (int)bar.sprite.rect.width / 6;
         speed = 500.0f;
         direction = new Vector2(1, 0);
     }
@@ -40,8 +41,6 @@ public class DuelUIScript : MonoBehaviour
         {
             direction.x *= -1;
         }
-
-        Debug.Log(minVal + ", " + maxVal + ", " + pin.transform.position.x);
     }
 
     private void FixedUpdate()
@@ -60,7 +59,7 @@ public class DuelUIScript : MonoBehaviour
     public bool HitOrMiss()
     {
 
-        if (-25 < centreVal - pin.transform.position.x && centreVal - pin.transform.position.x < 25)
+        if (-winSize < centreVal - pin.transform.position.x && centreVal - pin.transform.position.x < winSize)
         {
             return true;
         }
