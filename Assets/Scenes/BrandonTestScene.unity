@@ -4190,7 +4190,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665643618}
-  m_LocalRotation: {x: 0.15220079, y: 0.00000008263344, z: -0.000000012725127, w: 0.9883496}
+  m_LocalRotation: {x: 0.15220079, y: 0.00000009113641, z: -0.00000001403454, w: 0.9883496}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5747,9 +5747,17 @@ PrefabInstance:
       propertyPath: _npcInfo
       value: 
       objectReference: {fileID: 950490139}
+    - target: {fileID: 726972471, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
+      propertyPath: _talkManager
+      value: 
+      objectReference: {fileID: 1793450896}
+    - target: {fileID: 726972471, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
+      propertyPath: _talkController
+      value: 
+      objectReference: {fileID: 1117212709}
     - target: {fileID: 1088514184, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
       propertyPath: beenMadeEnemy
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1088514185, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
       propertyPath: _ignoreMask.m_Bits
@@ -6595,7 +6603,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064913117}
-  m_LocalRotation: {x: 0.11619861, y: 0.000000106181616, z: -0.000000012422304, w: 0.993226}
+  m_LocalRotation: {x: 0.11619861, y: 0.00000010065694, z: -0.000000011775965, w: 0.993226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
