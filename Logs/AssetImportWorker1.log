@@ -1238,3 +1238,15 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1088.636366 seconds.
+  path: Assets/Tree_Textures/normal_specular.png
+  artifactKey: Guid(006e462e7a20909429c72b43e0ce23d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tree_Textures/normal_specular.png using Guid(006e462e7a20909429c72b43e0ce23d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe09652b3311bbef33c80767705d3d66') in 0.170626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Tree_Textures/translucency_gloss.png
+  artifactKey: Guid(d3ca6c9eb7364964cbd7add6b93fa48a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tree_Textures/translucency_gloss.png using Guid(d3ca6c9eb7364964cbd7add6b93fa48a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '688641036c27cc3cd3c22bd3428d169e') in 0.040997 seconds 

@@ -1268,3 +1268,21 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 570.202211 seconds.
+  path: Assets/Tree_Textures/diffuse.png
+  artifactKey: Guid(22d5e79fcd3b514478f4296edfebfcf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tree_Textures/diffuse.png using Guid(22d5e79fcd3b514478f4296edfebfcf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ea3c1e2cca327e0a7b14171d38522ed') in 0.187141 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Tree_Textures/shadow.png
+  artifactKey: Guid(4db0a01e29604c643987f01fd95cbeb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tree_Textures/shadow.png using Guid(4db0a01e29604c643987f01fd95cbeb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ff32264da10399a422d4153dbb11cbf') in 0.058661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.219287 seconds.
+  path: Assets/Scenes/AxelScene.unity
+  artifactKey: Guid(f57b92aa5219b8d44a5c823439670534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/AxelScene.unity using Guid(f57b92aa5219b8d44a5c823439670534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f80e3865eb7369dc60008a2e0198cdb') in 0.019581 seconds 
