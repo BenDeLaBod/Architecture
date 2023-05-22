@@ -12,15 +12,18 @@ public class Gun : MonoBehaviour
     float shootTimer;
     [SerializeField] private float shootCooldown;
 
-    [SerializeField] private GameObject bulletSpawnPoint;
+    public GameObject bulletSpawnPoint;
 
     [SerializeField] private int magSize;
     private int bulletsInMag;
+
+    private BulletManager bulletManager;
 
 
     void Start()
     {
         Reload();
+        bulletManager = GetComponent<BulletManager>();
     }
 
     // Update is called once per frame
@@ -36,7 +39,10 @@ public class Gun : MonoBehaviour
     {
         if (bulletsInMag > 0 && shootTimer <= 0)
         {
-            Instantiate(projectilePrefab, bulletSpawnPoint.transform.position, transform.rotation);
+            //Instantiate(projectilePrefab, bulletSpawnPoint.transform.position, transform.rotation);
+
+            bulletManager.pool.Get();
+
             shootTimer = shootCooldown;
             bulletsInMag--;
         }

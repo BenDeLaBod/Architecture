@@ -1,31 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class BulletScript : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] float _bulletSpeed = 20;
     float _lifeSpan = 2.5f;
+    float timer;
 
     Vector3 direction;
+
+    private ObjectPool<GameObject> _objectPool;
     
     void Start()
     {
+        
+        //Destroy(gameObject, _lifeSpan);
+    }
+
+    private void OnEnable()
+    {
         direction = transform.forward;
-        Destroy(gameObject, _lifeSpan);
+        timer = _lifeSpan;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position +=  Time.deltaTime * _bulletSpeed * direction;
-        //_lifeSpan -= Time.deltaTime;
+        timer -= Time.deltaTime;
 
-        //if(_lifeSpan <= 0)
-        //{
-        //    Destroy(gameObject);
-        //}
+        if (timer <= 0)
+        {
+            _objectPool.Release(gameObject);
+        }
     }
    
 
@@ -39,9 +49,16 @@ public class BulletScript : MonoBehaviour
                 targetHit.gameObject.GetComponent<HealthPoints>().TakeDamage(1);
             }
 
-            Destroy(gameObject);
+            _objectPool.Release(gameObject);
         }
     }
+
+    public void SetPool(ObjectPool<GameObject> pool)
+    {
+        _objectPool = pool;
+    }
+
+
 }
 
 
