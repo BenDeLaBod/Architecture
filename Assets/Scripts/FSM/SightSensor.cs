@@ -12,8 +12,8 @@ public class SightSensor : MonoBehaviour
 
     private void Awake()
     {
-        //Player = GameObject.Find("Player1").transform;
-        Player = GameObject.FindWithTag("Player").transform;
+        Player = GameObject.Find("Player1").transform;
+        //Player = GameObject.FindWithTag("Player").transform;
     }
 
     public bool Ping()
