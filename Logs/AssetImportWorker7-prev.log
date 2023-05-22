@@ -9,11 +9,11 @@ C:\Program Files\Unity\Hub\Editor\2021.3.21f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker1
+AssetImportWorker7
 -projectPath
 C:/Users/jojjo/Documents/GitHub/Architecture
 -logFile
-Logs/AssetImportWorker1.log
+Logs/AssetImportWorker7.log
 -srvPort
 65351
 Successfully changed project path to: C:/Users/jojjo/Documents/GitHub/Architecture
@@ -47,11 +47,11 @@ C:/Users/jojjo/Documents/GitHub/Architecture
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [20600] Host "[IP] 192.168.72.21 [Port] 0 [Flags] 2 [Guid] 3539472586 [EditorId] 3539472586 [Version] 1048832 [Id] WindowsEditor(7,JojoOmenPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [45136] Host "[IP] 192.168.72.21 [Port] 0 [Flags] 2 [Guid] 841059626 [EditorId] 841059626 [Version] 1048832 [Id] WindowsEditor(7,JojoOmenPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [20600] Host "[IP] 192.168.72.21 [Port] 0 [Flags] 2 [Guid] 3539472586 [EditorId] 3539472586 [Version] 1048832 [Id] WindowsEditor(7,JojoOmenPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [45136] Host "[IP] 192.168.72.21 [Port] 0 [Flags] 2 [Guid] 841059626 [EditorId] 841059626 [Version] 1048832 [Id] WindowsEditor(7,JojoOmenPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 52.40 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 81.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.21f1 (1b156197d683)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.21f1/Editor/Data/Resources/UnitySubsystems
@@ -67,50 +67,50 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.21f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.21f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56660
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56276
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006065 seconds.
+Registered in 0.005632 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 51.19 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 73.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.565 seconds
+- Completed reload, in  0.619 seconds
 Domain Reload Profiling:
-	ReloadAssembly (566ms)
-		BeginReloadAssembly (87ms)
+	ReloadAssembly (620ms)
+		BeginReloadAssembly (93ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (395ms)
-			LoadAssemblies (85ms)
+		EndReloadAssembly (434ms)
+			LoadAssemblies (91ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (98ms)
+			SetupTypeCache (87ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (24ms)
-			SetupLoadedEditorAssemblies (228ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (267ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (51ms)
+				RefreshPlugins (74ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (125ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
+				ProcessInitializeOnLoadAttributes (133ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005717 seconds.
+Registered in 0.006138 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\jojjo\Documents\GitHub\Architecture\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\jojjo\Documents\GitHub\Architecture\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.44 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 System.Exception: Error! Visual Scripting: couldn't find visual scripting package
   at Unity.VisualScripting.PackageVersionUtility.get_version () [0x00025] in C:\Users\jojjo\Documents\GitHub\Architecture\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Utilities\PackageVersionUtility.cs:22 
@@ -130,43 +130,43 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.157 seconds
+- Completed reload, in  1.247 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1157ms)
-		BeginReloadAssembly (116ms)
+	ReloadAssembly (1248ms)
+		BeginReloadAssembly (141ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (941ms)
-			LoadAssemblies (88ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1001ms)
+			LoadAssemblies (133ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (163ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (631ms)
+			SetupTypeCache (190ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (625ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (68ms)
-				ProcessInitializeOnLoadAttributes (533ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
-				AfterProcessingInitializeOnLoad (10ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (69ms)
+				ProcessInitializeOnLoadAttributes (519ms)
+				ProcessInitializeOnLoadMethodAttributes (17ms)
+				AfterProcessingInitializeOnLoad (11ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3153 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (129.4 KB). Loaded Objects now: 3617.
-Memory consumption went from 112.8 MB to 112.7 MB.
-Total: 8.806800 ms (FindLiveObjects: 0.188600 ms CreateObjectMapping: 0.076400 ms MarkObjects: 8.463400 ms  DeleteObjects: 0.077600 ms)
+Unloading 34 unused Assets / (129.1 KB). Loaded Objects now: 3618.
+Memory consumption went from 113.0 MB to 112.9 MB.
+Total: 10.419600 ms (FindLiveObjects: 0.185700 ms CreateObjectMapping: 0.069400 ms MarkObjects: 10.066500 ms  DeleteObjects: 0.097300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -181,28 +181,58 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 363314.651699 seconds.
-  path: Assets/Jojo Assets/Models/hat1.fbx
-  artifactKey: Guid(ac5cf70ee374135418ae2ed3934610d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Jojo Assets/Models/hat1.fbx using Guid(ac5cf70ee374135418ae2ed3934610d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8dcc03e596e882f0dfee0280375cd71') in 0.288028 seconds 
+  Time since last request: 366464.256652 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Barrel.mat
+  artifactKey: Guid(5500ab938f947db4796a5a0fcaa12928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Barrel.mat using Guid(5500ab938f947db4796a5a0fcaa12928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f7906ed1520ea02df0ed7421e8c679c') in 0.236144 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 213.472169 seconds.
-  path: Assets/Jojo Assets/Materials/Dimmadome.mat
-  artifactKey: Guid(32e4d5f53c7b6814db23976e9085f676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Jojo Assets/Materials/Dimmadome.mat using Guid(32e4d5f53c7b6814db23976e9085f676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd2bc5e0ac0155fd26355fdf63eb5fbe') in 0.349201 seconds 
+  Time since last request: 0.000021 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Tree.mat
+  artifactKey: Guid(8c7ee7c1b61181e4fbd5880e14248394) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Tree.mat using Guid(8c7ee7c1b61181e4fbd5880e14248394) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4317129a223910f4573ffba54fc1d9b0') in 0.009399 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Jojo Assets/Materials/Red1.mat
-  artifactKey: Guid(ae58fa5a6f7dd994db3f57132ea7d2b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Jojo Assets/Materials/Red1.mat using Guid(ae58fa5a6f7dd994db3f57132ea7d2b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a5595d715041268e0ab4408d4886858') in 0.016436 seconds 
+  Time since last request: 0.000023 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Church.mat
+  artifactKey: Guid(09738dbbd8f9a8b4bb70dee89ef72acc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Church.mat using Guid(09738dbbd8f9a8b4bb70dee89ef72acc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb6cab6776dbd8d8eb5d15cd4f5e3362') in 0.010819 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Jojo Assets/Materials/Hatcolour1.mat
-  artifactKey: Guid(0c967d32cd1bcee4595b1bd4c12d1c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Jojo Assets/Materials/Hatcolour1.mat using Guid(0c967d32cd1bcee4595b1bd4c12d1c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e3f943df9dffa5c190bff3481024b84') in 0.123482 seconds 
+  Time since last request: 0.000016 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Hay.mat
+  artifactKey: Guid(7e52a8b5973526b45a1c5b2b0be10fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Hay.mat using Guid(7e52a8b5973526b45a1c5b2b0be10fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '652f43796c24d795236065c705857edc') in 0.007915 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Coin_01.mat
+  artifactKey: Guid(9591057b3ee5cdb44b98eb25b8d92dec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Coin_01.mat using Guid(9591057b3ee5cdb44b98eb25b8d92dec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e7e133334e4b0b074033d582c2af498') in 0.009246 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Fence_Wooden.mat
+  artifactKey: Guid(5655c6520eb470a479286a5f7da8ab43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Fence_Wooden.mat using Guid(5655c6520eb470a479286a5f7da8ab43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6242a7f9b50fc47b5240fd0d00f1df37') in 0.011472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Coin_03.mat
+  artifactKey: Guid(60ccf20d421c8f24fbc95b369d4eff4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Coin_03.mat using Guid(60ccf20d421c8f24fbc95b369d4eff4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59a11f4257310a0254d62b5828c5ef20') in 0.008559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Western_Wagon.mat
+  artifactKey: Guid(d4c6a0dc66d4e7b47a0c3e4264d64929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/Western_Wagon.mat using Guid(d4c6a0dc66d4e7b47a0c3e4264d64929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0004ac121b06a4d066d4e88a0939da27') in 0.006927 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/ThirdPartyAssets/Wild West Western/Models/Materials/House_Standard_01.mat
+  artifactKey: Guid(7d7e99978af58284b94d1fad49f972f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdPartyAssets/Wild West Western/Models/Materials/House_Standard_01.mat using Guid(7d7e99978af58284b94d1fad49f972f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9928821dd043a1f56a8fc9d97fa62ecb') in 0.007408 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

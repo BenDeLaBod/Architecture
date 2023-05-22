@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using TMPro;
 
 public class DuelUIScript : MonoBehaviour
 {
@@ -15,12 +16,18 @@ public class DuelUIScript : MonoBehaviour
     int maxVal, minVal, centreVal, winSize;
     bool isStopped;
 
+    [SerializeField] private GameObject _result;
+    [SerializeField] private TextMeshProUGUI _duelResultText;
+    [SerializeField] private GameObject _returnButton;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
+        _result.SetActive(false);
+        _returnButton.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -58,14 +65,26 @@ public class DuelUIScript : MonoBehaviour
 
     public bool HitOrMiss()
     {
-
+        StartCoroutine(DelayResultText(3));
         if (-winSize < centreVal - pin.transform.position.x && centreVal - pin.transform.position.x < winSize)
         {
+            _duelResultText.text = "Victory";
             return true;
         }
         else
         {
+            _duelResultText.text = "Lose";
             return false;
         }
+
+
+    }
+
+    private IEnumerator DelayResultText(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        _result.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        _returnButton.SetActive(true);
     }
 }

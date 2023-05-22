@@ -10,6 +10,7 @@ public class PatrolAction : FSMAction
     {
         var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
         var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
+        navMeshAgent.isStopped = false;
 
         if (patrolPoints.HasReached(navMeshAgent))
             navMeshAgent.SetDestination(patrolPoints.GetNext().position);
