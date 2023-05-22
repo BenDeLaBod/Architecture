@@ -8,7 +8,15 @@ public class NPCInteract : MonoBehaviour, Interactable
 
     [SerializeField] private string _promt;
     [SerializeField] private NPCTalkHUDManager _talkManager;
+    [SerializeField] private TalkController _talkController;
     [SerializeField] private NPCInfo _npcInfo;
+
+
+    private void Start()
+    {
+        _talkManager = GameObject.Find("NPCHUDManager").GetComponent<NPCTalkHUDManager>();
+        _talkController = GameObject.Find("TalkController").GetComponent<TalkController>();
+    }
 
     public string InteractionPromt => _promt;
 
@@ -20,6 +28,8 @@ public class NPCInteract : MonoBehaviour, Interactable
     public bool Interact(Interactor interactor)
     {
         Debug.Log("Talk to NPC");
+
+        _talkController.ToggleCanvas(true);
 
         if (!_talkManager.showHUD)
         {

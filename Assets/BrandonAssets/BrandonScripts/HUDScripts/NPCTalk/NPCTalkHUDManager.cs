@@ -13,20 +13,28 @@ public class NPCTalkHUDManager : MonoBehaviour
     [SerializeField] private RectTransform _playerWeapon;
     [SerializeField] private PlayerMove _playerMoveScript;
     [SerializeField] private CinemachineFreeLook _thirdPersonCamera;
+    float _thirdPersonYDefaultSpeed;
+    float _thirdPersonXDefaultSpeed;
     Vector2 _healthPos;
     Vector2 _goldPos;
     Vector2 _weaponPos;
 
+    [Header("Duel")]
     [SerializeField] private GameObject _duelQuest;
     [SerializeField] private GameObject _duelSelected;
 
-
+    [Header("Quest")]
+    [SerializeField] private GameObject _questSelected;
     public bool showHUD;
     void Start()
     {
         _healthPos = _playerHealth.anchoredPosition;
         _goldPos = _playerGold.anchoredPosition;
         _weaponPos = _playerWeapon.anchoredPosition;
+
+        _thirdPersonYDefaultSpeed = _thirdPersonCamera.m_YAxis.m_MaxSpeed;
+        _thirdPersonXDefaultSpeed = _thirdPersonCamera.m_XAxis.m_MaxSpeed;
+        
     }
 
     // Update is called once per frame
@@ -35,6 +43,12 @@ public class NPCTalkHUDManager : MonoBehaviour
         if (showHUD && Input.GetKeyDown(KeyCode.Q))
         {
             HideNPCHUD();
+        }
+        if (!showHUD)
+        {
+            _duelQuest.SetActive(true);
+            _duelSelected.SetActive(false);
+            _questSelected.SetActive(false);
         }
     }
     /// <summary>
@@ -74,6 +88,8 @@ public class NPCTalkHUDManager : MonoBehaviour
         _NPCchoiceCanvas.gameObject.SetActive(false);
         showHUD = false;
         _playerMoveScript.enabled = true;
+        _thirdPersonCamera.m_YAxis.m_MaxSpeed = _thirdPersonYDefaultSpeed;
+        _thirdPersonCamera.m_XAxis.m_MaxSpeed = _thirdPersonXDefaultSpeed;
         //_thirdPersonCamera.enabled = true;
     }
 
@@ -83,4 +99,16 @@ public class NPCTalkHUDManager : MonoBehaviour
         _duelQuest.SetActive(false);
     }
 
+    public void QuestSelected()
+    {
+        _questSelected.SetActive(true);
+        
+        _duelQuest.SetActive(false);
+    }
+
+    public void DuelReturnButton()
+    {
+        _duelQuest.SetActive(true);
+        _duelSelected.SetActive(false);
+    }
 }

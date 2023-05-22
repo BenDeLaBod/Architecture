@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hpEvent: {fileID: 0}
   _hpUpdateEvent: {fileID: 0}
-  _currentHP: 100
+  currentHP: 100
 --- !u!4 &523592592
 Transform:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791843148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.77, y: 1.1, z: -18.87}
+  m_LocalPosition: {x: -10.9, y: 1.1, z: -1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -797,9 +797,9 @@ GameObject:
   - component: {fileID: 2025220782}
   - component: {fileID: 2025220783}
   - component: {fileID: 2025220784}
-  - component: {fileID: 2025220785}
   - component: {fileID: 2025220786}
   - component: {fileID: 2025220787}
+  - component: {fileID: 2025220785}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged

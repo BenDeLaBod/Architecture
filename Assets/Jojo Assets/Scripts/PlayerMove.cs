@@ -7,11 +7,12 @@ public class PlayerMove : MonoBehaviour
     public float movementSpeed, runningMovementSpeed, smoothRotationTime;
     private float turnSmoothVelocity, gravityConstant;
     private Vector3 direction;
-    public bool sprint;
+    bool sprint;
 
     public CharacterController controller;
     public Transform cameraTransform;
     public Animator animator;
+
     // Start
     private void Start()
     {
@@ -25,6 +26,11 @@ public class PlayerMove : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         sprint = Input.GetKey(KeyCode.LeftControl);
         direction = new Vector3(horizontalInput, 0, verticalInput).normalized;
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            animator.SetBool("ADSing", !animator.GetBool("ADSing"));
+        }
     }
 
     private void FixedUpdate()

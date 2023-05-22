@@ -7,14 +7,16 @@ using UnityEngine.UI;
 public class NPCInfo : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Sprite _cowboyImage;
-    [SerializeField] private Image _cowboyHeadshot;
-    [SerializeField] private TextMeshProUGUI _displayName;
-    [SerializeField] private string _name;
+    [SerializeField] public Sprite _cowboySprite;
+    [SerializeField] private Image _cowboyImage;
+
+    [SerializeField] public string _name;
+    TalkController _talkController;
     private void Start()
     {
-        
-      
+        gameObject.name = _name;
+         _talkController = GameObject.FindAnyObjectByType<TalkController>();
+        UpdateNPCInfo();
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class NPCInfo : MonoBehaviour
     }
     public void UpdateNPCInfo()
     {
-        _cowboyHeadshot.sprite = _cowboyImage;
-        _displayName.text = _name;
+        _talkController.SetImage(_cowboySprite);
+        _talkController.SetDisplayName(_name);
     }
 }

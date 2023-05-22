@@ -20,7 +20,7 @@ public class AiShooting : MonoBehaviour
     {
         gunTimer = gunCooldown;
         bulletsInMag = magSize;
-        Player = GameObject.Find("Player").transform;
+        Player = GameObject.FindWithTag("Player").transform;
     }
     public void shoot()
     {
