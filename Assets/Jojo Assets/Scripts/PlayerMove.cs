@@ -27,9 +27,9 @@ public class PlayerMove : MonoBehaviour
         sprint = Input.GetKey(KeyCode.LeftControl);
         direction = new Vector3(horizontalInput, 0, verticalInput).normalized;
 
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            animator.SetBool("Died", true);
+            animator.SetBool("ADSing", !animator.GetBool("ADSing"));
         }
     }
 
