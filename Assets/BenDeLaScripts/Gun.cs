@@ -14,15 +14,14 @@ public class Gun : MonoBehaviour
     [SerializeField] private float gunCooldown;
 
     [SerializeField] private int magSize;
-    int bulletsInMag;
+    private int bulletsInMag;
 
-    private Vector3 calibration;
+    [SerializeField] private GameObject bulletSpawnPoint;
 
     void Start()
     {
         gunTimer = gunCooldown;
         bulletsInMag = magSize;
-        calibration = Vector3.zero;// transform.forward + transform.up;
     }
 
     // Update is called once per frame
@@ -66,7 +65,7 @@ public class Gun : MonoBehaviour
     /// <param name="shootPos"> The position where the bullet spawns from</param>
     public void Shoot(Transform shootPos)
     {
-        Instantiate(projectilePrefab, shootPos.transform.position + calibration, shootPos.transform.rotation);
+        Instantiate(projectilePrefab, /*transform.position +*/ bulletSpawnPoint.transform.position, shootPos.transform.rotation);
     }
 
     

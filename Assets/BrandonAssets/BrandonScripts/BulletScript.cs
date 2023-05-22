@@ -12,7 +12,6 @@ public class BulletScript : MonoBehaviour
     
     void Start()
     {
-        transform.localEulerAngles += new Vector3(0, 90);
         direction = transform.forward;
         Destroy(gameObject, _lifeSpan);
     }
