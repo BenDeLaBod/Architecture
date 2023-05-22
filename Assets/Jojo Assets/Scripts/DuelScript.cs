@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DuelScript : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    [SerializeField] Animator playerAnimator, enemyAnimator;
     bool success, hasShot;
     // Start is called before the first frame update
     void Start()
@@ -26,12 +26,14 @@ public class DuelScript : MonoBehaviour
             DuelUIScript.instance.StoppPin();
             success = DuelUIScript.instance.HitOrMiss();
 
-            Debug.Log(success);
+            playerAnimator.SetBool("Died", !success);
+            enemyAnimator.SetBool("Died", success);
         }
     }
 
     void Transition(bool input)
     {
-        animator.SetBool("HasFired", input);
+        playerAnimator.SetBool("HasFired", input);
+        enemyAnimator.SetBool("HasFired", input);
     }
 }

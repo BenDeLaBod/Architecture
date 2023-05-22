@@ -25,6 +25,11 @@ public class PlayerMove : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         sprint = Input.GetKey(KeyCode.LeftControl);
         direction = new Vector3(horizontalInput, 0, verticalInput).normalized;
+
+        if (Input.GetKey(KeyCode.Return))
+        {
+            animator.SetBool("Died", true);
+        }
     }
 
     private void FixedUpdate()
