@@ -5,65 +5,47 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     // Start is called before the first frame update
+
     public GameObject projectilePrefab;
     // public GameObject barrelPosition;
 
-    bool pressing;
+    float shootTimer;
+    [SerializeField] private float shootCooldown;
 
-    float gunTimer;
-    [SerializeField] private float gunCooldown;
+    public GameObject bulletSpawnPoint;
 
     [SerializeField] private int magSize;
-    int bulletsInMag;
+    private int bulletsInMag;
+
+    private BulletManager bulletManager;
+
 
     void Start()
     {
-        gunTimer = gunCooldown;
-        bulletsInMag = magSize;
+        Reload();
+        bulletManager = GetComponent<BulletManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gunTimer <= 0)
+        if (shootTimer > 0)
         {
-            if (bulletsInMag > 0 && Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                if (!pressing)
-                {
-                    Shoot(transform);
-                    bulletsInMag--;
-                }
-                pressing = true;
-
-                gunTimer = gunCooldown;
-            }
-            else
-            {
-                pressing = false;
-            }
-        }
-        else
-        {
-            gunTimer -= Time.deltaTime;
-        }
-
-        if (bulletsInMag == 0)
-        {
-            if(Input.GetKeyDown(KeyCode.R))
-            {
-                Reload();
-            }
+            shootTimer -= Time.deltaTime;
         }
     }
 
-    /// <summary>
-    /// Spawn a bullet prefab 
-    /// </summary>
-    /// <param name="shootPos"> The position where the bullet spawns from</param>
-    public void Shoot(Transform shootPos)
+    public void Shoot()
     {
-        Instantiate(projectilePrefab, shootPos.transform.position, shootPos.transform.rotation);
+        if (bulletsInMag > 0 && shootTimer <= 0)
+        {
+            //Instantiate(projectilePrefab, bulletSpawnPoint.transform.position, transform.rotation);
+
+            bulletManager.pool.Get();
+
+            shootTimer = shootCooldown;
+            bulletsInMag--;
+        }
     }
 
     
@@ -71,4 +53,10 @@ public class Gun : MonoBehaviour
     {
         bulletsInMag = magSize;
     }
+
+    public void ToggleAim()
+    {
+        //animator.SetBool("ADSing", !animator.GetBool("ADSing"));
+    }
+
 }
