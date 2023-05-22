@@ -9,7 +9,7 @@ public class DuelUIScript : MonoBehaviour
 {
     public static DuelUIScript instance;
 
-    [SerializeField] Image pin;
+    [SerializeField] Image pin, bar;
     float speed;
     Vector2 direction;
     int maxVal, minVal, centreVal;
@@ -26,9 +26,9 @@ public class DuelUIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxVal = (int)pin.transform.position.x + 340;
-        minVal = (int)pin.transform.position.x;
-        centreVal = (int)pin.transform.position.x + 170;
+        centreVal = (int)pin.transform.position.x;
+        maxVal = centreVal + (int)bar.sprite.rect.xMax / 2;
+        minVal = centreVal - (int)bar.sprite.rect.xMax / 2;
         speed = 500.0f;
         direction = new Vector2(1, 0);
     }
@@ -40,6 +40,8 @@ public class DuelUIScript : MonoBehaviour
         {
             direction.x *= -1;
         }
+
+        Debug.Log(minVal + ", " + maxVal + ", " + pin.transform.position.x);
     }
 
     private void FixedUpdate()
