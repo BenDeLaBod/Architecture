@@ -13,10 +13,15 @@ GameObject:
   - component: {fileID: 408592059866305367}
   - component: {fileID: 408592059866305366}
   - component: {fileID: 408592059866305362}
-  - component: {fileID: 408592059866305363}
   - component: {fileID: 726972471}
   - component: {fileID: 726972472}
   - component: {fileID: 411385319}
+  - component: {fileID: 1088514183}
+  - component: {fileID: 1088514184}
+  - component: {fileID: 1088514185}
+  - component: {fileID: 1088514186}
+  - component: {fileID: 1088514187}
+  - component: {fileID: 1088514188}
   m_Layer: 6
   m_Name: EnemyTarget
   m_TagString: EnemyTest
@@ -32,7 +37,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408592059866305365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 6, z: 0}
+  m_LocalPosition: {x: 8.05, y: 1.32, z: 10.12}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120,21 +125,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &408592059866305363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408592059866305365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2351d0c7a52ac2040a53424523ad36e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 5
-  _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
-  _deathMoney: 80
 --- !u!114 &726972471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,8 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _promt: '[E] Talk'
   _talkManager: {fileID: 0}
-  _talkController: {fileID: 0}
-  _npcInfo: {fileID: 411385319}
+  _npcInfo: {fileID: 0}
 --- !u!114 &726972472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,8 +155,7 @@ MonoBehaviour:
   _renderers:
   - {fileID: 6379462666116372683}
   - {fileID: 4745763091972793719}
-  _highlightColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.88235295}
-  _wantedColor: {r: 0.9622642, g: 0.3680386, b: 0.32135987, a: 0.8666667}
+  _color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0.09803922}
 --- !u!114 &411385319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,9 +168,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b35a6c7d7606af4fb4bbb8bb0dd1dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cowboySprite: {fileID: 21300000, guid: afb80ec26ce515345bf038b6d44e5d75, type: 3}
-  _cowboyImage: {fileID: 21300000, guid: 882d77e06b2042f458097d90d234f4cd, type: 3}
-  _name: Thelma 'No Horse' Morton
+  _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
+  _cowboyHeadshot: {fileID: 0}
+  _displayName: {fileID: 0}
+  _name: Lonnie 'Justice' Stanton
+--- !u!114 &1088514183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28468daddb3c5fa4181a17f8cf93cc49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3932567768388180325, guid: 1a2d8608e78d0f149ae2eba255ad2fd4, type: 3}
+  gunCooldown: 1
+  magSize: 6
+--- !u!114 &1088514184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521062935f37e8e47b446f9965ad829e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beenMadeEnemy: 0
+--- !u!114 &1088514185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1392d9c8c7b7b2340bc61066d8270d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ignoreMask:
+    serializedVersion: 2
+    m_Bits: 2
+--- !u!114 &1088514186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509033fd48da8374f97848e52109399d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1088514187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11e223bf3dd40d49a6dea0df1aa3106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialState: {fileID: 11400000, guid: dbe06c202b32a3b4a9d054b21e761553, type: 2}
+--- !u!195 &1088514188
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1390680105
 PrefabInstance:
   m_ObjectHideFlags: 0
