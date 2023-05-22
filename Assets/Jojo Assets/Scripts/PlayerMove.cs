@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     public float movementSpeed, runningMovementSpeed, smoothRotationTime;
     private float turnSmoothVelocity, gravityConstant;
     private Vector3 direction;
-    public bool sprint;
+    bool sprint;
 
     public CharacterController controller;
     public Transform cameraTransform;
@@ -26,6 +26,11 @@ public class PlayerMove : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         sprint = Input.GetKey(KeyCode.LeftControl);
         direction = new Vector3(horizontalInput, 0, verticalInput).normalized;
+
+        if (Input.GetKey(KeyCode.Return))
+        {
+            animator.SetBool("Died", true);
+        }
     }
 
     private void FixedUpdate()
