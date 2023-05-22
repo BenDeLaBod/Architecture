@@ -48,4 +48,9 @@ public class Gun : MonoBehaviour
         bulletsInMag = magSize;
     }
 
+    public void ToggleAim()
+    {
+        //animator.SetBool("ADSing", !animator.GetBool("ADSing"));
+    }
+
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private KeyCode reload, shoot;
+    [SerializeField] private KeyCode reload, shoot, aim;
     [SerializeField] private KeyCode hats;
 
     [SerializeField] private GameObject gunObject;
@@ -28,6 +28,11 @@ public class InputManager : MonoBehaviour
         if (Input.GetKey(reload))
         {
             gun.Reload();
+        }
+
+        if (Input.GetKey(aim))
+        {
+            gun.ToggleAim();
         }
     }
 }
