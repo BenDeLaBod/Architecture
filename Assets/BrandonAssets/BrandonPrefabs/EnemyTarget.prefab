@@ -131,9 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b35a6c7d7606af4fb4bbb8bb0dd1dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cowboySprite: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
+  _cowboySprite: {fileID: 21300000, guid: 882d77e06b2042f458097d90d234f4cd, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
-  _name: Louisa 'Ranger' Watson
+  _name: Ollie 'Leather' Shannon
 --- !u!114 &1088514183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 10
   _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
-  deathMoney: 33
+  deathMoney: 209
 --- !u!114 &-4609699131705311050
 MonoBehaviour:
   m_ObjectHideFlags: 0

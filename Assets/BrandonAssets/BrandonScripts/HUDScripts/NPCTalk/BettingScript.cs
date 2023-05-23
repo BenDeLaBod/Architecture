@@ -10,7 +10,12 @@ public class BettingScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bettingText;
     [SerializeField] public double bettingMoney;
     Stack<int> _bettingHistory = new Stack<int>();
-    [SerializeField] 
+    [SerializeField] private NPCManager _npcManager;
+
+    private void Start()
+    {
+        _npcManager = GameObject.Find("NPC Manager").GetComponent<NPCManager>();
+    }
 
     public void Add5()
     {
@@ -72,6 +77,7 @@ public class BettingScript : MonoBehaviour
     public void UpdateBettingText()
     {
         _bettingText.text = "Your bet amount: $" +  bettingMoney.ToString();
+        _npcManager.AddBettingMoney(bettingMoney * 2);
     }
 
     private bool CheckEnoughGold(int wantToBet)

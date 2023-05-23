@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
+
 public class NPCManager : MonoBehaviour
 {
 
@@ -27,8 +28,10 @@ public class NPCManager : MonoBehaviour
     private static bool m_Initialized = false;
 
     [SerializeField] SceneSwitchScript _sceneManager;
-    
-   
+
+    [SerializeField] double _bettingAmount;
+
+
     void Start()
     {
         _sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneSwitchScript>();
@@ -42,8 +45,6 @@ public class NPCManager : MonoBehaviour
             // this is only run once
             LoadNames();
             int npcCount = npcNames.Count;
-
-
 
 
             for (int i = 0; i < npcCount; i++)
@@ -95,7 +96,7 @@ public class NPCManager : MonoBehaviour
         newNpc.name = giveName;
 
         newNpc.GetComponent<NPCInfo>()._cowboySprite = _npcSprites[Random.Range(0, _npcSprites.Length)];
-
+        newNpc.gameObject.GetComponent<HealthPoints>().deathMoney = Random.Range(100, 300);
 
         //Spawn NPC
         Instantiate(newNpc, _patrolPoints[Random.Range(0, _patrolPoints.Length)].position, newNpc.transform.rotation);
@@ -117,7 +118,7 @@ public class NPCManager : MonoBehaviour
             if ( npcWanted._name == wantedNPCName )
             {
                 _wantedNPC = npcWanted.gameObject;
-                npcWanted.gameObject.GetComponent<HealthPoints>().deathMoney = rewardAmount;
+                npcWanted.gameObject.GetComponent<HealthPoints>().deathMoney = rewardAmount + (int)_bettingAmount;
               
                 _wantedNPC.GetComponent<HighlightInteract>().ToggleWanted(true);
             }
@@ -139,6 +140,11 @@ public class NPCManager : MonoBehaviour
             //_sceneManager.UpdateDDOLArray();
         }
         
+    }
+
+    public void AddBettingMoney(double betting)
+    {
+        _bettingAmount = betting;
     }
    
 }
