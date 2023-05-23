@@ -13,6 +13,7 @@ Temp/
 /[Bb]uilds/
 */[Ll]ogs/
 */[Uu]ser[Ss]ettings/
+*/[Aa]rchitecture/Logs
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
