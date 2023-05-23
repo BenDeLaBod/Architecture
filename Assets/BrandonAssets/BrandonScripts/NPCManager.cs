@@ -9,9 +9,6 @@ public class NPCManager : MonoBehaviour
 
     
     [SerializeField] public NPCInfo[] npcArray;
-    float x;
-    float y;
-    float z;
     public GameObject newNpc;
     [SerializeField] private Sprite[] _npcSprites;
     [SerializeField] private Transform[] _patrolPoints; 
@@ -25,35 +22,47 @@ public class NPCManager : MonoBehaviour
 
    [SerializeField] GameObject _wantedNPC;
 
+    private static bool m_Initialized = false;
+
    
     void Start()
     {
-        
-        LoadNames();
-        int npcCount = npcNames.Count;
-
-        
+        DontDestroyOnLoad(this.gameObject);
 
 
-        for (int i = 0; i < npcCount; i++)
+
+        if (!m_Initialized)
         {
-            giveRandomName = npcNames[Random.Range(0, npcNames.Count)];
+            m_Initialized = true;
+            // this is only run once
+            LoadNames();
+            int npcCount = npcNames.Count;
 
-            while (_usedNPCNames.Contains(giveRandomName))
+
+
+
+            for (int i = 0; i < npcCount; i++)
             {
                 giveRandomName = npcNames[Random.Range(0, npcNames.Count)];
+
+                while (_usedNPCNames.Contains(giveRandomName))
+                {
+                    giveRandomName = npcNames[Random.Range(0, npcNames.Count)];
+                }
+                _usedNPCNames.Add(giveRandomName);
+
+
+                for (int j = 0; j < 5; j++)
+                {
+                    newNpc.gameObject.GetComponent<PatrolPoints>().AddPatrolPoint(_patrolPoints[Random.Range(0, _patrolPoints.Length)], i);
+                }
+
+
+                SpawnNewNPC(giveRandomName);
             }
-            _usedNPCNames.Add(giveRandomName);
 
-
-            for (int j = 0; j < 5; j++)
-            {
-                newNpc.gameObject.GetComponent<PatrolPoints>().AddPatrolPoint(_patrolPoints[Random.Range(0, _patrolPoints.Length)], i);
-            }
-
-
-            SpawnNewNPC(giveRandomName); 
         }
+
 
         //npcArray = FindObjectsOfType<NPCInfo>();
 

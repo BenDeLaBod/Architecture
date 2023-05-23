@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class HealthPoints : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -12,14 +12,16 @@ public class HealthPoints : MonoBehaviour
     private PlayerHealthManager _phm;
 
     // Update is called once per frame
+   
     private void Start()
     {
         _phm = GameObject.Find("HealthManager").GetComponent<PlayerHealthManager>();
     }
     void Update()
     {
-        
-        if(gameObject.tag == "Player")
+       // CheckScene();
+
+        if (gameObject.tag == "Player")
         {
             healthPoints = _phm.GetCurrentHP();
         }
@@ -50,4 +52,17 @@ public class HealthPoints : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
+
+    //public void CheckScene()
+    //{
+    //    _currerntScene = SceneManager.GetActiveScene();
+    //    if (_currerntScene.buildIndex == 1)
+    //    {
+    //        gameObject.SetActive(false);
+    //    }
+    //    else 
+    //    {
+    //        gameObject.SetActive(true);
+    //    }
+    //}
 }

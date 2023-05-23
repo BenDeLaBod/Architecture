@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-
+    
     [SerializeField] private NPCManager _npcManager;
 
     //Generate Names
@@ -27,10 +27,11 @@ public class QuestManager : MonoBehaviour
     string _rewardText;
     string _randomWantedNpc;
 
-   
 
+    
     private void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         _playerName = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfoScript>().playerName;
 
         _npcNamesList = _npcManager.npcNames;
@@ -77,6 +78,7 @@ public class QuestManager : MonoBehaviour
         {
             _randomWantedNpc = _npcNamesList[Random.Range(0, _npcNamesList.Count)];
         }
+
         _npcManager.WantedNPC(_randomWantedNpc);
 
 
