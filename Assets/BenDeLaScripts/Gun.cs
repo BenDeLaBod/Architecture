@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
     public GameObject bulletSpawnPoint;
 
     [SerializeField] private int magSize;
-    private int bulletsInMag;
+    public int bulletsInMag;
 
     private BulletManager bulletManager;
 
