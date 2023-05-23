@@ -21,6 +21,7 @@ public class NPCManager : MonoBehaviour
     string giveRandomName;
 
     [SerializeField] GameObject _wantedNPC;
+    [SerializeField] int _reawardAmount;
     [SerializeField] GameObject _interactingNPC;
 
     private static bool m_Initialized = false;
@@ -54,13 +55,6 @@ public class NPCManager : MonoBehaviour
                     giveRandomName = npcNames[Random.Range(0, npcNames.Count)];
                 }
                 _usedNPCNames.Add(giveRandomName);
-
-
-                //for (int j = 0; j < 5; j++)
-                //{
-                //    newNpc.gameObject.GetComponent<PatrolPoints>().AddPatrolPoint(_patrolPoints[Random.Range(0, _patrolPoints.Length)], j);
-                //}
-
 
                 SpawnNewNPC(giveRandomName);
             }
@@ -115,7 +109,7 @@ public class NPCManager : MonoBehaviour
         return _patrolPoints[Random.Range(0, _patrolPoints.Length)];
     }
 
-    public void WantedNPC(string wantedNPCName)
+    public void WantedNPC(string wantedNPCName, int rewardAmount)
     {
         foreach (NPCInfo npcWanted in npcArray)
         {
@@ -123,6 +117,8 @@ public class NPCManager : MonoBehaviour
             if ( npcWanted._name == wantedNPCName )
             {
                 _wantedNPC = npcWanted.gameObject;
+                npcWanted.gameObject.GetComponent<HealthPoints>().deathMoney = rewardAmount;
+              
                 _wantedNPC.GetComponent<HighlightInteract>().ToggleWanted(true);
             }
 

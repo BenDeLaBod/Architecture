@@ -8,7 +8,7 @@ public class HealthPoints : MonoBehaviour
     public int healthPoints;
 
     [SerializeField] private IntEventSO _goldEvent;
-    [SerializeField] private int _deathMoney = 33;
+    [SerializeField] public int deathMoney = 33;
     private PlayerHealthManager _phm;
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class HealthPoints : MonoBehaviour
 
         if (gameObject.tag == "EnemyTest")
         {
-            _goldEvent.Invoke(_deathMoney);
+            _goldEvent.Invoke(deathMoney);
         }
         Destroy(this.gameObject,2);
     }

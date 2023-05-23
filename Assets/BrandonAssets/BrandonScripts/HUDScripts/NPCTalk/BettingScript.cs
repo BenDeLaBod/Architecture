@@ -10,6 +10,7 @@ public class BettingScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bettingText;
     [SerializeField] public double bettingMoney;
     Stack<int> _bettingHistory = new Stack<int>();
+    [SerializeField] 
 
     public void Add5()
     {
@@ -70,7 +71,6 @@ public class BettingScript : MonoBehaviour
 
     public void UpdateBettingText()
     {
-        //_bettingMoney *= 0.5f;
         _bettingText.text = "Your bet amount: $" +  bettingMoney.ToString();
     }
 
@@ -78,5 +78,6 @@ public class BettingScript : MonoBehaviour
     {
         return _goldManager.currentGold-bettingMoney-wantToBet > 0;
     }
+
 
 }
