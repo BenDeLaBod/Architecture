@@ -61,7 +61,7 @@ public class DuelUIScript : MonoBehaviour
         }
     }
 
-    public void StoppPin()
+    public void StopPin()
     {
         isStopped = true;
     }
