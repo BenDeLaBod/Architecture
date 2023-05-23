@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     private Vector3 direction;
     bool sprint;
 
+    private Vector2 mouseMovement;
+
     public CharacterController controller;
     public Transform cameraTransform;
     public Animator animator;
@@ -24,6 +26,7 @@ public class PlayerMove : MonoBehaviour
     {
         crosshair.enabled = false;
         gravityConstant = 9.82f;
+        mouseMovement = Vector2.zero;
     }
 
     // Update is called once per frame
@@ -34,6 +37,11 @@ public class PlayerMove : MonoBehaviour
         sprint = Input.GetKey(KeyCode.LeftControl);
         direction = new Vector3(horizontalInput, 0, verticalInput).normalized;
 
+        if (animator.GetBool("ADSing"))
+        {
+            mouseMovement.x += Input.GetAxis("Mouse X");
+            mouseMovement.y += Input.GetAxis("Mouse Y");
+        }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             animator.SetBool("ADSing", !animator.GetBool("ADSing"));
@@ -44,16 +52,25 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (direction != Vector3.zero)
+        animator.SetBool("isMoving", true);
+
+        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
+
+        if (!animator.GetBool("ADSing"))
         {
-            animator.SetBool("isMoving", true);
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, smoothRotationTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            mouseMovement.x = angle;
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, mouseMovement.x, 0f);
+        }
 
-            Vector3 moveDirection = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized;
-            moveDirection.y = -gravityConstant;
-
+        Vector3 moveDirection = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized;
+        moveDirection.y = -gravityConstant;
+        if (direction != Vector3.zero)
+        {
             if (sprint)
             {
                 animator.SetBool("isSprinting", true);
@@ -69,6 +86,7 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("isMoving", false);
         }
+
     }
 
     void ChangeCamera()
