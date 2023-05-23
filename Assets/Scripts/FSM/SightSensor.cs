@@ -21,7 +21,7 @@ public class SightSensor : MonoBehaviour
         if (Player == null)
             return false;
 
-        _ray = new Ray(this.transform.position, Player.position - this.transform.position);
+        _ray = new Ray(this.transform.position, Player.position + new Vector3(0,3,0) - this.transform.position);
 
         var dir = new Vector3(_ray.direction.x, 0, _ray.direction.z);
 
@@ -48,7 +48,7 @@ public class SightSensor : MonoBehaviour
         if (Player == null)
             return false;
 
-        Aray = new Ray(this.transform.position, Player.position - this.transform.position);
+        Aray = new Ray(this.transform.position, Player.position + new Vector3(0, 3, 0) - this.transform.position);
 
         var dir = new Vector3(Aray.direction.x, 0, Aray.direction.z);
 
@@ -56,11 +56,11 @@ public class SightSensor : MonoBehaviour
         if (angle > 60)
             return false;
 
-        if (!Physics.Raycast(Aray, out var hit, 100, ~_ignoreMask))
-        {
-            return false;
-        }
-        if (Vector3.Distance(this.transform.position, Player.position) < 10 && hit.collider.tag == "Player")
+        //if (!Physics.Raycast(Aray, out var hit, 100, ~_ignoreMask))
+        //{
+        //    return false;
+        //}
+        if (Vector3.Distance(this.transform.position, Player.position) < 10 /*&& hit.collider.tag == "Player"*/)
         {
             Debug.Log("In Range");
             return true;

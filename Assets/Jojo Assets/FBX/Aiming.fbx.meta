@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b36495e4a64e2174fbc48f1a079a8aae
+guid: 3396006605e7ebc429b704b48f3c6326
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Raise Gun
+      name: Aiming
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 22
+      firstFrame: 22
+      lastFrame: 23
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

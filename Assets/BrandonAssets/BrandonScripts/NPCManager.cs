@@ -14,7 +14,7 @@ public class NPCManager : MonoBehaviour
     float z;
     public GameObject newNpc;
     [SerializeField] private Sprite[] _npcSprites;
- 
+    [SerializeField] private Transform[] _patrolPoints;
 
 
     //Generate Names

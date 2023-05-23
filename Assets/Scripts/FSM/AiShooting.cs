@@ -20,18 +20,22 @@ public class AiShooting : MonoBehaviour
     {
         gunTimer = gunCooldown;
         bulletsInMag = magSize;
+       // Player = GameObject.Find("Player1").transform;
         Player = GameObject.FindWithTag("Player").transform;
     }
     public void shoot()
     {
+        //this.transform.LookAt(Player);
+        //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+        
+     
         Debug.Log("shoot");
         if (gunTimer <= 0)
         {
             if (bulletsInMag > 0)
             {
                 Debug.Log("shoot2");
-
-                this.transform.LookAt(Player);
+                
                 Shoot(transform);
                 
                 bulletsInMag--;
@@ -55,7 +59,7 @@ public class AiShooting : MonoBehaviour
     /// <param name="shootPos"> The position where the bullet spawns from</param>
     public void Shoot(Transform shootPos)
     {
-        Instantiate(projectilePrefab, shootPos.transform.position + transform.forward, shootPos.transform.rotation);
+        Instantiate(projectilePrefab, shootPos.transform.position  + transform.forward, shootPos.transform.rotation);
     }
 
 

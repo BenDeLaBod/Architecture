@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,7 +12,23 @@ public class ChaseAction : FSMAction
         var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
         var enemySightSensor = stateMachine.GetComponent<SightSensor>();
 
-        navMeshAgent.isStopped = false;
-        navMeshAgent.SetDestination(enemySightSensor.Player.position);
+        
+        if (Vector3.Distance(stateMachine.transform.position, enemySightSensor.Player.position) > 7)
+        {
+            navMeshAgent.isStopped = false;
+            Debug.Log("hehe");
+            navMeshAgent.SetDestination(enemySightSensor.Player.position);
+        }
+        else
+        {
+            navMeshAgent.isStopped = true;
+            //navMeshAgent.speed = 20f;
+            //navMeshAgent.SetDestination(new Vector3(
+            //                stateMachine.transform.position.x + Random.Range(-3, 3),
+            //                stateMachine.transform.position.y,
+            //                stateMachine.transform.position.z + Random.Range(-3, 3)));
+        }
+            
+        
     }
 }
