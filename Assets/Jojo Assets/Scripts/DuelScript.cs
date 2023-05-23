@@ -7,11 +7,17 @@ public class DuelScript : MonoBehaviour
 {
     [SerializeField] Animator playerAnimator, enemyAnimator;
     bool success, hasShot;
-   
+
+    [SerializeField] private GameObject gunObject, enemyGunObject;
+
+    private Gun gun;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gun = gunObject.GetComponent<Gun>();
+        gunObject.SetActive(false);
+        enemyGunObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,15 +27,21 @@ public class DuelScript : MonoBehaviour
         {
             Transition(false);
         }
+
         if (!hasShot && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            hasShot = true;
-            Transition(true);
-            DuelUIScript.instance.StoppPin();
+            DuelUIScript.instance.StopPin();
             success = DuelUIScript.instance.HitOrMiss();
+            hasShot = true;
+            gunObject.SetActive(true);
+            enemyGunObject.SetActive(true);
+            Transition(true);
+            
 
             playerAnimator.SetBool("Died", !success);
             enemyAnimator.SetBool("Died", success);
+
+            
         }
     }
 
@@ -38,4 +50,18 @@ public class DuelScript : MonoBehaviour
         playerAnimator.SetBool("HasFired", input);
         enemyAnimator.SetBool("HasFired", input);
     }
+
+    public void DeactivateGun()
+    {
+        if (success)
+        {
+            gunObject.SetActive(false);
+        }
+        else
+        {
+            enemyGunObject.SetActive(false);
+        }
+    }
+
+
 }
