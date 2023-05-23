@@ -37,7 +37,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408592059866305365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 6, z: 7}
+  m_LocalPosition: {x: 2, y: 6, z: 8}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -115,7 +115,7 @@ MonoBehaviour:
   - {fileID: 6379462666116372683}
   - {fileID: 4745763091972793719}
   _highlightColor: {r: 0, g: 0, b: 0, a: 0}
-  _wantedColor: {r: 0, g: 0, b: 0, a: 0}
+  _wantedColor: {r: 1, g: 0.088679194, b: 0.088679194, a: 0}
 --- !u!114 &411385319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,9 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b35a6c7d7606af4fb4bbb8bb0dd1dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cowboySprite: {fileID: 21300000, guid: 6f81d015f7c926945b1f062037d30a80, type: 3}
+  _cowboySprite: {fileID: 21300000, guid: afb80ec26ce515345bf038b6d44e5d75, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
-  _name: Test NPC
+  _name: Bill 'Horse Whisperer' McGowan
 --- !u!114 &1088514183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +191,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _nextPoint: {fileID: 0}
+  _npcManager: {fileID: 0}
 --- !u!114 &1088514187
 MonoBehaviour:
   m_ObjectHideFlags: 0

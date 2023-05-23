@@ -14,13 +14,13 @@ public class NPCManager : MonoBehaviour
     float z;
     public GameObject newNpc;
     [SerializeField] private Sprite[] _npcSprites;
-    [SerializeField] private Transform[] _patrolPoints;
+    [SerializeField] private Transform[] _patrolPoints; 
 
 
     //Generate Names
     public string loadNameListPath;
     [SerializeField] public List<string> npcNames = new List<string>();
-    List<string> assignedName = new List<string>();
+    private List<string> _usedNPCNames = new List<string>();
     string giveRandomName;
 
    [SerializeField] GameObject _wantedNPC;
@@ -29,12 +29,30 @@ public class NPCManager : MonoBehaviour
     void Start()
     {
         
-
         LoadNames();
         int npcCount = npcNames.Count;
+
+        
+
+
         for (int i = 0; i < npcCount; i++)
         {
-            SpawnNewNPC(npcNames[i]); 
+            giveRandomName = npcNames[Random.Range(0, npcNames.Count)];
+
+            while (_usedNPCNames.Contains(giveRandomName))
+            {
+                giveRandomName = npcNames[Random.Range(0, npcNames.Count)];
+            }
+            _usedNPCNames.Add(giveRandomName);
+
+
+            for (int j = 0; j < 5; j++)
+            {
+                newNpc.gameObject.GetComponent<PatrolPoints>().AddPatrolPoint(_patrolPoints[Random.Range(0, _patrolPoints.Length)], i);
+            }
+
+
+            SpawnNewNPC(giveRandomName); 
         }
 
         //npcArray = FindObjectsOfType<NPCInfo>();
@@ -61,21 +79,26 @@ public class NPCManager : MonoBehaviour
 
     private void SpawnNewNPC(string giveName)
     {
-        x = Random.Range(-10, 10);
-        y = 6;
-        z = Random.Range(0,10);
-        Vector3 randomPos = new Vector3(x, y, z);
-        newNpc.transform.position = randomPos;
-        Instantiate(newNpc, newNpc.transform.position,newNpc.transform.rotation);
-        
-        //New NPC Info
+
+        //Assign NPC Info
         newNpc.GetComponent<NPCInfo>()._name = giveName;
         newNpc.name = giveName;
 
         newNpc.GetComponent<NPCInfo>()._cowboySprite = _npcSprites[Random.Range(0, _npcSprites.Length)];
 
+       
+
+
+        //Spawn NPC
+        Instantiate(newNpc, _patrolPoints[Random.Range(0, _patrolPoints.Length)].position, newNpc.transform.rotation);
+       
         npcArray = FindObjectsOfType<NPCInfo>();
         
+    }
+
+    public Transform RandomTransform()
+    {
+        return _patrolPoints[Random.Range(0, _patrolPoints.Length)];
     }
 
     public void WantedNPC(string wantedNPCName)
