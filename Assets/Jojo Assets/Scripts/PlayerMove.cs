@@ -27,11 +27,13 @@ public class PlayerMove : MonoBehaviour
         crosshair.enabled = false;
         gravityConstant = 9.82f;
         mouseMovement = Vector2.zero;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
+        vCam = GameObject.Find("Aiming Camera").GetComponent<CinemachineVirtualCamera>();
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         sprint = Input.GetKey(KeyCode.LeftControl);

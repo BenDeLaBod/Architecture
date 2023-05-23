@@ -56,10 +56,10 @@ public class NPCManager : MonoBehaviour
                 _usedNPCNames.Add(giveRandomName);
 
 
-                for (int j = 0; j < 5; j++)
-                {
-                    newNpc.gameObject.GetComponent<PatrolPoints>().AddPatrolPoint(_patrolPoints[Random.Range(0, _patrolPoints.Length)], i);
-                }
+                //for (int j = 0; j < 5; j++)
+                //{
+                //    newNpc.gameObject.GetComponent<PatrolPoints>().AddPatrolPoint(_patrolPoints[Random.Range(0, _patrolPoints.Length)], j);
+                //}
 
 
                 SpawnNewNPC(giveRandomName);
@@ -106,7 +106,7 @@ public class NPCManager : MonoBehaviour
         //Spawn NPC
         Instantiate(newNpc, _patrolPoints[Random.Range(0, _patrolPoints.Length)].position, newNpc.transform.rotation);
        
-        npcArray = FindObjectsOfType<NPCInfo>();
+        //npcArray = FindObjectsOfType<NPCInfo>();
         
     }
 

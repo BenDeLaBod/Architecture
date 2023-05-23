@@ -19,7 +19,7 @@ public class PatrolPoints : MonoBehaviour
         _npcManager = GameObject.Find("NPC Manager").GetComponent<NPCManager>();
         for (int i = 0; i < 5; i++)
         {
-            AddPatrolPoint(_npcManager.RandomTransform(),i);
+            AddPatrolPoint(_npcManager.RandomTransform(), i);
         }
     }
 

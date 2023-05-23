@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 1088514188}
   - component: {fileID: 1643438541}
   - component: {fileID: -4609699131705311050}
+  - component: {fileID: 7753655999891042246}
   m_Layer: 6
   m_Name: EnemyTarget
   m_TagString: EnemyTest
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cowboySprite: {fileID: 21300000, guid: 2dc48f1b8b3fc3b459f31ad1007f7c79, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
-  _name: Ollie 'Leather' Shannon
+  _name: Bernard 'Outlaw' Terry
 --- !u!114 &1088514183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +258,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3db8de34cf7baf4491e959706f8d5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7753655999891042246
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1390680105
 PrefabInstance:
   m_ObjectHideFlags: 0
