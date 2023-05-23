@@ -8,18 +8,30 @@ public class SceneSwitchScript : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] DontDestroy[] _ddolObjects;
+
     private Scene _currerntScene;
     [SerializeField] int _currenSceneIndex;
+    private NPCManager _npcManager;
+    public static bool duelWon;
+
+
+
+    List<DontDestroy> _ddolObjectList ;
+   
     void Start()
     {
+
         _ddolObjects = GameObject.FindObjectsOfType<DontDestroy>();
+        _npcManager = GameObject.Find("NPC Manager").GetComponent<NPCManager>();
+        _ddolObjectList = new List<DontDestroy>(_ddolObjects);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+        _ddolObjectList.RemoveAll(x => x == null);
+        _ddolObjects = _ddolObjectList.ToArray();
         CheckScene();
     }
 
@@ -30,6 +42,8 @@ public class SceneSwitchScript : MonoBehaviour
     public void SwitchMainScene()
     {
         SceneManager.LoadScene(0);
+        _npcManager.DuelWon(duelWon);
+        UpdateDDOLArray();
     }
 
     public void CheckScene()
@@ -40,11 +54,16 @@ public class SceneSwitchScript : MonoBehaviour
         {
             foreach (DontDestroy ddol in _ddolObjects)
             {
-                if(ddol.gameObject.CompareTag("SceneManager") != true)
+                ddol.gameObject.SetActive(false);
+                if (ddol.gameObject.CompareTag("SceneManager"))
                 {
-                    ddol.gameObject.SetActive(false);
+                    ddol.gameObject.SetActive(true);
                 }
-                
+                else if (ddol.gameObject.CompareTag("NPCManager"))
+                {
+                    ddol.gameObject.SetActive(true);
+                }
+
             }
         }
         if(_currerntScene.buildIndex == 0)
@@ -53,6 +72,14 @@ public class SceneSwitchScript : MonoBehaviour
             {
                 ddol.gameObject.SetActive(true);
             }
+
+
         }
+    }
+
+    public void UpdateDDOLArray()
+    {
+        _ddolObjects = GameObject.FindObjectsOfType<DontDestroy>();
+        
     }
 }

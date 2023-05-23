@@ -46,11 +46,12 @@ public class HealthPoints : MonoBehaviour
 
     public void Die()
     {
+
         if (gameObject.tag == "EnemyTest")
         {
             _goldEvent.Invoke(_deathMoney);
         }
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,2);
     }
 
     //public void CheckScene()

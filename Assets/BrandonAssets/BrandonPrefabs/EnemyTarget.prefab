@@ -99,6 +99,7 @@ MonoBehaviour:
   _promt: '[E] Talk'
   _talkManager: {fileID: 0}
   _talkController: {fileID: 0}
+  _npcManager: {fileID: 0}
   _npcInfo: {fileID: 411385319}
 --- !u!114 &726972472
 MonoBehaviour:
@@ -115,7 +116,7 @@ MonoBehaviour:
   _renderers:
   - {fileID: 6379462666116372683}
   - {fileID: 4745763091972793719}
-  _highlightColor: {r: 0, g: 0, b: 0, a: 0}
+  _highlightColor: {r: 0.33962262, g: 0.32488427, b: 0.32488427, a: 0.84313726}
   _wantedColor: {r: 1, g: 0.088679194, b: 0.088679194, a: 0.8039216}
 --- !u!114 &411385319
 MonoBehaviour:
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b35a6c7d7606af4fb4bbb8bb0dd1dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cowboySprite: {fileID: 21300000, guid: 882d77e06b2042f458097d90d234f4cd, type: 3}
+  _cowboySprite: {fileID: 21300000, guid: 40031c690f6e48e47aff1c2d18cd026a, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
   _name: Bill 'Horse Whisperer' McGowan
 --- !u!114 &1088514183
@@ -256,8 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3db8de34cf7baf4491e959706f8d5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneManager: []
-  _player: []
 --- !u!1001 &1390680105
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,13 +20,17 @@ public class NPCManager : MonoBehaviour
     private List<string> _usedNPCNames = new List<string>();
     string giveRandomName;
 
-   [SerializeField] GameObject _wantedNPC;
+    [SerializeField] GameObject _wantedNPC;
+    [SerializeField] GameObject _interactingNPC;
 
     private static bool m_Initialized = false;
 
+    [SerializeField] SceneSwitchScript _sceneManager;
+    
    
     void Start()
     {
+        _sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneSwitchScript>();
         DontDestroyOnLoad(this.gameObject);
 
 
@@ -84,6 +88,9 @@ public class NPCManager : MonoBehaviour
         //{
         //    SpawnNewNPC();
         //} 
+
+        //InteractionNPCFate(duelWon);
+        npcArray = FindObjectsOfType<NPCInfo>();
     }
 
     private void SpawnNewNPC(string giveName)
@@ -94,8 +101,6 @@ public class NPCManager : MonoBehaviour
         newNpc.name = giveName;
 
         newNpc.GetComponent<NPCInfo>()._cowboySprite = _npcSprites[Random.Range(0, _npcSprites.Length)];
-
-       
 
 
         //Spawn NPC
@@ -122,6 +127,22 @@ public class NPCManager : MonoBehaviour
             }
 
         }     
+    }
+
+    public void SetInteractingNPC(GameObject interactingNPC)
+    {
+        _interactingNPC = interactingNPC;
+    }
+
+    public void DuelWon(bool duelWon)
+    {
+        if (duelWon)
+        {
+            _interactingNPC.GetComponent<HealthPoints>().Die();
+            //npcArray = FindObjectsOfType<NPCInfo>();
+            //_sceneManager.UpdateDDOLArray();
+        }
+        
     }
    
 }

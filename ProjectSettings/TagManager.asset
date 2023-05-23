@@ -8,6 +8,8 @@ TagManager:
   - PlayerUI
   - Gun
   - SceneManager
+  - NPCManager
+  - Cavas
   layers:
   - Default
   - TransparentFX

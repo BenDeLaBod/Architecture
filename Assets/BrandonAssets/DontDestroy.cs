@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    public GameObject[] _sceneManager;
-    public GameObject[] _player;
+    private GameObject[] _sceneManager;
+    private GameObject[] _player;
+   // private GameObject[] _cavas;
     private void Awake()
     {
         _sceneManager = GameObject.FindGameObjectsWithTag("SceneManager");
         _player = GameObject.FindGameObjectsWithTag("Player");
+        _player = GameObject.FindGameObjectsWithTag("MainCamera");
 
         if (_sceneManager.Length > 1)
         {
@@ -19,6 +21,10 @@ public class DontDestroy : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        //if (_cavas.Length > 1)
+        //{
+        //    Destroy(this.gameObject);
+        //}
 
         DontDestroyOnLoad(this.gameObject);
     }

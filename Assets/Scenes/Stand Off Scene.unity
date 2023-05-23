@@ -1354,6 +1354,7 @@ MonoBehaviour:
   _result: {fileID: 35259490}
   _duelResultText: {fileID: 35259492}
   _returnButton: {fileID: 1375275320}
+  _npcManager: {fileID: 0}
 --- !u!114 &990139221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ab5ac7e6ebc2e4bbc9d7cfb1075939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ddolObjects: []
+  _currenSceneIndex: 0
 --- !u!1 &1033328791
 GameObject:
   m_ObjectHideFlags: 0
