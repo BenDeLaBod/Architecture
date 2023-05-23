@@ -1,6 +1,8 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -13,9 +15,14 @@ public class PlayerMove : MonoBehaviour
     public Transform cameraTransform;
     public Animator animator;
 
+    [SerializeField] CinemachineVirtualCamera vCam;
+    [SerializeField] CinemachineFreeLook fCam;
+    [SerializeField] Image crosshair;
+
     // Start
     private void Start()
     {
+        crosshair.enabled = false;
         gravityConstant = 9.82f;
     }
 
@@ -30,6 +37,8 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             animator.SetBool("ADSing", !animator.GetBool("ADSing"));
+            ChangeCamera();
+            crosshair.enabled = !crosshair.isActiveAndEnabled;
         }
     }
 
@@ -59,6 +68,20 @@ public class PlayerMove : MonoBehaviour
         else
         {
             animator.SetBool("isMoving", false);
+        }
+    }
+
+    void ChangeCamera()
+    {
+        if (vCam.isActiveAndEnabled)
+        {
+            vCam.enabled = false;
+            fCam.enabled = true;
+        }
+        else
+        {
+            fCam.enabled = false;
+            vCam.enabled = true;
         }
     }
 }
