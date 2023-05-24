@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
     public int bulletsInMag;
 
     private BulletManager bulletManager;
-
+    public bool isAming;
 
     void Start()
     {

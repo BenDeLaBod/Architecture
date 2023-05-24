@@ -12,7 +12,6 @@ public class InputManager : MonoBehaviour
 
     private Gun gun;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +21,7 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(shoot))
+        if (Input.GetKeyDown(shoot) && gun.isAming)
         {
             gun.Shoot();
             

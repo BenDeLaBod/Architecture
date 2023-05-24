@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera vCam;
     [SerializeField] CinemachineFreeLook fCam;
     [SerializeField] Image crosshair;
-
+    [SerializeField] Gun _gunScript;
     // Start
     private void Start()
     {
@@ -97,11 +97,13 @@ public class PlayerMove : MonoBehaviour
         {
             vCam.enabled = false;
             fCam.enabled = true;
+            _gunScript.isAming = false;
         }
         else
         {
             fCam.enabled = false;
             vCam.enabled = true;
+            _gunScript.isAming = true;
         }
     }
 }

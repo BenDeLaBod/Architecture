@@ -10,11 +10,15 @@ public class ShootCooldown : MonoBehaviour
 
     private void Start()
     {
-        
+        _shootCooldown.value = 0;
     }
 
     private void Update()
     {
-        _shootCooldown.value = _gunScript.ShootColdownTime();
+        if (_gunScript.isAming)
+        {
+            _shootCooldown.value = _gunScript.ShootColdownTime();
+        }
+       
     }
 }
