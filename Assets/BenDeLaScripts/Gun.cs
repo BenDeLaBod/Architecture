@@ -48,6 +48,11 @@ public class Gun : MonoBehaviour
         }
     }
 
+    public float ShootColdownTime()
+    {
+        return shootTimer / shootCooldown;
+    }
+
     
     public void Reload()
     {
