@@ -6,6 +6,7 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
     [SerializeField] private BaseState _initialState;
+    public Animator animator;
     private Dictionary<Type, Component> _cachedComponents;
     private void Awake()
     {
