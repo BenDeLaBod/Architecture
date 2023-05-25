@@ -2046,7 +2046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cowboySprite: {fileID: 21300000, guid: 2dc48f1b8b3fc3b459f31ad1007f7c79, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
-  _name: Charley 'Painkiller' Sargent
+  _name: Bert 'Brawn' McConnell
 --- !u!114 &6195549307214446553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2161,7 +2161,7 @@ MonoBehaviour:
   healthPoints: 10
   _anim: {fileID: 6195549307214446529}
   _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
-  deathMoney: 201
+  deathMoney: 178
 --- !u!114 &6195549307214446530
 MonoBehaviour:
   m_ObjectHideFlags: 0
