@@ -7,35 +7,34 @@ public class BulletManager : MonoBehaviour
 {
     public ObjectPool<GameObject> pool;
 
-    private Gun gun;
+    [SerializeField]
+    private GameObject bulletPrefab;
+
+    [SerializeField]
+    private int poolMax;
 
     private void Start()
     {
-        gun = GetComponent<Gun>();
         pool = new ObjectPool<GameObject>(
             CreateBullet,
             OnTakeBulletFromPool, 
             OnReturnBulletToPool, 
-            OnDestroyBullet
+            OnDestroyBullet,
+            true, 4, poolMax
             );
     }
 
     private GameObject CreateBullet()
     {
-        GameObject bullet = Instantiate(gun.projectilePrefab, gun.bulletSpawnPoint.transform.position, gun.transform.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, transform);
 
-        bullet.GetComponent<BulletScript>().SetPool(pool);
-
-        bullet.SetActive(true);
+        bullet.SetActive(false);
 
         return bullet;
     }
 
     private void OnTakeBulletFromPool(GameObject bullet)
     {
-        bullet.transform.position = gun.bulletSpawnPoint.transform.position;
-        bullet.transform.rotation = gun.transform.rotation;
-
         bullet.SetActive(true);
     }
 
@@ -47,5 +46,14 @@ public class BulletManager : MonoBehaviour
     private void OnDestroyBullet(GameObject bullet)
     {
         Destroy(bullet);
+    }
+
+    public GameObject GetBullet()
+    {
+        return pool.Get();
+    }
+    public void ReturnBullet(GameObject bullet)
+    {
+        pool.Release(bullet);
     }
 }

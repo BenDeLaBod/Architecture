@@ -6,24 +6,24 @@ public class Gun : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject projectilePrefab;
     // public GameObject barrelPosition;
 
     float shootTimer;
     [SerializeField] private float shootCooldown;
 
-    public GameObject bulletSpawnPoint;
+    [SerializeField]
+    private GameObject bulletSpawnPoint;
 
     [SerializeField] private int magSize;
     public int bulletsInMag;
 
+    [SerializeField]
     private BulletManager bulletManager;
     public bool isAming;
 
     void Start()
     {
         Reload();
-        bulletManager = GetComponent<BulletManager>();
     }
 
     // Update is called once per frame
@@ -40,8 +40,10 @@ public class Gun : MonoBehaviour
         if (bulletsInMag > 0 && shootTimer <= 0)
         {
             //Instantiate(projectilePrefab, bulletSpawnPoint.transform.position, transform.rotation);
+            GameObject bullet = bulletManager.GetBullet();
 
-            bulletManager.pool.Get();
+            bullet.transform.position = bulletSpawnPoint.transform.position;
+            bullet.transform.rotation = transform.rotation;
 
             shootTimer = shootCooldown;
             bulletsInMag--;

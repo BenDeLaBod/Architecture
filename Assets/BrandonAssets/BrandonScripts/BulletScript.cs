@@ -12,11 +12,15 @@ public class BulletScript : MonoBehaviour
 
     Vector3 direction;
 
-    private ObjectPool<GameObject> _objectPool;
-    
+    private BulletManager bulletManager;
+
+    private void Awake()
+    {
+        bulletManager = FindAnyObjectByType<BulletManager>();
+    }
+
     void Start()
     {
-        
         //Destroy(gameObject, _lifeSpan);
     }
 
@@ -34,7 +38,7 @@ public class BulletScript : MonoBehaviour
 
         if (timer <= 0)
         {
-            _objectPool.Release(gameObject);
+            bulletManager.ReturnBullet(gameObject);
         }
     }
    
@@ -49,16 +53,9 @@ public class BulletScript : MonoBehaviour
                 targetHit.gameObject.GetComponent<HealthPoints>().TakeDamage(1);
             }
 
-            _objectPool.Release(gameObject);
+            bulletManager.ReturnBullet(gameObject);
         }
     }
-
-    public void SetPool(ObjectPool<GameObject> pool)
-    {
-        _objectPool = pool;
-    }
-
-
 }
 
 
