@@ -56,6 +56,13 @@ public class BulletScript : MonoBehaviour
             bulletManager.ReturnBullet(gameObject);
         }
     }
+
+    public void SetDirection()
+    {
+        direction = transform.forward;
+        direction.y = 0;
+        direction.Normalize();
+    }
 }
 
 
