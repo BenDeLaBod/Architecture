@@ -6,7 +6,6 @@ using UnityEngine.AI;
 
 public class AttackAction : FSMAction
 {
-    float time;
     public override void Execute(StateMachine stateMachine)     
     {
         var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
@@ -16,11 +15,16 @@ public class AttackAction : FSMAction
                         stateMachine.transform.position.x + Random.Range(-3, 3),
                         stateMachine.transform.position.y,
                         stateMachine.transform.position.z + Random.Range(-3, 3)));
-        var attack = stateMachine.GetComponent<AiShooting>();
+        var attack = stateMachine.GetComponentInChildren<Gun>();
+        var player = GameObject.FindGameObjectWithTag("Player");
 
-        stateMachine.transform.LookAt(attack.Player);
+        stateMachine.transform.LookAt(player.transform);
         stateMachine.transform.eulerAngles = new Vector3(0, stateMachine.transform.eulerAngles.y, 0);
-        attack.shoot();
+        attack.Shoot();
+        if (attack.bulletsInMag == 0)
+        {
+            attack.Reload();
+        }
 
        
     }
