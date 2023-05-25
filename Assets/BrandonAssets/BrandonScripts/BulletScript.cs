@@ -47,7 +47,7 @@ public class BulletScript : MonoBehaviour
     {
         if (!targetHit.gameObject.CompareTag("Gun"))
         {
-            if (targetHit.gameObject.CompareTag("EnemyTest"))
+            if (targetHit.gameObject.CompareTag("EnemyTest") || targetHit.gameObject.CompareTag("Player"))
             {
                 Debug.Log("Enemy Hit");
                 targetHit.gameObject.GetComponent<HealthPoints>().TakeDamage(1);

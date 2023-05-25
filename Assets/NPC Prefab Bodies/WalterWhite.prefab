@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 6727871046852282757}
   - component: {fileID: 846148718598673407}
   m_Layer: 0
-  m_Name: character1 (2)
+  m_Name: WalterWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
