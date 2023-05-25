@@ -34,4 +34,9 @@ public class StateMachine : MonoBehaviour
         return component;
     }
 
+    public void GetAnimator(Animator anim)
+    {
+        animator = anim;
+    }
+
 }

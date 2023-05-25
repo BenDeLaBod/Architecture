@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,5 +60,10 @@ public class HighlightInteract : MonoBehaviour
                 material.DisableKeyword("_EMISSION");
             }
         }
+    }
+
+    internal void GetRenderer(List<Renderer> renderers)
+    {
+        _renderers = renderers;
     }
 }

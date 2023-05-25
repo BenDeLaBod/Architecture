@@ -104,11 +104,18 @@ public class NPCManager : MonoBehaviour
         newNpc.GetComponent<NPCInfo>()._cowboySprite = _npcSprites[Random.Range(0, _npcSprites.Length)];
         newNpc.gameObject.GetComponent<HealthPoints>().deathMoney = Random.Range(100, 300);
 
+
+
+
+
         //Spawn NPC
-        Instantiate(newNpc, _patrolPoints[Random.Range(0, _patrolPoints.Length)].position, newNpc.transform.rotation);
-       
+        var npc = Instantiate(newNpc, _patrolPoints[Random.Range(0, _patrolPoints.Length)].position, newNpc.transform.rotation);
+        var npcBody = Instantiate(GetRandomMainBody(), new Vector3(npc.transform.position.x, npc.transform.position.y -1.5f, npc.transform.position.z), npc.transform.rotation, npc.transform);
+        npc.GetComponent<HealthPoints>().GetAnimator(npcBody.GetComponent<Animator>());
+        npc.GetComponent<StateMachine>().GetAnimator(npcBody.GetComponent<Animator>());
+        npc.GetComponent<HighlightInteract>().GetRenderer(npcBody.GetComponent<GetBodyRenderer>()._renderers);
         //npcArray = FindObjectsOfType<NPCInfo>();
-        
+
     }
 
     public Transform RandomTransform()
@@ -153,4 +160,8 @@ public class NPCManager : MonoBehaviour
         _bettingAmount = betting;
     }
    
+    public GameObject GetRandomMainBody()
+    {
+        return _mainBody[Random.Range(0, _mainBody.Length)];
+    }
 }

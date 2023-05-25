@@ -57,16 +57,8 @@ public class HealthPoints : MonoBehaviour
         Destroy(this.gameObject,2.5f);
     }
 
-    //public void CheckScene()
-    //{
-    //    _currerntScene = SceneManager.GetActiveScene();
-    //    if (_currerntScene.buildIndex == 1)
-    //    {
-    //        gameObject.SetActive(false);
-    //    }
-    //    else 
-    //    {
-    //        gameObject.SetActive(true);
-    //    }
-    //}
+    public void GetAnimator(Animator anim)
+    {
+        _anim = anim;
+    }
 }
