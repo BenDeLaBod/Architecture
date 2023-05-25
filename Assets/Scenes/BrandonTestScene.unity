@@ -7924,7 +7924,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665643618}
-  m_LocalRotation: {x: 0.15220079, y: 0.00000009113641, z: -0.00000001403454, w: 0.9883496}
+  m_LocalRotation: {x: 0.15220079, y: 0.00000007413049, z: -0.0000000114157155, w: 0.9883496}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23119,6 +23119,7 @@ GameObject:
   - component: {fileID: 2086461537}
   - component: {fileID: 2086461536}
   - component: {fileID: 2086461539}
+  - component: {fileID: 2086461540}
   m_Layer: 6
   m_Name: Door_R
   m_TagString: Untagged
@@ -23218,6 +23219,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _promt: '[E] open Door'
+--- !u!114 &2086461540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086461534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b67e726a3a1b81448676848b1762739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderers:
+  - {fileID: 2086461537}
+  _highlightColor: {r: 0.5471698, g: 0.5440726, b: 0.5440726, a: 0.89411765}
+  _wantedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2087703458
 GameObject:
   m_ObjectHideFlags: 0
@@ -23231,6 +23248,7 @@ GameObject:
   - component: {fileID: 2087703461}
   - component: {fileID: 2087703460}
   - component: {fileID: 2087703463}
+  - component: {fileID: 2087703464}
   m_Layer: 6
   m_Name: Door_L
   m_TagString: Untagged
@@ -23330,6 +23348,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _promt: '[E] open Door'
+--- !u!114 &2087703464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087703458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b67e726a3a1b81448676848b1762739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderers:
+  - {fileID: 2087703461}
+  _highlightColor: {r: 0.5471698, g: 0.5440726, b: 0.5440726, a: 0.89411765}
+  _wantedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2095441115
 GameObject:
   m_ObjectHideFlags: 3

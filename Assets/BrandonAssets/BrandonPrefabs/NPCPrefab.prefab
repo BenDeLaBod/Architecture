@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cowboySprite: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
-  _name: Elijah 'the Loner' Jenkins
+  _name: Tom 'Lone Rider' Best
 --- !u!114 &6195549307214446553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   healthPoints: 10
   _anim: {fileID: 0}
   _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
-  deathMoney: 126
+  deathMoney: 227
 --- !u!114 &6195549307214446530
 MonoBehaviour:
   m_ObjectHideFlags: 0
