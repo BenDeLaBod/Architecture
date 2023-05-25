@@ -6,7 +6,7 @@ public class HealthPoints : MonoBehaviour
 {
     // Start is called before the first frame update
     public int healthPoints;
-
+    [SerializeField] Animator _anim;
     [SerializeField] private IntEventSO _goldEvent;
     [SerializeField] public int deathMoney = 33;
     private PlayerHealthManager _phm;
@@ -53,7 +53,8 @@ public class HealthPoints : MonoBehaviour
         {    
             _goldEvent.Invoke(deathMoney);
         }
-        Destroy(this.gameObject,2);
+        _anim.SetBool("Died", true);
+        Destroy(this.gameObject,2.5f);
     }
 
     //public void CheckScene()

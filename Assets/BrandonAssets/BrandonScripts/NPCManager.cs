@@ -16,11 +16,17 @@ public class NPCManager : MonoBehaviour
 
 
     //Generate Names
+    [Header("Generate Name")]
     public string loadNameListPath;
     [SerializeField] public List<string> npcNames = new List<string>();
     private List<string> _usedNPCNames = new List<string>();
     string giveRandomName;
 
+    [Header("Generate NPC body")]
+    [SerializeField] GameObject[] _mainBody;
+    [SerializeField] GameObject[] _hatOptions;
+
+    [Header("NPC Quest")]
     [SerializeField] GameObject _wantedNPC;
     [SerializeField] int _reawardAmount;
     [SerializeField] GameObject _interactingNPC;
