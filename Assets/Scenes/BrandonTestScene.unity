@@ -7454,6 +7454,7 @@ MonoBehaviour:
   vCam: {fileID: 1346212375}
   fCam: {fileID: 2133670908}
   crosshair: {fileID: 1156278815}
+  _gunScript: {fileID: 1933781964}
 --- !u!143 &636493389
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7964,7 +7965,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665643618}
-  m_LocalRotation: {x: 0.15220079, y: 0.00000009113641, z: -0.00000001403454, w: 0.9883496}
+  m_LocalRotation: {x: 0.15220079, y: 0.00000007413049, z: -0.0000000114157155, w: 0.9883496}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8432,17 +8433,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678811378}
   m_CullTransparentMesh: 1
---- !u!114 &681355024 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1643438541, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
-  m_PrefabInstance: {fileID: 924416446}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2351d0c7a52ac2040a53424523ad36e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &684947114
 GameObject:
   m_ObjectHideFlags: 0
@@ -11207,10 +11197,6 @@ PrefabInstance:
       propertyPath: _talkController
       value: 
       objectReference: {fileID: 1117212709}
-    - target: {fileID: 1088514184, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
-      propertyPath: _healthPointScripts
-      value: 
-      objectReference: {fileID: 681355024}
     - target: {fileID: 1088514186, guid: a3c683f2f554142498c41ba3d1832236, type: 3}
       propertyPath: _patrolPoints.Array.size
       value: 5
@@ -13053,7 +13039,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064913117}
-  m_LocalRotation: {x: 0.11619861, y: 0.00000010065694, z: -0.000000011775965, w: 0.993226}
+  m_LocalRotation: {x: 0.11619861, y: 0.00000006542537, z: -0.000000007654185, w: 0.993226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19646,7 +19632,7 @@ Skybox:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722710057}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 0}
+  m_CustomSkybox: {fileID: 2100000, guid: 7b4c7c2359bca4f4db13c3dff936f2ea, type: 2}
 --- !u!114 &1722710060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21596,6 +21582,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 177692186}
   magSize: 6
   bulletsInMag: 0
+  isAming: 0
 --- !u!1 &1937933999
 GameObject:
   m_ObjectHideFlags: 0
