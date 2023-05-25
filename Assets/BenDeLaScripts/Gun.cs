@@ -44,6 +44,7 @@ public class Gun : MonoBehaviour
 
             bullet.transform.position = bulletSpawnPoint.transform.position;
             bullet.transform.rotation = transform.rotation;
+            bullet.GetComponent<BulletScript>().direction = bullet.transform.forward;
 
             shootTimer = shootCooldown;
             bulletsInMag--;

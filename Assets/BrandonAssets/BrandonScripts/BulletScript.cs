@@ -10,7 +10,7 @@ public class BulletScript : MonoBehaviour
     float _lifeSpan = 2.5f;
     float timer;
 
-    Vector3 direction;
+    public Vector3 direction;
 
     private BulletManager bulletManager;
 
@@ -26,7 +26,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnEnable()
     {
-        direction = transform.forward;
+        //direction = transform.forward;
         timer = _lifeSpan;
     }
 
