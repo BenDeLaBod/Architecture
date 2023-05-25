@@ -8,6 +8,10 @@ public class AttackAction : FSMAction
 {
     public override void Execute(StateMachine stateMachine)     
     {
+        stateMachine.animator.SetBool("ADSing", true);
+        stateMachine.animator.SetBool("isMoving", false);
+        stateMachine.animator.SetBool("isSprinting", false);
+
         var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
         //navMeshAgent.isStopped = true;
         navMeshAgent.speed = 3.5f;

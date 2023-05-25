@@ -9,6 +9,10 @@ public class ChaseAction : FSMAction
 {
     public override void Execute(StateMachine stateMachine)
     {
+        stateMachine.animator.SetBool("ADSing", false);
+        stateMachine.animator.SetBool("isMoving", true);
+        stateMachine.animator.SetBool("isSprinting", true);
+
         var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
         var enemySightSensor = stateMachine.GetComponent<SightSensor>();
 
