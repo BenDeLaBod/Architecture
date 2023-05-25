@@ -1,25 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class HealthPoints : MonoBehaviour
 {
     // Start is called before the first frame update
     public int healthPoints;
 
     [SerializeField] private IntEventSO _goldEvent;
-    [SerializeField] private int _deathMoney = 33;
+    [SerializeField] public int deathMoney = 33;
     private PlayerHealthManager _phm;
+    bool alive;
 
     // Update is called once per frame
+   
     private void Start()
     {
+        alive = true;
         _phm = GameObject.Find("HealthManager").GetComponent<PlayerHealthManager>();
     }
     void Update()
     {
-        
-        if(gameObject.tag == "Player")
+       // CheckScene();
+
+        if (gameObject.tag == "Player")
         {
             healthPoints = _phm.GetCurrentHP();
         }
@@ -44,10 +48,24 @@ public class HealthPoints : MonoBehaviour
 
     public void Die()
     {
+
         if (gameObject.tag == "EnemyTest")
-        {
-            _goldEvent.Invoke(_deathMoney);
+        {    
+            _goldEvent.Invoke(deathMoney);
         }
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,2);
     }
+
+    //public void CheckScene()
+    //{
+    //    _currerntScene = SceneManager.GetActiveScene();
+    //    if (_currerntScene.buildIndex == 1)
+    //    {
+    //        gameObject.SetActive(false);
+    //    }
+    //    else 
+    //    {
+    //        gameObject.SetActive(true);
+    //    }
+    //}
 }

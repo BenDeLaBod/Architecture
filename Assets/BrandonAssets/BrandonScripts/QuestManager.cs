@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-
+    
     [SerializeField] private NPCManager _npcManager;
 
     //Generate Names
@@ -27,10 +27,11 @@ public class QuestManager : MonoBehaviour
     string _rewardText;
     string _randomWantedNpc;
 
-   
 
+    
     private void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         _playerName = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfoScript>().playerName;
 
         _npcNamesList = _npcManager.npcNames;
@@ -70,6 +71,7 @@ public class QuestManager : MonoBehaviour
 
         _questionText = _questionList[Random.Range(0, _questionList.Count)];
         _rewardText = _rewardList[Random.Range(0, _rewardList.Count)];
+        int _rewardAmount = Random.Range(100, 500);
 
 
         _randomWantedNpc = _npcNamesList[Random.Range(0, _npcNamesList.Count)];
@@ -77,7 +79,8 @@ public class QuestManager : MonoBehaviour
         {
             _randomWantedNpc = _npcNamesList[Random.Range(0, _npcNamesList.Count)];
         }
-        _npcManager.WantedNPC(_randomWantedNpc);
+
+        _npcManager.WantedNPC(_randomWantedNpc,_rewardAmount);
 
 
 
@@ -88,7 +91,7 @@ public class QuestManager : MonoBehaviour
         }
         if (_rewardText.Contains(_placeholderReward))
         {
-            _rewardText = SetRewardAmount(_rewardText, Random.Range(100, 500));
+            _rewardText = SetRewardAmount(_rewardText,_rewardAmount);
         }
         if (_rewardText.Contains(_placeholderWantedNPC))
         {

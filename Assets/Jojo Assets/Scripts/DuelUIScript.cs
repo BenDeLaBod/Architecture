@@ -19,6 +19,7 @@ public class DuelUIScript : MonoBehaviour
     [SerializeField] private GameObject _result;
     [SerializeField] private TextMeshProUGUI _duelResultText;
     [SerializeField] private GameObject _returnButton;
+    //private SceneSwitchScript _sceneManager;
 
     private void Awake()
     {
@@ -39,6 +40,8 @@ public class DuelUIScript : MonoBehaviour
         winSize = (int)bar.sprite.rect.width / 6;
         speed = 500.0f;
         direction = new Vector2(1, 0);
+       // _sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneSwitchScript>();
+        
     }
 
     // Update is called once per frame
@@ -69,11 +72,14 @@ public class DuelUIScript : MonoBehaviour
         if (-winSize < centreVal - pin.transform.position.x && centreVal - pin.transform.position.x < winSize)
         {
             _duelResultText.text = "Victory";
+            SceneSwitchScript.duelWon = true;
             return true;
         }
         else
         {
+           
             _duelResultText.text = "Lose";
+            SceneSwitchScript.duelWon = false;
             return false;
         }
 

@@ -50,7 +50,7 @@ public class Interactor : MonoBehaviour
         if (_numColliderFound > 0)
         {
             _interactable = _colliders[0].GetComponent<Interactable>();
-            //If interactable object is found press L to interact
+            //If interactable object is found press E to interact
             if (_interactable != null)
             {
                 if (!_interactionPromptUI.isDisplayed)

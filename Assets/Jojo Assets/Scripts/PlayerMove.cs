@@ -20,18 +20,20 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera vCam;
     [SerializeField] CinemachineFreeLook fCam;
     [SerializeField] Image crosshair;
-
+    [SerializeField] Gun _gunScript;
     // Start
     private void Start()
     {
         crosshair.enabled = false;
         gravityConstant = 9.82f;
         mouseMovement = Vector2.zero;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
+        vCam = GameObject.Find("Aiming Camera").GetComponent<CinemachineVirtualCamera>();
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         sprint = Input.GetKey(KeyCode.LeftControl);
@@ -95,11 +97,13 @@ public class PlayerMove : MonoBehaviour
         {
             vCam.enabled = false;
             fCam.enabled = true;
+            _gunScript.isAming = false;
         }
         else
         {
             fCam.enabled = false;
             vCam.enabled = true;
+            _gunScript.isAming = true;
         }
     }
 }

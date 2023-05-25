@@ -9,6 +9,19 @@ public class PatrolPoints : MonoBehaviour
     public Transform CurrentPoint => _patrolPoints[_currentPoint];
 
     private int _currentPoint = 0;
+    
+    [SerializeField] private Transform _nextPoint;
+
+    [SerializeField] private NPCManager _npcManager;
+
+    private void Start()
+    {
+        _npcManager = GameObject.Find("NPC Manager").GetComponent<NPCManager>();
+        for (int i = 0; i < 5; i++)
+        {
+            AddPatrolPoint(_npcManager.RandomTransform(), i);
+        }
+    }
 
     /// <summary>
     /// Får nästa punkt att gå till
@@ -18,6 +31,7 @@ public class PatrolPoints : MonoBehaviour
     {
         var point = _patrolPoints[_currentPoint];
         _currentPoint = (_currentPoint + 1) % _patrolPoints.Length;
+        _nextPoint = point;
         return point;
     }
 
@@ -40,5 +54,10 @@ public class PatrolPoints : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void AddPatrolPoint(Transform points, int _index)
+    {
+        _patrolPoints.SetValue(value: points, index: _index);
     }
 }

@@ -15,10 +15,10 @@ public class Gun : MonoBehaviour
     public GameObject bulletSpawnPoint;
 
     [SerializeField] private int magSize;
-    private int bulletsInMag;
+    public int bulletsInMag;
 
     private BulletManager bulletManager;
-
+    public bool isAming;
 
     void Start()
     {
@@ -46,6 +46,11 @@ public class Gun : MonoBehaviour
             shootTimer = shootCooldown;
             bulletsInMag--;
         }
+    }
+
+    public float ShootColdownTime()
+    {
+        return shootTimer / shootCooldown;
     }
 
     

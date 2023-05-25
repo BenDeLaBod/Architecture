@@ -10,6 +10,8 @@ public class RevolverBulletCount : MonoBehaviour
     [SerializeField] private Image _image;
     private WeaponHUDScript _weaponHUD;
     public int currentAmmoCount;
+    bool shot;
+    [SerializeField] Gun _gunScript;
     void Start()
     {
         _weaponHUD = GameObject.Find("Ammo HUD").GetComponent<WeaponHUDScript>();
@@ -19,19 +21,9 @@ public class RevolverBulletCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentAmmoCount = Mathf.Clamp(currentAmmoCount, 0, 7);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            currentAmmoCount--;
-            if (currentAmmoCount < 0)
-            {
-                FullAmmo();
-            }
-            else
-            {
-                ChangeRevolverImage(currentAmmoCount);
-            }
-        }
+        currentAmmoCount = _gunScript.bulletsInMag;
+        ChangeRevolverImage(currentAmmoCount);
+        _weaponHUD.UpdateInfo(6, currentAmmoCount);
     }
     public void ChangeRevolverImage(int newAmmoCount)
     {
@@ -43,4 +35,5 @@ public class RevolverBulletCount : MonoBehaviour
         _image.sprite = _sprites[6];
         currentAmmoCount = 6;
     }
+
 }
