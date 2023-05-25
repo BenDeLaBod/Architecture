@@ -10,6 +10,7 @@ public class FriendlyAction : FSMAction
     public override void Execute(StateMachine stateMachine)
     {
         var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
+        Debug.LogWarning("Friendly");
         navMeshAgent.isStopped = true;
     }
 }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 408592059866305361}
   - component: {fileID: 408592059866305360}
-  - component: {fileID: 408592059866305367}
   - component: {fileID: 408592059866305366}
   - component: {fileID: 408592059866305362}
   - component: {fileID: 726972471}
@@ -22,6 +21,9 @@ GameObject:
   - component: {fileID: 1088514186}
   - component: {fileID: 1088514187}
   - component: {fileID: 1088514188}
+  - component: {fileID: 1643438541}
+  - component: {fileID: -4609699131705311050}
+  - component: {fileID: 7753655999891042246}
   m_Layer: 6
   m_Name: EnemyTarget
   m_TagString: EnemyTest
@@ -37,7 +39,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408592059866305365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.05, y: 1.32, z: 10.12}
+  m_LocalPosition: {x: 2, y: 6, z: 8}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53,48 +55,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408592059866305365}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &408592059866305367
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408592059866305365}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &408592059866305366
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -108,7 +68,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2.2
   m_Direction: 1
-  m_Center: {x: 0, y: -0.51, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &408592059866305362
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,7 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _promt: '[E] Talk'
   _talkManager: {fileID: 0}
-  _npcInfo: {fileID: 0}
+  _talkController: {fileID: 0}
+  _npcManager: {fileID: 0}
+  _npcInfo: {fileID: 411385319}
 --- !u!114 &726972472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +117,8 @@ MonoBehaviour:
   _renderers:
   - {fileID: 6379462666116372683}
   - {fileID: 4745763091972793719}
-  _color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0.09803922}
+  _highlightColor: {r: 0.33962262, g: 0.32488427, b: 0.32488427, a: 0.84313726}
+  _wantedColor: {r: 1, g: 0.088679194, b: 0.088679194, a: 0.8039216}
 --- !u!114 &411385319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,10 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b35a6c7d7606af4fb4bbb8bb0dd1dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cowboySprite: {fileID: 21300000, guid: 16cca2101405588458c3277cb949f853, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
-  _cowboyHeadshot: {fileID: 0}
-  _displayName: {fileID: 0}
-  _name: Lonnie 'Justice' Stanton
+  _name: Thelma 'No Horse' Morton
 --- !u!114 &1088514183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28468daddb3c5fa4181a17f8cf93cc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3932567768388180325, guid: 1a2d8608e78d0f149ae2eba255ad2fd4, type: 3}
+  projectilePrefab: {fileID: 1727630854264015292, guid: 39e6b9e1066ef564bab91f5d99bde9e7, type: 3}
   gunCooldown: 1
   magSize: 6
 --- !u!114 &1088514184
@@ -200,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beenMadeEnemy: 0
+  _healthPointScripts: {fileID: 1643438541}
 --- !u!114 &1088514185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +195,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  _nextPoint: {fileID: 0}
+  _npcManager: {fileID: 0}
 --- !u!114 &1088514187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,10 +228,58 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 1
+  m_BaseOffset: 1.6
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1643438541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2351d0c7a52ac2040a53424523ad36e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 10
+  _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
+  deathMoney: 180
+--- !u!114 &-4609699131705311050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3db8de34cf7baf4491e959706f8d5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &7753655999891042246
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408592059866305365}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1390680105
 PrefabInstance:
   m_ObjectHideFlags: 0

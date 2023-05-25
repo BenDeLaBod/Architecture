@@ -6,7 +6,8 @@ public class HighlightInteract : MonoBehaviour
 {
 
     [SerializeField] private List<Renderer> _renderers;
-    [SerializeField] private Color _color = Color.red;
+    [SerializeField] private Color _highlightColor;
+    [SerializeField] private Color _wantedColor;
 
     private List<Material> _materials;
 
@@ -21,6 +22,24 @@ public class HighlightInteract : MonoBehaviour
         }
     }
 
+    public void ToggleWanted(bool wanted)
+    {
+        if (wanted)
+        {
+            foreach (var material in _materials)
+            {
+                material.EnableKeyword("_EMISSION");
+                material.SetColor("_EmissionColor", _wantedColor);
+            }
+        }
+        else
+        {
+            foreach (var material in _materials)
+            {
+                material.DisableKeyword("_EMISSION");
+            }
+        }
+    }
    
         
     public void ToggleHighlight(bool val)
@@ -30,7 +49,7 @@ public class HighlightInteract : MonoBehaviour
             foreach (var material in _materials)
             {
                 material.EnableKeyword("_EMISSION");
-                material.SetColor("_EmissionColor", _color);
+                material.SetColor("_EmissionColor", _highlightColor);
             }
         }
         else

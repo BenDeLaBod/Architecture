@@ -15,6 +15,7 @@ public class WeaponHUDScript : MonoBehaviour
     public void UpdateInfo(/*Sprite weaponIcon,*/ int ammoSize, int ammoCount)
     {
         //icon.sprite = weaponIcon;
+        
         _ammoSizeText.text = ""+ammoSize.ToString();
         _ammoCountText.text = "" + ammoCount.ToString();
         

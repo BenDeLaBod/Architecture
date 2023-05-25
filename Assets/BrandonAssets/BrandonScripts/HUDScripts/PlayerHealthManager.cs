@@ -7,8 +7,8 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] private IntEventSO _hpEvent;
     [SerializeField] private IntEventSO _hpUpdateEvent;
 
-    public int _currentHP = 100;
-    public int GetCurrentHP() => _currentHP;
+    public int currentHP = 100;
+    public int GetCurrentHP() => currentHP;
 
     private void Start()
     {
@@ -26,9 +26,9 @@ public class PlayerHealthManager : MonoBehaviour
     /// <param name="healedHP"> The assigned value gets added to the existing current HP</param>
     private void UpdateHP(int healedHP)
     {
-        _currentHP += healedHP;
-        _currentHP = Mathf.Clamp(_currentHP, 0, 100);
+        currentHP += healedHP;
+        currentHP = Mathf.Clamp(currentHP, 0, 100);
        
-        _hpUpdateEvent.Invoke(_currentHP);
+        _hpUpdateEvent.Invoke(currentHP);
     }
 }

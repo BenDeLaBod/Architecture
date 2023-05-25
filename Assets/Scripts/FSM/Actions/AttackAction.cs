@@ -17,6 +17,9 @@ public class AttackAction : FSMAction
                         stateMachine.transform.position.y,
                         stateMachine.transform.position.z + Random.Range(-3, 3)));
         var attack = stateMachine.GetComponent<AiShooting>();
+
+        stateMachine.transform.LookAt(attack.Player);
+        stateMachine.transform.eulerAngles = new Vector3(0, stateMachine.transform.eulerAngles.y, 0);
         attack.shoot();
 
        
