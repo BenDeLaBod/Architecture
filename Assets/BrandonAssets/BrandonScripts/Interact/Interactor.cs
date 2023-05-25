@@ -9,7 +9,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private LayerMask _interactableMask;
     [SerializeField] private InteractionPromptUI _interactionPromptUI;
 
-    private readonly Collider[] _colliders = new Collider[3];
+    [SerializeField] Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numColliderFound;
     Collider[] _hoverArray = new Collider[0];
 

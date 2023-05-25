@@ -24397,6 +24397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6195549307214446528, guid: f20a244243231bb46883e8e1cdc2bd4a, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 6195549307214446532, guid: f20a244243231bb46883e8e1cdc2bd4a, type: 3}
       propertyPath: m_Name
       value: NPCPrefabTest
