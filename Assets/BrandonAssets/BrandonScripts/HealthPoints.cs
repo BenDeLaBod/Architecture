@@ -51,6 +51,7 @@ public class HealthPoints : MonoBehaviour
 
         if (gameObject.tag == "EnemyTest")
         {    
+            //Send message using the event
             _goldEvent.Invoke(deathMoney);
         }
         _anim.SetBool("Died", true);

@@ -1033,7 +1033,7 @@ MonoBehaviour:
   _goldManager: {fileID: 364978904}
   _bettingText: {fileID: 1090140572}
   bettingMoney: 0
-  _npcManager: {fileID: 0}
+  _npcManager: {fileID: 1759320989}
 --- !u!1 &79458112
 GameObject:
   m_ObjectHideFlags: 0
@@ -7508,6 +7508,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _interactionPromptUI: {fileID: 1884633156}
+  _colliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _numColliderFound: 0
 --- !u!114 &636493395
 MonoBehaviour:

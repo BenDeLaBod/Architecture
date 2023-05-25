@@ -11,20 +11,20 @@ public class GoldManager : MonoBehaviour
 
     private void Start()
     {
+        //Listens to event
         _goldAddedEvent.Event += UpdateGold;
         addGold = true;
     }
-    private void OnDestroy()
-    {
-        _goldAddedEvent.Event -= UpdateGold;
-    }
 
+
+    //Trigger when an event is Invoked
     private void UpdateGold(int addedGold)
     {
         if (addGold)
         {
             addGold = false;
             currentGold += addedGold;
+            //Send message using the event
             _goldUpdateEvent.Invoke(currentGold);
            
         }

@@ -13,6 +13,7 @@ public class PickUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
+            //Send message using the event
             _damageEvent.Invoke(-9);
             _goldEvent.Invoke(addGoldPickUp);
             Destroy(gameObject);
