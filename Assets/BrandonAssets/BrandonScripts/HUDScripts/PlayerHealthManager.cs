@@ -9,7 +9,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     public int currentHP = 100;
     public int GetCurrentHP() => currentHP;
-
+    public void TakeDamage() => _hpEvent.Invoke(-10);
     private void Start()
     {
         _hpEvent.Event += UpdateHP;

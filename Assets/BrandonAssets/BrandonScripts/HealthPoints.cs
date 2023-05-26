@@ -43,7 +43,11 @@ public class HealthPoints : MonoBehaviour
 
     public void TakeDamage(int damageNumber)
     {
-        healthPoints -= damageNumber;    
+        healthPoints -= damageNumber;
+        if (gameObject.tag == "Player")
+        {
+            _phm.TakeDamage();
+        }
     }
 
     public void HealHP(int amountHeal)
