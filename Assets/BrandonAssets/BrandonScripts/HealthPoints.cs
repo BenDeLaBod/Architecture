@@ -12,12 +12,17 @@ public class HealthPoints : MonoBehaviour
     private PlayerHealthManager _phm;
     bool alive;
 
+
+    
+    
     // Update is called once per frame
-   
+
     private void Start()
     {
         alive = true;
         _phm = GameObject.Find("HealthManager").GetComponent<PlayerHealthManager>();
+
+        
     }
     void Update()
     {
@@ -55,7 +60,7 @@ public class HealthPoints : MonoBehaviour
             _goldEvent.Invoke(deathMoney);
         }
         _anim.SetBool("Died", true);
-        Destroy(this.gameObject,2.5f);
+        Destroy(this.gameObject,_anim.GetCurrentAnimatorStateInfo(0).length);
     }
 
     public void GetAnimator(Animator anim)

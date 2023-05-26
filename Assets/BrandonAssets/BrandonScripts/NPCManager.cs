@@ -108,9 +108,14 @@ public class NPCManager : MonoBehaviour
         var npcBody = Instantiate(GetRandomMainBody(), new Vector3(npc.transform.position.x, npc.transform.position.y -1.5f,
             npc.transform.position.z), npc.transform.rotation, npc.transform);
 
+
+        var npcBodyComponent = npcBody.GetComponent<GetBodyRenderer>();
+        Instantiate(GetRandomHat(), npcBodyComponent.hatPlacement.transform);
+
         npc.GetComponent<HealthPoints>().GetAnimator(npcBody.GetComponent<Animator>());
         npc.GetComponent<StateMachine>().GetAnimator(npcBody.GetComponent<Animator>());
-        npc.GetComponent<HighlightInteract>().GetRenderer(npcBody.GetComponent<GetBodyRenderer>()._renderers);
+        npc.GetComponent<HighlightInteract>().GetRenderer(npcBodyComponent.renderers);
+
         //npcArray = FindObjectsOfType<NPCInfo>();
 
     }
@@ -160,5 +165,10 @@ public class NPCManager : MonoBehaviour
     public GameObject GetRandomMainBody()
     {
         return _mainBody[Random.Range(0, _mainBody.Length)];
+    }
+
+    public GameObject GetRandomHat()
+    {
+        return _hatOptions[Random.Range(0, _hatOptions.Length)];
     }
 }

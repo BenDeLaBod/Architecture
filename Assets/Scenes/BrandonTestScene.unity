@@ -7928,7 +7928,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665643618}
-  m_LocalRotation: {x: 0.15220079, y: 0.00000007413049, z: -0.0000000114157155, w: 0.9883496}
+  m_LocalRotation: {x: 0.15220079, y: 0.00000009113641, z: -0.00000001403454, w: 0.9883496}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19921,8 +19921,8 @@ MonoBehaviour:
   - {fileID: 5613915653582405460, guid: d78916cd4336796439ba6669ea9f91c6, type: 3}
   - {fileID: 6203114470595908415, guid: 73b960d954b4d0e41833cf51608d11e6, type: 3}
   _hatOptions:
-  - {fileID: 919132149155446097, guid: ac5cf70ee374135418ae2ed3934610d4, type: 3}
-  - {fileID: 919132149155446097, guid: 2b47bd84970f17b40b07ee609b3bd215, type: 3}
+  - {fileID: 8747616912103470016, guid: 635caa585f2818f459df7987916cc47d, type: 3}
+  - {fileID: 5705077318923227820, guid: 7cfed11da4528314b81dd8f94b904e9b, type: 3}
   _wantedNPC: {fileID: 0}
   _reawardAmount: 0
   _interactingNPC: {fileID: 0}
