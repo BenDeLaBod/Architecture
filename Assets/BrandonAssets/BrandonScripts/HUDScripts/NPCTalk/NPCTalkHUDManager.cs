@@ -25,6 +25,7 @@ public class NPCTalkHUDManager : MonoBehaviour
 
     [Header("Quest")]
     [SerializeField] private GameObject _questSelected;
+    [SerializeField] private GameObject _miniMap;
     public bool showHUD;
     void Start()
     {
@@ -69,6 +70,7 @@ public class NPCTalkHUDManager : MonoBehaviour
         _playerHealth.anchoredPosition = new Vector2(_playerHealth.anchoredPosition.x + 117, _playerHealth.anchoredPosition.y - 126); ;
         _playerGold.anchoredPosition = new Vector2(_playerGold.anchoredPosition.x + 120, _playerGold.anchoredPosition.y - 140);
         _playerWeapon.anchoredPosition = new Vector2(_playerWeapon.anchoredPosition.x, _playerWeapon.anchoredPosition.y - 126);
+        _miniMap.SetActive(false);
         _NPCchoiceCanvas.gameObject.SetActive(true);
     }
     /// <summary>
@@ -90,6 +92,7 @@ public class NPCTalkHUDManager : MonoBehaviour
         _playerMoveScript.enabled = true;
         _thirdPersonCamera.m_YAxis.m_MaxSpeed = _thirdPersonYDefaultSpeed;
         _thirdPersonCamera.m_XAxis.m_MaxSpeed = _thirdPersonXDefaultSpeed;
+        _miniMap.SetActive(true);
         //_thirdPersonCamera.enabled = true;
     }
 
