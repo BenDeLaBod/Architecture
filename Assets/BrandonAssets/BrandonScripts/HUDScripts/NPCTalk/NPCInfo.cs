@@ -9,6 +9,7 @@ public class NPCInfo : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] public Sprite _cowboySprite;
     [SerializeField] private Image _cowboyImage;
+    [SerializeField] private RawImage _profile;
 
     [SerializeField] public string _name;
     TalkController _talkController;

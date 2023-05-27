@@ -9,6 +9,7 @@ public class TalkController : MonoBehaviour
 {
     [SerializeField] private GameObject _canvasGO;
     [SerializeField] private Image _npcImage;
+    [SerializeField] private RawImage _npcProfile;
     [SerializeField] public TextMeshProUGUI npcDisplayName;
     public void ToggleCanvas(bool state)
     {
@@ -23,7 +24,10 @@ public class TalkController : MonoBehaviour
     public void SetImage(Sprite image)
     {
         _npcImage.sprite = image;
+        
     }
+
+ 
 
     public void SetDisplayName(string name)
     {
