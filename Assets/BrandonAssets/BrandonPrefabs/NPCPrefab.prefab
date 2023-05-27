@@ -251,7 +251,7 @@ MonoBehaviour:
   healthPoints: 10
   _anim: {fileID: 0}
   _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
-  deathMoney: 157
+  deathMoney: 118
 --- !u!114 &6195549307214446530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,6 +443,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

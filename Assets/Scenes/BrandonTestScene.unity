@@ -13142,7 +13142,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064913117}
-  m_LocalRotation: {x: 0.11619861, y: 0.00000006542537, z: -0.000000007654185, w: 0.993226}
+  m_LocalRotation: {x: 0.11619861, y: 0.00000010065694, z: -0.000000011775965, w: 0.993226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -24827,6 +24827,10 @@ PrefabInstance:
       propertyPath: _talkController
       value: 
       objectReference: {fileID: 1117212709}
+    - target: {fileID: 6195549307214446554, guid: f20a244243231bb46883e8e1cdc2bd4a, type: 3}
+      propertyPath: _cowboyImage
+      value: 
+      objectReference: {fileID: 513654042}
     - target: {fileID: 6195549307214446558, guid: f20a244243231bb46883e8e1cdc2bd4a, type: 3}
       propertyPath: _npcManager
       value: 
