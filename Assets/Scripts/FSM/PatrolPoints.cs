@@ -56,8 +56,14 @@ public class PatrolPoints : MonoBehaviour
         return false;
     }
 
+    public bool IsTalking(NavMeshAgent agent)
+    {
+        return true;
+    }
+
     public void AddPatrolPoint(Transform points, int _index)
     {
         _patrolPoints.SetValue(value: points, index: _index);
     }
+    
 }

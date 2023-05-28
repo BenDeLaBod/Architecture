@@ -18,6 +18,7 @@ public class NPCTalkHUDManager : MonoBehaviour
     Vector2 _healthPos;
     Vector2 _goldPos;
     Vector2 _weaponPos;
+    [SerializeField] private NPCManager _npcManager;
 
     [Header("Duel")]
     [SerializeField] private GameObject _duelQuest;
@@ -90,6 +91,7 @@ public class NPCTalkHUDManager : MonoBehaviour
         _playerMoveScript.enabled = true;
         _thirdPersonCamera.m_YAxis.m_MaxSpeed = _thirdPersonYDefaultSpeed;
         _thirdPersonCamera.m_XAxis.m_MaxSpeed = _thirdPersonXDefaultSpeed;
+        _npcManager._interactingNPC.GetComponent<NPCInteract>().Talking(false);
         //_thirdPersonCamera.enabled = true;
     }
 

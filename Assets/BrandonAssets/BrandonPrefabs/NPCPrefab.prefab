@@ -102,6 +102,8 @@ MonoBehaviour:
   _talkController: {fileID: 0}
   _npcManager: {fileID: 0}
   _npcInfo: {fileID: 6195549307214446554}
+  _patrolPoints: {fileID: 6195549307214446558}
+  _navAgent: {fileID: 6195549307214446556}
 --- !u!114 &6195549307214446555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,9 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b35a6c7d7606af4fb4bbb8bb0dd1dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cowboySprite: {fileID: 21300000, guid: 882d77e06b2042f458097d90d234f4cd, type: 3}
+  _cowboySprite: {fileID: 21300000, guid: 40031c690f6e48e47aff1c2d18cd026a, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
-  _name: Leonard 'Creed' Booth
+  _name: Glenn 'Dawn' Burns
 --- !u!114 &6195549307214446553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +252,9 @@ MonoBehaviour:
   healthPoints: 10
   _anim: {fileID: 0}
   _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
-  deathMoney: 294
+  deathMoney: 113
+  _phm: {fileID: 0}
+  _gameOver: {fileID: 0}
 --- !u!114 &6195549307214446530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +446,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

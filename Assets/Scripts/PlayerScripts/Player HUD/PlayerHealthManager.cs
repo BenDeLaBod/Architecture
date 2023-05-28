@@ -33,8 +33,8 @@ public class PlayerHealthManager : MonoBehaviour
         _hpUpdateEvent.Invoke(currentHP);
     }
 
-    internal void TakeDamage()
+    internal void TakeDamage(int damage)
     {
-        UpdateHP(-10);
+        UpdateHP(damage);
     }
 }

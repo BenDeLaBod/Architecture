@@ -9,17 +9,17 @@ public class HealthPoints : MonoBehaviour
     [SerializeField] Animator _anim;
     [SerializeField] private IntEventSO _goldEvent;
     [SerializeField] public int deathMoney = 33;
-    private PlayerHealthManager _phm;
+    [SerializeField] private PlayerHealthManager _phm;
     bool alive;
     private IntEventSO _takeDamage;
-    private GameObject _gameOver;
+    [SerializeField] private GameObject _gameOver;
 
     // Update is called once per frame
    
     private void Start()
     {
-       
-        _gameOver = GameObject.Find("Game Over");
+
+        _gameOver = GameObject.FindGameObjectWithTag("GameOver");
         _gameOver.SetActive(false);
         alive = true;
         _phm = GameObject.Find("HealthManager").GetComponent<PlayerHealthManager>();
@@ -47,7 +47,7 @@ public class HealthPoints : MonoBehaviour
 
         if (gameObject.tag == "Player")
         {
-            _phm.TakeDamage();
+            _phm.TakeDamage(-10);
         }
     }
 
@@ -66,6 +66,7 @@ public class HealthPoints : MonoBehaviour
         if(gameObject.tag == "Player")
         {
             _gameOver.SetActive(true);
+            
         }
         _anim.SetBool("Died", true);
         Destroy(this.gameObject,2.5f);

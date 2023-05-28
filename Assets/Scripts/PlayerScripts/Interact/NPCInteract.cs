@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class NPCInteract : MonoBehaviour, Interactable
 {
@@ -11,13 +12,16 @@ public class NPCInteract : MonoBehaviour, Interactable
     [SerializeField] private TalkController _talkController;
     [SerializeField] private NPCManager _npcManager;
     [SerializeField] private NPCInfo _npcInfo;
-
+    [SerializeField] private PatrolPoints _patrolPoints;
+    [SerializeField] private NavMeshAgent _navAgent;
 
     private void Start()
     {
-        _talkManager = GameObject.Find("NPCHUDManager").GetComponent<NPCTalkHUDManager>();
+        _talkManager = GameObject.Find("NPCTalkHUDManager").GetComponent<NPCTalkHUDManager>();
         _talkController = GameObject.Find("TalkController").GetComponent<TalkController>();
         _npcManager = GameObject.Find("NPC Manager").GetComponent<NPCManager>();
+        _patrolPoints = gameObject.GetComponent<PatrolPoints>();
+        _navAgent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     public string InteractionPromt => _promt;
@@ -31,6 +35,7 @@ public class NPCInteract : MonoBehaviour, Interactable
     {
         Debug.Log("Talk to NPC");
 
+        Talking(true);
         _talkController.ToggleCanvas(true);
 
         if (!_talkManager.showHUD)
@@ -41,5 +46,17 @@ public class NPCInteract : MonoBehaviour, Interactable
 
         _npcManager.SetInteractingNPC(gameObject);
         return true;
+    }
+
+    public void Talking(bool isTalking)
+    {
+        if (isTalking)
+        {
+            _navAgent.speed = 0f;
+        }
+        if(!isTalking)
+        {
+            _navAgent.speed = 3.5f;
+        }
     }
 }

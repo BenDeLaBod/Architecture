@@ -29,7 +29,7 @@ public class NPCManager : MonoBehaviour
     [Header("NPC Quest")]
     [SerializeField] GameObject _wantedNPC;
     [SerializeField] int _reawardAmount;
-    [SerializeField] GameObject _interactingNPC;
+    [SerializeField] public GameObject _interactingNPC;
 
     private static bool m_Initialized = false;
 
