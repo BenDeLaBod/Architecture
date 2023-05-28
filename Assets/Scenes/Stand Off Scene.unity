@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4005199, g: 0.30272216, b: 0.19804595, a: 1}
+  m_IndirectSpecularColor: {r: 0.40062854, g: 0.30299303, b: 0.19768158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1890,7 +1890,6 @@ MonoBehaviour:
   _result: {fileID: 35259490}
   _duelResultText: {fileID: 35259492}
   _returnButton: {fileID: 1375275320}
-  _npcManager: {fileID: 0}
 --- !u!114 &990139221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3583,6 +3582,8 @@ MonoBehaviour:
   shootCooldown: 1
   bulletSpawnPoint: {fileID: 1828513144}
   magSize: 6
+  bulletsInMag: 0
+  isAming: 0
 --- !u!1 &1782277695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3904,6 +3905,8 @@ MonoBehaviour:
   shootCooldown: 1
   bulletSpawnPoint: {fileID: 1598978326}
   magSize: 6
+  bulletsInMag: 0
+  isAming: 0
 --- !u!4 &1892697380
 Transform:
   m_ObjectHideFlags: 0

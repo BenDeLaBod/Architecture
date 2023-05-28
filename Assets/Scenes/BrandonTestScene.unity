@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7626,10 +7626,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _interactionPromptUI: {fileID: 1884633156}
-  _colliders:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   _numColliderFound: 0
 --- !u!114 &636493395
 MonoBehaviour:
@@ -13156,7 +13152,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064913117}
-  m_LocalRotation: {x: 0.11619861, y: 0.00000006542537, z: -0.000000007654185, w: 0.993226}
+  m_LocalRotation: {x: 0.11619861, y: 0.00000010065694, z: -0.000000011775965, w: 0.993226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13278,7 +13274,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: c637272fb8f4b3b44b9a342c47be0305, type: 2}
+  m_Texture: {fileID: 8400000, guid: 2c505305520b9b941acc5a2411c586db, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -13696,7 +13692,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasGO: {fileID: 281631805}
   _npcImage: {fileID: 513654042}
-  _npcProfile: {fileID: 0}
   npcDisplayName: {fileID: 554768956}
 --- !u!114 &1117212710
 MonoBehaviour:
@@ -19181,9 +19176,9 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 448
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: c637272fb8f4b3b44b9a342c47be0305, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 2c505305520b9b941acc5a2411c586db, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -20589,7 +20584,6 @@ MonoBehaviour:
   _duelQuest: {fileID: 925231761}
   _duelSelected: {fileID: 331959242}
   _questSelected: {fileID: 857848885}
-  _miniMap: {fileID: 1072362421}
   showHUD: 0
 --- !u!1 &1814958110
 GameObject:
