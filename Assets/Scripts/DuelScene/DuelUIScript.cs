@@ -76,8 +76,7 @@ public class DuelUIScript : MonoBehaviour
             return true;
         }
         else
-        {
-           
+        {         
             _duelResultText.text = "Lose";
             SceneSwitchScript.duelWon = false;
             return false;
