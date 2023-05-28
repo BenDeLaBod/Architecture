@@ -135,7 +135,7 @@ MonoBehaviour:
   _cowboySprite: {fileID: 21300000, guid: 882d77e06b2042f458097d90d234f4cd, type: 3}
   _cowboyImage: {fileID: 21300000, guid: 56a341345189d5c44b806432d99d4847, type: 3}
   _profile: {fileID: 0}
-  _name: Glenn 'Dawn' Burns
+  _name: Leonard 'Creed' Booth
 --- !u!114 &6195549307214446553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
   healthPoints: 10
   _anim: {fileID: 0}
   _goldEvent: {fileID: 11400000, guid: 898a11d3f9024cd438a51c590451c59e, type: 2}
-  deathMoney: 118
+  deathMoney: 158
 --- !u!114 &6195549307214446530
 MonoBehaviour:
   m_ObjectHideFlags: 0
